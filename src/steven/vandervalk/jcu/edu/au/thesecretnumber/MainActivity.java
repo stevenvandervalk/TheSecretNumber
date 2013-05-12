@@ -21,6 +21,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		System.out.println("running model");
+		Model test = new Model();
+		test.run();
 	}
 
 	@Override
@@ -34,9 +37,7 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onDoubleTap(MotionEvent e) {
 				System.out.println("double tap!");
-				System.out.println("running model");
-				Model test = new Model();
-				test.run();
+
 				return true;
 			}
 
@@ -134,5 +135,15 @@ public class MainActivity extends Activity {
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
-	//
+
+	public void StartFreePlay(View view) {
+		// // // Make magics
+		Intent intent = new Intent(this, FreePlay.class);
+		// // // EditText editText = (EditText) findViewById
+		// (R.id.edit_message);
+		// // // String message = editText.getText().toString();
+		// // // intent.putExtra(EXTRA_MESSAGE, message);
+		startActivity(intent);
+	}
+
 }

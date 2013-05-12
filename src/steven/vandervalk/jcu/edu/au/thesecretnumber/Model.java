@@ -19,7 +19,25 @@ public class Model implements Runnable {
 
 	private static int max_length;
 
+	public static ArrayList<ArrayList<Integer>> modelOfCards = new ArrayList<ArrayList<Integer>>();
+
+	public static int[] convertIntegers(List<Integer> integers) {
+		int[] ret = new int[integers.size()];
+		for (int i = 0; i < ret.length; i++) {
+			ret[i] = integers.get(i).intValue();
+		}
+		return ret;
+	}
+
+	// Code for obtaining cards in string form
+
+	// EditText editText1 = (EditText) findViewById(R.id.TextView01);
+	// int[] value = Model.convertIntegers(Model.modelOfCards.get(0));
+	// String cardNumbers = Arrays.toString(value);
+	// editText1.setText(cardNumbers);
+
 	@Override
+	// change to use Async Task
 	public void run() {
 		magic_numbers = new ArrayList<Integer>();
 		// dummy data settings
@@ -32,16 +50,17 @@ public class Model implements Runnable {
 		// actual runtime
 
 		BuildChosenArray();
-		makeCards();
+		modelOfCards = makeCards();
 
 	}
 
-	private void makeCards() {
+	private ArrayList<ArrayList<Integer>> makeCards() {
 
 		Integer[] magic_numbers_array = new Integer[magic_numbers.size()];
 		magic_numbers.toArray(magic_numbers_array);
 		ArrayList<ArrayList<Integer>> maintrol = CardGenerator
 				.main(magic_numbers_array);
+		return maintrol;
 
 	}
 

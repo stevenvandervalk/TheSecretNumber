@@ -49,69 +49,81 @@ public final class R {
         public static final int volume_on=0x7f02000c;
     }
     public static final class id {
-        public static final int ScrollView1=0x7f0b0016;
-        public static final int action_help=0x7f0b001d;
-        public static final int action_settings=0x7f0b001c;
-        public static final int button1=0x7f0b0000;
-        public static final int button2=0x7f0b0002;
-        public static final int button3=0x7f0b0001;
-        public static final int button4=0x7f0b0003;
-        public static final int help_button1=0x7f0b0018;
-        public static final int help_button2=0x7f0b0019;
-        public static final int help_button3=0x7f0b001a;
-        public static final int help_button4=0x7f0b001b;
-        public static final int help_page_intro=0x7f0b0017;
-        public static final int radioGroup1=0x7f0b0006;
-        public static final int radioGroup2=0x7f0b000b;
-        public static final int radioGroup3=0x7f0b000f;
-        public static final int radio_beatheclock=0x7f0b000c;
-        public static final int radio_binary=0x7f0b0010;
-        public static final int radio_compguess=0x7f0b0008;
-        public static final int radio_fibonnacci=0x7f0b0011;
-        public static final int radio_freeplay=0x7f0b0007;
-        public static final int radio_playerguess=0x7f0b0009;
-        public static final int radio_prime_numbers=0x7f0b0012;
-        public static final int radio_timetrial=0x7f0b000d;
-        public static final int save_settings_button=0x7f0b0004;
-        public static final int textView1=0x7f0b000a;
-        public static final int textView2=0x7f0b0005;
-        public static final int textView3=0x7f0b000e;
-        public static final int title=0x7f0b0014;
-        public static final int toggleButton1=0x7f0b0013;
-        public static final int value=0x7f0b0015;
+        public static final int LinearLayout01=0x7f0b0000;
+        public static final int ScrollView1=0x7f0b001e;
+        public static final int TextView01=0x7f0b0006;
+        public static final int TextView02=0x7f0b0007;
+        public static final int TextView03=0x7f0b0008;
+        public static final int ViewFlipper01=0x7f0b0005;
+        public static final int action_help=0x7f0b0025;
+        public static final int action_settings=0x7f0b0024;
+        public static final int button1=0x7f0b0009;
+        public static final int button2=0x7f0b000b;
+        public static final int button3=0x7f0b000c;
+        public static final int button4=0x7f0b000a;
+        public static final int help_button1=0x7f0b0020;
+        public static final int help_button2=0x7f0b0021;
+        public static final int help_button3=0x7f0b0022;
+        public static final int help_button4=0x7f0b0023;
+        public static final int help_page_intro=0x7f0b001f;
+        public static final int radio0=0x7f0b0002;
+        public static final int radio1=0x7f0b0003;
+        public static final int radio2=0x7f0b0004;
+        public static final int radioGroup1=0x7f0b0001;
+        public static final int radioGroup2=0x7f0b0013;
+        public static final int radioGroup3=0x7f0b0017;
+        public static final int radio_beatheclock=0x7f0b0014;
+        public static final int radio_binary=0x7f0b0018;
+        public static final int radio_compguess=0x7f0b0010;
+        public static final int radio_fibonnacci=0x7f0b0019;
+        public static final int radio_freeplay=0x7f0b000f;
+        public static final int radio_playerguess=0x7f0b0011;
+        public static final int radio_prime_numbers=0x7f0b001a;
+        public static final int radio_timetrial=0x7f0b0015;
+        public static final int save_settings_button=0x7f0b000d;
+        public static final int textView1=0x7f0b0012;
+        public static final int textView2=0x7f0b000e;
+        public static final int textView3=0x7f0b0016;
+        public static final int title=0x7f0b001c;
+        public static final int toggleButton1=0x7f0b001b;
+        public static final int value=0x7f0b001d;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_overview=0x7f030001;
-        public static final int activity_settings=0x7f030002;
-        public static final int activity_start_page=0x7f030003;
-        public static final int add_edit=0x7f030004;
-        public static final int help=0x7f030005;
-        public static final int main=0x7f030006;
-        public static final int row=0x7f030007;
+        public static final int activity_free_play=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_overview=0x7f030002;
+        public static final int activity_settings=0x7f030003;
+        public static final int activity_start_page=0x7f030004;
+        public static final int add_edit=0x7f030005;
+        public static final int help=0x7f030006;
+        public static final int main=0x7f030007;
+        public static final int row=0x7f030008;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
-        public static final int menu=0x7f0a0001;
-        public static final int preferences=0x7f0a0002;
-        public static final int settings=0x7f0a0003;
-        public static final int start_page=0x7f0a0004;
+        public static final int free_play=0x7f0a0000;
+        public static final int main=0x7f0a0001;
+        public static final int menu=0x7f0a0002;
+        public static final int preferences=0x7f0a0003;
+        public static final int settings=0x7f0a0004;
+        public static final int start_page=0x7f0a0005;
     }
     public static final class string {
         public static final int Scoring_mode=0x7f07001c;
         public static final int Sound_toggle_button=0x7f070022;
         public static final int about_help_topics=0x7f070001;
         public static final int action_settings=0x7f070011;
-        public static final int activity_settings=0x7f07002d;
+        public static final int activity_settings=0x7f070031;
         public static final int add_title=0x7f070029;
         public static final int app_guess=0x7f07001d;
         public static final int app_name=0x7f070010;
         public static final int beat_the_clock=0x7f070020;
         public static final int binary=0x7f070018;
         public static final int cancel=0x7f07002c;
+        public static final int computerguess_button=0x7f07002e;
         public static final int delete_title=0x7f07002b;
         public static final int fibonnacci=0x7f07001a;
         public static final int free_play=0x7f070017;
+        public static final int freeplay_button=0x7f07002d;
         public static final int game_mode=0x7f070016;
         public static final int hello_world=0x7f070012;
         public static final int help_button=0x7f070026;
@@ -131,32 +143,34 @@ public final class R {
         public static final int number_type=0x7f07001b;
         public static final int ok=0x7f07002a;
         public static final int play_game_button=0x7f070023;
-        public static final int pref_default_display_name=0x7f070032;
-        public static final int pref_description_social_recommendations=0x7f070030;
+        public static final int playerguess_button=0x7f07002f;
+        public static final int pref_default_display_name=0x7f070036;
+        public static final int pref_description_social_recommendations=0x7f070034;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f070034;
+        public static final int pref_header_data_sync=0x7f070038;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f07002e;
+        public static final int pref_header_general=0x7f070032;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f070037;
-        public static final int pref_ringtone_silent=0x7f07003a;
-        public static final int pref_title_add_friends_to_messages=0x7f070033;
-        public static final int pref_title_display_name=0x7f070031;
-        public static final int pref_title_new_message_notifications=0x7f070038;
-        public static final int pref_title_ringtone=0x7f070039;
-        public static final int pref_title_social_recommendations=0x7f07002f;
-        public static final int pref_title_sync_frequency=0x7f070035;
-        public static final int pref_title_system_sync_settings=0x7f070036;
-        public static final int pref_title_vibrate=0x7f07003b;
+        public static final int pref_header_notifications=0x7f07003b;
+        public static final int pref_ringtone_silent=0x7f07003e;
+        public static final int pref_title_add_friends_to_messages=0x7f070037;
+        public static final int pref_title_display_name=0x7f070035;
+        public static final int pref_title_new_message_notifications=0x7f07003c;
+        public static final int pref_title_ringtone=0x7f07003d;
+        public static final int pref_title_social_recommendations=0x7f070033;
+        public static final int pref_title_sync_frequency=0x7f070039;
+        public static final int pref_title_system_sync_settings=0x7f07003a;
+        public static final int pref_title_vibrate=0x7f07003f;
         public static final int prime_numbers=0x7f070019;
         public static final int save_settings=0x7f070021;
         public static final int settings=0x7f070015;
         public static final int time_trial=0x7f07001f;
         public static final int title_activity_ConstantsBrowser=0x7f070028;
+        public static final int title_activity_free_play=0x7f070030;
         public static final int title_activity_help=0x7f070027;
         public static final int title_activity_preferences=0x7f070025;
         public static final int title_activity_settings=0x7f070014;
