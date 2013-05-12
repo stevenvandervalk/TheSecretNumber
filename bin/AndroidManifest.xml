@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="steven.vandervalk.jcu.edu.au.thesecretnumber"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage"
+            android:label="@string/title_activity_start_page" >
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Settings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
+         <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.ConstantsBrowser"
+            android:label="@string/title_activity_ConstantsBrowser"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
+     
+        
+        <provider android:authorities="steven.vandervalk.jcu.edu.au.Provider"
+              android:name=".Provider" android:exported="false"/>
+    </application>
+
+</manifest>
