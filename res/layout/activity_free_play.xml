@@ -9,25 +9,14 @@
     <RadioGroup android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <RadioButton android:layout_height="wrap_content"
-            android:id="@+id/radio0" android:layout_width="wrap_content"
-            android:text="Show View 1" android:checked="true"></RadioButton>
-        <RadioButton android:layout_height="wrap_content"
-            android:id="@+id/radio1" android:layout_width="wrap_content"
-            android:text="Show view 2"></RadioButton>
-        <RadioButton android:layout_height="wrap_content"
-            android:id="@+id/radio2" android:layout_width="wrap_content"
-            android:text="Show View 3"></RadioButton>
+        
     </RadioGroup>
 
     <ViewFlipper android:id="@+id/ViewFlipper01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <!--adding views to ViewFlipper-->
-        <TextView android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="First view is now displayed"></TextView>
+        
        
     </ViewFlipper>
 

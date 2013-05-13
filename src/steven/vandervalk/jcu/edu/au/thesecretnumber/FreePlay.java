@@ -7,17 +7,14 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class FreePlay extends Activity {
 
-	RadioButton RB0;
-	RadioButton RB1;
-	RadioButton RB2;
+	// RadioButton RB0;
+	// RadioButton RB1;
+	// RadioButton RB2;
 	ViewFlipper VF;
 
 	GestureDetector detector_FreePlay;
@@ -46,15 +43,15 @@ public class FreePlay extends Activity {
 			VF.addView(txt[i]);
 		}
 
-		int[] value1 = Model.convertIntegers(Model.modelOfCards.get(0));
-		String cardNumbers1 = Arrays.toString(value1);
-		System.out.println("cardNumbers : " + value1);
-		// System.out.println("cardsNumbers1 toString " +
-		// cardNumbers1.toString());
-		TextView TV1 = (TextView) findViewById(R.id.TextView01);
-		TV1.setText(cardNumbers1.toString());
-
-		int[] value2 = Model.convertIntegers(Model.modelOfCards.get(0));
+		// int[] value1 = Model.convertIntegers(Model.modelOfCards.get(0));
+		// String cardNumbers1 = Arrays.toString(value1);
+		// System.out.println("cardNumbers : " + value1);
+		// // System.out.println("cardsNumbers1 toString " +
+		// // cardNumbers1.toString());
+		// TextView TV1 = (TextView) findViewById(R.id.TextView01);
+		// TV1.setText(cardNumbers1.toString());
+		//
+		// int[] value2 = Model.convertIntegers(Model.modelOfCards.get(0));
 		// String cardNumbers2 = Arrays.toString(value2);
 		// TextView TV2 = (TextView) findViewById(R.id.TextView02);
 		// TV2.setText(cardNumbers2);
@@ -62,18 +59,18 @@ public class FreePlay extends Activity {
 		/*
 		 * Find the views declared in main.xml.
 		 */
-		RB0 = (RadioButton) findViewById(R.id.radio0);
-		RB1 = (RadioButton) findViewById(R.id.radio1);
-		RB2 = (RadioButton) findViewById(R.id.radio2);
+		// RB0 = (RadioButton) findViewById(R.id.radio0);
+		// RB1 = (RadioButton) findViewById(R.id.radio1);
+		// RB2 = (RadioButton) findViewById(R.id.radio2);
 		// VF = (ViewFlipper) findViewById(R.id.ViewFlipper01);
 
 		/*
 		 * Set a listener that will listen for clicks on the radio buttons and
 		 * perform suitable actions.
 		 */
-		RB0.setOnClickListener(radio_listener);
-		RB1.setOnClickListener(radio_listener);
-		RB2.setOnClickListener(radio_listener);
+		// RB0.setOnClickListener(radio_listener);
+		// RB1.setOnClickListener(radio_listener);
+		// RB2.setOnClickListener(radio_listener);
 
 		// gesture code for switching cards
 
@@ -124,20 +121,20 @@ public class FreePlay extends Activity {
 	 * Define a OnClickListener that will change which view that is displayed by
 	 * the ViewFlipper
 	 */
-	private final OnClickListener radio_listener = new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			switch (v.getId()) {
-			case R.id.radio0:
-				VF.setDisplayedChild(0);
-				break;
-			case R.id.radio1:
-				VF.setDisplayedChild(1);
-				break;
-			case R.id.radio2:
-				VF.setDisplayedChild(2);
-				break;
-			}
-		}
-	};
+	// private final OnClickListener radio_listener = new OnClickListener() {
+	// @Override
+	// public void onClick(View v) {
+	// switch (v.getId()) {
+	// case R.id.radio0:
+	// VF.setDisplayedChild(0);
+	// break;
+	// case R.id.radio1:
+	// VF.setDisplayedChild(1);
+	// break;
+	// case R.id.radio2:
+	// VF.setDisplayedChild(2);
+	// break;
+	// }
+	// }
+	// };
 }
