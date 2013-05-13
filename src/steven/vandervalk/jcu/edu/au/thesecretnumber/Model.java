@@ -9,13 +9,19 @@ public class Model implements Runnable {
 		fibonnaci, prime, binary;
 	}
 
-	Array_Type array_type;
+	public static Array_Type array_type;
 
 	static int[] FIBONNACI_ARRAY = { 1, 2, 3, 5, 8, 13, 21, 34 };
 	static int[] PRIME_ARRAY = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23 };
 	static int[] BINARY_ARRAY = { 1, 2, 4, 8, 16, 32 };
 
 	static List<Integer> magic_numbers = null;
+
+	public static int magic_numbers_size;
+
+	public static int getMagic_numbers_size() {
+		return magic_numbers_size;
+	}
 
 	private static int max_length;
 
@@ -41,7 +47,7 @@ public class Model implements Runnable {
 	public void run() {
 		magic_numbers = new ArrayList<Integer>();
 		// dummy data settings
-		max_length = 50; // assume input from gui
+		max_length = 20; // assume input from gui
 		String value = "binary"; // assume input from gui #still to be wired
 
 		array_type = Array_Type.valueOf(value); // surround with
@@ -49,7 +55,14 @@ public class Model implements Runnable {
 
 		// actual runtime
 
+		System.out.println("making chosen array");
+
 		BuildChosenArray();
+
+		magic_numbers_size = magic_numbers.size();
+
+		System.out.println(magic_numbers_size);
+
 		modelOfCards = makeCards();
 
 	}
@@ -96,7 +109,8 @@ public class Model implements Runnable {
 				}
 			}
 
-			System.out.println(magic_numbers.toString());
+			System.out.println("completed magic numbers : "
+					+ magic_numbers.toString());
 			break;
 		}
 	}
