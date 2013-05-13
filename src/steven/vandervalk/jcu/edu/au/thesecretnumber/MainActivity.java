@@ -32,6 +32,12 @@ public class MainActivity extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
 
+		final Intent intent1 = new Intent(this, HelpActivity.class);
+		final Intent intent2 = new Intent(this, PlayActivity.class);
+
+		// change to play activity
+		// Intent intent4 = new Intent(this, HelpActivity.class);
+
 		detector = new GestureDetector(this, new SimpleOnGestureListener() {
 
 			@Override
@@ -46,13 +52,22 @@ public class MainActivity extends Activity {
 					float velocityX, float velocityY) {
 				// TODO Auto-generated method stub
 
-				if (start.getX() < end.getX()) {
-					System.out.println("swiped right");
+				if (start.getY() > end.getY()) {
+					System.out.println("swiped down");
+
+					// EditText editText = (EditText) findViewById
+					// (R.id.edit_message);
+					// String message = editText.getText().toString();
+					// intent.putExtra(EXTRA_MESSAGE, message);
+
+					startActivity(intent1);
 					return true;
 				}
+				if (start.getY() < end.getY()) {
+					System.out.println("swiped up");
 
-				if (start.getX() > end.getX()) {
-					System.out.println("swiped left");
+					startActivity(intent2);
+
 					return true;
 				}
 
@@ -99,6 +114,14 @@ public class MainActivity extends Activity {
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent2);
 			break;
+		case R.id.action_scores:
+			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			break;
 
 		default:
 			break;
@@ -136,9 +159,9 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 
-	public void StartFreePlay(View view) {
+	public void StartPlay(View view) {
 		// // // Make magics
-		Intent intent = new Intent(this, FreePlay.class);
+		Intent intent = new Intent(this, PlayActivity.class);
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);
 		// // // String message = editText.getText().toString();

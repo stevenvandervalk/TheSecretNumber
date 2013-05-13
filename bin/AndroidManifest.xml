@@ -50,9 +50,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
         </activity>
-
-        
-
         <activity
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.FreePlay"
             android:label="@string/title_activity_free_play"
@@ -61,11 +58,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
         </activity>
-        
+
         <provider
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
             android:authorities="steven.vandervalk.jcu.edu.au.Provider"
             android:exported="false" />
+
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity"
+            android:label="@string/title_activity_play"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
     </application>
 
 </manifest>

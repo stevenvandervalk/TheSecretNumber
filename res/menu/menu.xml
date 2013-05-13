@@ -9,13 +9,17 @@
     <item
         android:id="@+id/action_help"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:icon="@drawable/help_light"
         android:title="Help"/>
        
     <item
-        android:id="@+id/action_settings"
-        android:title="Settings">
-    </item>
+        android:id="@+id/action_scores"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/scores_light"
+        android:title="Scores"/>
+        
+ 
 
 </menu> 

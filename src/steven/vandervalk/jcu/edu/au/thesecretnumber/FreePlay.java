@@ -37,8 +37,10 @@ public class FreePlay extends Activity {
 		for (int i = 0; i < txt.length; i++) {
 
 			txt[i] = new TextView(FreePlay.this);
-			txt[i].setText(Arrays.toString(Model
+			String formattedString = (Arrays.toString(Model
 					.convertIntegers(Model.modelOfCards.get(i))));
+			formattedString.replace(",", "").replace("[", "").replace("]", "");
+			txt[i].setText(formattedString);
 			txt[i].setTextAppearance(this, R.style.CodeFont);
 			VF.addView(txt[i]);
 		}

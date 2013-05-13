@@ -7,24 +7,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Settings extends Activity {
-
-	RadioGroup rg;
-	RadioButton rb;
+public class PlayActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_settings);
+		setContentView(R.layout.activity_play);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
 	}
 
 	/**
@@ -40,40 +35,8 @@ public class Settings extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		// getMenuInflater().inflate(R.menu.settings, menu);
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
+		getMenuInflater().inflate(R.menu.play, menu);
 		return true;
-	}
-
-	public void SavePressed(View view) {
-
-		// Intent data = new Intent();
-		//
-		// // //SeekBar seek = (SeekBar) findViewById(R.id.seekBar1);
-		// //
-		// // setBrushWidth(seek.getProgress());
-		// //
-		rg = (RadioGroup) findViewById(R.id.radioGroup1);
-		RadioButton radiovalue = (RadioButton) this.findViewById(rg
-				.getCheckedRadioButtonId());
-
-		// //
-		// // data.putExtra("seekValue", getBrushWidth());
-		// //
-		// // data.putExtra("color", brushColor);
-		// //
-		// // setResult(RESULT_OK, data);
-		// //
-		// //// finish();
-		// // }
-		// //
-		// // public int getBrushWidth() {
-		// // return brushWidth;
-		// // }
-		// //
-		// // public void setBrushWidth(int brushWidth) {
-		// // this.brushWidth = brushWidth;
 	}
 
 	@Override
@@ -105,6 +68,14 @@ public class Settings extends Activity {
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent2);
 			break;
+		case R.id.action_scores:
+			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			break;
 
 		default:
 			break;
@@ -112,6 +83,16 @@ public class Settings extends Activity {
 		// return true;
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void StartFreePlay(View view) {
+		// // // Make magics
+		Intent intent = new Intent(this, FreePlay.class);
+		// // // EditText editText = (EditText) findViewById
+		// (R.id.edit_message);
+		// // // String message = editText.getText().toString();
+		// // // intent.putExtra(EXTRA_MESSAGE, message);
+		startActivity(intent);
 	}
 
 }

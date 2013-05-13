@@ -31,8 +31,12 @@
     <string name="delete_title">Delete Title</string>
     <string name="cancel">Cancel</string>
     <string name="freeplay_button">Free Play</string>
-    <string name="computerguess_button">Computer Guesses</string>
-    <string name="playerguess_button">You Guess</string>
+    <string name="computerguess_button">The Computer Guesses Your Number</string>
+    <string name="playerguess_button">You Guess The Computers Number</string>
     <string name="title_activity_free_play">FreePlay</string>
+    <string name="how_to_play_button">How To Play</string>
+    <string name="swipe_up">Swipe Up To Play</string>
+    <string name="swipe_down">Swipe Down For Instructions</string>
+    <string name="title_activity_play">PlayActivity</string>
 
 </resources>
