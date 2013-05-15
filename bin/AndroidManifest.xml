@@ -72,6 +72,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
         </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType"
+            android:label="@string/title_activity_number_type"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.TimeMode"
+            android:label="@string/title_activity_time_mode"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
+        </activity>
     </application>
 
 </manifest>

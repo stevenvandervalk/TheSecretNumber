@@ -38,5 +38,9 @@
     <string name="swipe_up">Swipe Up To Play</string>
     <string name="swipe_down">Swipe Down For Instructions</string>
     <string name="title_activity_play">PlayActivity</string>
+    <string name="title_activity_number_type">NumberType</string>
+    <string name="what_number_type">What Kind of Numbers Do You Want To Use?</string>
+    <string name="title_activity_time_mode">TimeMode</string>
+    <string name="time_mode">Timer Mode</string>
 
 </resources>

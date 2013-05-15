@@ -1,17 +1,21 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Model implements Runnable {
 
-	private enum Array_Type {
-		fibonnaci, prime, binary;
+	public enum Array_Type {
+		FIBONACCI, PRIME, BINARY;
 	}
 
 	public static Array_Type array_type;
 
-	static int[] FIBONNACI_ARRAY = { 1, 2, 3, 5, 8, 13, 21, 34 };
+	public static boolean player_guess_mode = false; // if false then in
+														// computer guess mode
+
+	static int[] FIBONACCI_ARRAY = { 1, 2, 3, 5, 8, 13, 21, 34 };
 	static int[] PRIME_ARRAY = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23 };
 	static int[] BINARY_ARRAY = { 1, 2, 4, 8, 16, 32 };
 
@@ -48,7 +52,7 @@ public class Model implements Runnable {
 		magic_numbers = new ArrayList<Integer>();
 		// dummy data settings
 		max_length = 20; // assume input from gui
-		String value = "binary"; // assume input from gui #still to be wired
+		String value = "BINARY"; // assume input from gui #still to be wired
 
 		array_type = Array_Type.valueOf(value); // surround with
 												// try/catch
@@ -67,6 +71,14 @@ public class Model implements Runnable {
 
 	}
 
+	public static Array_Type getArray_type() {
+		return array_type;
+	}
+
+	public static void setArray_type(Array_Type array_type) {
+		Model.array_type = array_type;
+	}
+
 	private ArrayList<ArrayList<Integer>> makeCards() {
 
 		Integer[] magic_numbers_array = new Integer[magic_numbers.size()];
@@ -83,7 +95,7 @@ public class Model implements Runnable {
 		// less than max_length
 
 		switch (array_type) {
-		case prime:
+		case PRIME:
 
 			for (int i : PRIME_ARRAY) {
 				if (i < max_length) {
@@ -92,7 +104,7 @@ public class Model implements Runnable {
 			}
 			System.out.println(magic_numbers.toString());
 			break;
-		case binary:
+		case BINARY:
 
 			for (int i : BINARY_ARRAY) {
 				if (i < max_length) {
@@ -101,9 +113,9 @@ public class Model implements Runnable {
 			}
 			System.out.println(magic_numbers.toString());
 			break;
-		case fibonnaci:
+		case FIBONACCI:
 
-			for (int i : FIBONNACI_ARRAY) {
+			for (int i : FIBONACCI_ARRAY) {
 				if (i < max_length) {
 					magic_numbers.add(i);
 				}
@@ -128,6 +140,24 @@ public class Model implements Runnable {
 	 */
 	public static void setMAX_LENGTH(int mAX_LENGTH) {
 		max_length = mAX_LENGTH;
+	}
+
+	public static String modelOfCardsToString() {
+		String cardsToString = null;
+		for (int i = 0; i < magic_numbers_size; i++) {
+			cardsToString = (Arrays.toString(Model
+					.convertIntegers(Model.modelOfCards.get(i))));
+		}
+		return cardsToString;
+	}
+
+	public static String ToString() {
+		System.out.println("Array type : " + Model.array_type.toString());
+		System.out.println("Mode : " + Model.player_guess_mode);
+		System.out
+				.println("magic_numbers  : " + Model.magic_numbers.toString());
+		System.out.println("modelofCards : " + modelOfCardsToString());
+		return null;
 	}
 
 }

@@ -1,5 +1,6 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
+import steven.vandervalk.jcu.edu.au.thesecretnumber.Model.Array_Type;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,12 +12,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class PlayActivity extends Activity {
+public class NumberType extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_play);
+		setContentView(R.layout.activity_number_type);
 		// Show the Up button in the action bar.
 		setupActionBar();
 
@@ -35,8 +36,33 @@ public class PlayActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.play, menu);
+		getMenuInflater().inflate(R.menu.number_type, menu);
+
 		return true;
+	}
+
+	public void setArrayTypeBinary(View view) {
+		Array_Type BINARY = null;
+		Model.setArray_type(BINARY);
+		Intent intent = new Intent(this, TimeMode.class);
+		startActivity(intent);
+
+	}
+
+	public void setArrayTypePrime(View view) {
+		Array_Type PRIME = null;
+		Model.setArray_type(PRIME);
+		Intent intent = new Intent(this, TimeMode.class);
+		startActivity(intent);
+
+	}
+
+	public void setArrayTypeFibonacci(View view) {
+		Array_Type FIBONACCI = null;
+		Model.setArray_type(FIBONACCI);
+		Intent intent = new Intent(this, TimeMode.class);
+		startActivity(intent);
+
 	}
 
 	@Override
@@ -85,36 +111,4 @@ public class PlayActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void StartFreePlay(View view) {
-		// // // Make magics
-		Intent intent = new Intent(this, FreePlay.class);
-		// // // EditText editText = (EditText) findViewById
-		// (R.id.edit_message);
-		// // // String message = editText.getText().toString();
-		// // // intent.putExtra(EXTRA_MESSAGE, message);
-		startActivity(intent);
-	}
-
-	public void StartComputerGuessMode(View view) {
-		// // // Make magics
-		Model.player_guess_mode = false;
-		Intent intent = new Intent(this, NumberType.class);
-		// // // EditText editText = (EditText) findViewById
-		// (R.id.edit_message);
-		// // // String message = editText.getText().toString();
-		// // // intent.putExtra(EXTRA_MESSAGE, message);
-		startActivity(intent);
-
-	}
-
-	public void StartPlayerGuessMode(View view) {
-		// // // Make magics
-		Model.player_guess_mode = true;
-		Intent intent = new Intent(this, NumberType.class);
-		// // // EditText editText = (EditText) findViewById
-		// (R.id.edit_message);
-		// // // String message = editText.getText().toString();
-		// // // intent.putExtra(EXTRA_MESSAGE, message);
-		startActivity(intent);
-	}
 }

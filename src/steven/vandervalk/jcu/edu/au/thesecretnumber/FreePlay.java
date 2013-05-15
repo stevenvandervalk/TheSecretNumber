@@ -25,7 +25,7 @@ public class FreePlay extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_free_play);
 
-		// put on async task
+		// ** put on async task **
 
 		// generating TextViews for each card and then adding to the Layout
 		// LinearLayout linear = (LinearLayout)
@@ -37,9 +37,10 @@ public class FreePlay extends Activity {
 		for (int i = 0; i < txt.length; i++) {
 
 			txt[i] = new TextView(FreePlay.this);
-			String formattedString = (Arrays.toString(Model
+			String cardsToString = (Arrays.toString(Model
 					.convertIntegers(Model.modelOfCards.get(i))));
-			formattedString.replace(",", "").replace("[", "").replace("]", "");
+			String formattedString = cardsToString.replace(",", "")
+					.replace("[", "").replace("]", "");
 			txt[i].setText(formattedString);
 			txt[i].setTextAppearance(this, R.style.CodeFont);
 			VF.addView(txt[i]);

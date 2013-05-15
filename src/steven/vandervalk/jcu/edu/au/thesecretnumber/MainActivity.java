@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
 		System.out.println("running model");
 		Model test = new Model();
 		test.run();
+		Model.ToString();
 	}
 
 	@Override

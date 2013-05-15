@@ -46,19 +46,19 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout01=0x7f090000;
-        public static final int ScrollView1=0x7f090017;
+        public static final int ScrollView1=0x7f090018;
         public static final int ViewFlipper01=0x7f090002;
-        public static final int action_help=0x7f09001e;
-        public static final int action_scores=0x7f09001f;
-        public static final int action_settings=0x7f09001d;
+        public static final int action_help=0x7f09001f;
+        public static final int action_scores=0x7f090020;
+        public static final int action_settings=0x7f09001e;
         public static final int button1=0x7f090005;
         public static final int button2=0x7f090003;
         public static final int button3=0x7f090004;
-        public static final int help_button1=0x7f090019;
-        public static final int help_button2=0x7f09001a;
-        public static final int help_button3=0x7f09001b;
-        public static final int help_button4=0x7f09001c;
-        public static final int help_page_intro=0x7f090018;
+        public static final int help_button1=0x7f09001a;
+        public static final int help_button2=0x7f09001b;
+        public static final int help_button3=0x7f09001c;
+        public static final int help_button4=0x7f09001d;
+        public static final int help_page_intro=0x7f090019;
         public static final int radioGroup1=0x7f090001;
         public static final int radioGroup2=0x7f09000c;
         public static final int radioGroup3=0x7f090010;
@@ -71,32 +71,37 @@ public final class R {
         public static final int radio_prime_numbers=0x7f090013;
         public static final int radio_timetrial=0x7f09000e;
         public static final int save_settings_button=0x7f090008;
+        public static final int seekBar1=0x7f090015;
         public static final int textView1=0x7f090007;
         public static final int textView2=0x7f090006;
         public static final int textView3=0x7f09000f;
-        public static final int title=0x7f090015;
+        public static final int title=0x7f090016;
         public static final int toggleButton1=0x7f090014;
-        public static final int value=0x7f090016;
+        public static final int value=0x7f090017;
     }
     public static final class layout {
         public static final int activity_free_play=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_overview=0x7f030002;
-        public static final int activity_play=0x7f030003;
-        public static final int activity_settings=0x7f030004;
-        public static final int activity_start_page=0x7f030005;
-        public static final int add_edit=0x7f030006;
-        public static final int help=0x7f030007;
-        public static final int main=0x7f030008;
-        public static final int row=0x7f030009;
+        public static final int activity_number_type=0x7f030002;
+        public static final int activity_overview=0x7f030003;
+        public static final int activity_play=0x7f030004;
+        public static final int activity_settings=0x7f030005;
+        public static final int activity_start_page=0x7f030006;
+        public static final int activity_time_mode=0x7f030007;
+        public static final int add_edit=0x7f030008;
+        public static final int help=0x7f030009;
+        public static final int main=0x7f03000a;
+        public static final int row=0x7f03000b;
     }
     public static final class menu {
         public static final int free_play=0x7f080000;
         public static final int menu=0x7f080001;
-        public static final int play=0x7f080002;
-        public static final int preferences=0x7f080003;
-        public static final int settings=0x7f080004;
-        public static final int start_page=0x7f080005;
+        public static final int number_type=0x7f080002;
+        public static final int play=0x7f080003;
+        public static final int preferences=0x7f080004;
+        public static final int settings=0x7f080005;
+        public static final int start_page=0x7f080006;
+        public static final int time_mode=0x7f080007;
     }
     public static final class string {
         public static final int Scoring_mode=0x7f06001c;
@@ -140,18 +145,22 @@ public final class R {
         public static final int settings=0x7f060015;
         public static final int swipe_down=0x7f060033;
         public static final int swipe_up=0x7f060032;
+        public static final int time_mode=0x7f060038;
         public static final int time_trial=0x7f06001f;
         public static final int title_activity_ConstantsBrowser=0x7f060028;
         public static final int title_activity_free_play=0x7f060030;
         public static final int title_activity_help=0x7f060027;
+        public static final int title_activity_number_type=0x7f060035;
         public static final int title_activity_play=0x7f060034;
         public static final int title_activity_preferences=0x7f060025;
         public static final int title_activity_settings=0x7f060014;
         public static final int title_activity_start_page=0x7f060013;
+        public static final int title_activity_time_mode=0x7f060037;
         public static final int topic_section1=0x7f060006;
         public static final int topic_section2=0x7f060009;
         public static final int topic_section3=0x7f06000c;
         public static final int topic_section4=0x7f06000f;
+        public static final int what_number_type=0x7f060036;
     }
     public static final class style {
         /** 

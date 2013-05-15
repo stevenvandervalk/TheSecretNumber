@@ -25,6 +25,7 @@
         android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button2"
         android:layout_marginTop="72dp"
+        android:onClick="StartPlayerGuessMode"
         android:text="@string/playerguess_button" />
 
     <Button
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
         android:layout_centerVertical="true"
+        android:onClick="StartComputerGuessMode"
         android:text="@string/computerguess_button" />
 
 </RelativeLayout>
