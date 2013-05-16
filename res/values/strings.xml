@@ -46,5 +46,11 @@
     <string name="title_activity_beat_the_clock">BeatTheClock</string>
     <string name="title_activity_time_range">TimeRange</string>
     <string name="choose_your_number_range">Range For The Secret Number</string>
+    <string name="seek_bar_output_label">"0 : "</string>
+    <string name="time_progress_value">0.10 Minutes</string>
+    <string name="title_activity_time_trial">TimeTrial</string>
+    <string name="Yes_Button">Yes</string>
+    <string name="No_Button">No</string>
+    <string name="Is_the_secret_number_here">Is The Secret Number Here?</string>
 
 </resources>

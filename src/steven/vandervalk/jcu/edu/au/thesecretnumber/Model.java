@@ -23,6 +23,8 @@ public class Model implements Runnable {
 
 	static float timer_clock = 0;
 
+	static float time_trial_clock;
+
 	public static int magic_numbers_size;
 
 	public static int getMagic_numbers_size() {

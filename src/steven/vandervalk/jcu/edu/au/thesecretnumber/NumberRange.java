@@ -10,11 +10,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NumberRange extends Activity {
 
 	int number_value;
+	TextView tv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +59,12 @@ public class NumberRange extends Activity {
 
 			number_value = progress;
 
+			tv = (TextView) findViewById(R.id.seekbar_progress);
+
+			tv.setText("0 : " + number_value);
+
 			System.out.println("Progress is: " + progress);
 			System.out.println("Max number is: " + number_value);
-
-			Toast.makeText(getApplicationContext(),
-					String.valueOf(number_value), Toast.LENGTH_SHORT).show();
 
 		}
 
@@ -93,7 +96,10 @@ public class NumberRange extends Activity {
 	}
 
 	public void StartNumberTypeActivity(View view) {
+		String saved = "Settings Saved";
 		Model.max_length = number_value;
+		Toast.makeText(getApplicationContext(), saved, Toast.LENGTH_SHORT)
+				.show();
 		Intent intent = new Intent(this, NumberType.class);
 		startActivity(intent);
 

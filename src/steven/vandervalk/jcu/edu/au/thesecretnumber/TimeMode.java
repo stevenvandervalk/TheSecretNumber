@@ -2,17 +2,21 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TimeMode extends Activity {
 
 	float time_value;
+	TextView tv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,10 @@ public class TimeMode extends Activity {
 			System.out.println("Progress is: " + progress);
 			System.out.println("Value / Time is: " + time_value);
 
+			tv = (TextView) findViewById(R.id.time_progress_value);
+
+			tv.setText(time_value + " Minutes");
+
 		}
 
 		@Override
@@ -76,7 +84,6 @@ public class TimeMode extends Activity {
 					Toast.LENGTH_SHORT).show();
 
 		}
-
 	}
 
 	@Override
@@ -96,14 +103,14 @@ public class TimeMode extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	// public void StartBeatTheClockGame(View view) {
-	// // Intent intent = new Intent(this, BeatTheClockGame.class);
-	// startActivity(intent);
-	// }
-	//
-	// public void StartTimeTrialGame(View view) {
-	// // Intent intent = new Intent(this, TimeTrialGame.class);
-	// startActivity(intent);
-	// }
+	public void StartBeatTheClockGame(View view) {
+		Intent intent = new Intent(this, BeatTheClock.class);
+		startActivity(intent);
+	}
+
+	public void StartTimeTrialGame(View view) {
+		Intent intent = new Intent(this, TimeTrial.class);
+		startActivity(intent);
+	}
 
 }

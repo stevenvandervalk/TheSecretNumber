@@ -33,4 +33,14 @@
         android:onClick="StartNumberTypeActivity"
         android:text="@string/save_settings" />
 
+    <TextView
+        android:id="@+id/seekbar_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/seek_bar_output_label" />
+
 </RelativeLayout>

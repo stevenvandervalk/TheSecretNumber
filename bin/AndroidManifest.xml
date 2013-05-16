@@ -107,6 +107,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
         </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.TimeTrial"
+            android:label="@string/title_activity_time_trial"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType" />
+        </activity>
     </application>
 
 </manifest>
