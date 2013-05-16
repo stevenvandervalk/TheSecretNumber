@@ -21,13 +21,15 @@ public class Model implements Runnable {
 
 	static List<Integer> magic_numbers = null;
 
+	static float timer_clock = 0;
+
 	public static int magic_numbers_size;
 
 	public static int getMagic_numbers_size() {
 		return magic_numbers_size;
 	}
 
-	private static int max_length;
+	public static int max_length;
 
 	public static ArrayList<ArrayList<Integer>> modelOfCards = new ArrayList<ArrayList<Integer>>();
 
@@ -143,21 +145,28 @@ public class Model implements Runnable {
 	}
 
 	public static String modelOfCardsToString() {
-		String cardsToString = null;
+		String cardsToString = "";
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < magic_numbers_size; i++) {
+			// sb = new StringBuilder();
 			cardsToString = (Arrays.toString(Model
 					.convertIntegers(Model.modelOfCards.get(i))));
+			sb.append(cardsToString);
 		}
-		return cardsToString;
+		String model = sb.toString();
+
+		return model;
 	}
 
-	public static String ToString() {
+	public static String PrintStatus() {
+		System.out.println("Current model variables :");
 		System.out.println("Array type : " + Model.array_type.toString());
-		System.out.println("Mode : " + Model.player_guess_mode);
+		System.out.println("Timer : " + Model.timer_clock);
+		System.out.println("Player guess mode? : " + Model.player_guess_mode);
 		System.out
 				.println("magic_numbers  : " + Model.magic_numbers.toString());
-		System.out.println("modelofCards : " + modelOfCardsToString());
-		return null;
+		System.out.println("modelofCards : " + Model.modelOfCardsToString());
+		return "tim loves pants";
 	}
 
 }

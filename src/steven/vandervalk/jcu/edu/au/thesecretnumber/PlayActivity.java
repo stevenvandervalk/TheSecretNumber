@@ -98,7 +98,7 @@ public class PlayActivity extends Activity {
 	public void StartComputerGuessMode(View view) {
 		// // // Make magics
 		Model.player_guess_mode = false;
-		Intent intent = new Intent(this, NumberType.class);
+		Intent intent = new Intent(this, NumberRange.class);
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);
 		// // // String message = editText.getText().toString();
@@ -110,7 +110,7 @@ public class PlayActivity extends Activity {
 	public void StartPlayerGuessMode(View view) {
 		// // // Make magics
 		Model.player_guess_mode = true;
-		Intent intent = new Intent(this, NumberType.class);
+		Intent intent = new Intent(this, NumberRange.class);
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);
 		// // // String message = editText.getText().toString();

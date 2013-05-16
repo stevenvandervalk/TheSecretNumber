@@ -24,7 +24,9 @@ public class MainActivity extends Activity {
 		System.out.println("running model");
 		Model test = new Model();
 		test.run();
-		Model.ToString();
+
+        System.out.println("created first model in main : ");
+        Model.PrintStatus();
 	}
 
 	@Override
@@ -53,7 +55,7 @@ public class MainActivity extends Activity {
 					float velocityX, float velocityY) {
 				// TODO Auto-generated method stub
 
-				if (start.getY() > end.getY()) {
+				if (start.getY() < end.getY()) {
 					System.out.println("swiped down");
 
 					// EditText editText = (EditText) findViewById
@@ -64,7 +66,7 @@ public class MainActivity extends Activity {
 					startActivity(intent1);
 					return true;
 				}
-				if (start.getY() < end.getY()) {
+				if (start.getY() > end.getY()) {
 					System.out.println("swiped up");
 
 					startActivity(intent2);

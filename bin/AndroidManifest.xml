@@ -58,12 +58,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
         </activity>
-
-        <provider
-            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
-            android:authorities="steven.vandervalk.jcu.edu.au.Provider"
-            android:exported="false" />
-
         <activity
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity"
             android:label="@string/title_activity_play"
@@ -83,6 +77,31 @@
         <activity
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.TimeMode"
             android:label="@string/title_activity_time_mode"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
+        </activity>
+        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.BeatTheClockGame" />
+        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.TimeTrialGame" />
+        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberRange" />
+
+        <provider
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
+            android:authorities="steven.vandervalk.jcu.edu.au.Provider"
+            android:exported="false" />
+
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.BeatTheClock"
+            android:label="@string/title_activity_beat_the_clock"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberRange"
+            android:label="@string/title_activity_time_range"
             android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -25,7 +25,8 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="@string/beat_the_clock" />
+        android:text="@string/beat_the_clock"
+        android:onClick="StartBeatTheClockGame"/>
 
     <Button
         android:id="@+id/button2"
@@ -34,7 +35,8 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_below="@+id/button1"
         android:layout_marginTop="50dp"
-        android:text="@string/time_trial" />
+        android:text="@string/time_trial"
+        android:onClick="StartTimeTrialGame"/>
 
     <SeekBar
         android:id="@+id/seekBar1"

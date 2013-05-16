@@ -39,8 +39,12 @@
     <string name="swipe_down">Swipe Down For Instructions</string>
     <string name="title_activity_play">PlayActivity</string>
     <string name="title_activity_number_type">NumberType</string>
-    <string name="what_number_type">What Kind of Numbers Do You Want To Use?</string>
+    <string name="what_number_type">Choose A Set of Numbers</string>
     <string name="title_activity_time_mode">TimeMode</string>
     <string name="time_mode">Timer Mode</string>
+    <string name="choose_a_number_range">Choose A Number Range</string>
+    <string name="title_activity_beat_the_clock">BeatTheClock</string>
+    <string name="title_activity_time_range">TimeRange</string>
+    <string name="choose_your_number_range">Range For The Secret Number</string>
 
 </resources>
