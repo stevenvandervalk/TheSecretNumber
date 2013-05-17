@@ -1,5 +1,6 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
+import steven.vandervalk.jcu.edu.au.thesecretnumber.Model.Array_Type;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,11 +23,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		System.out.println("running model");
-		Model test = new Model();
-		test.run();
 
-        System.out.println("created first model in main : ");
-        Model.PrintStatus();
+		String value = "BINARY"; // assume input from gui #still to be wired
+
+		Model.array_type = Array_Type.valueOf(value);
+
+		Model.max_length = 20; // assume later input from gui
+
+		new Thread(new Model()).start();
+
+		System.out.println("created first model in main : ");
+		// Model.PrintStatus();
 	}
 
 	@Override

@@ -1,7 +1,11 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
@@ -15,15 +19,28 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class TimeTrial extends Activity {
 
 	ViewFlipper VF;
 
+	TextView[] txt;
+
+	int rollingSum;
+
+	Set<Integer> numbersAdded = new HashSet<Integer>();
+
 	GestureDetector detector_TimeTrial;
 
 	long StartTime = System.currentTimeMillis();
+
+	long elapseTime;
+
+	int seconds;
+
+	int minutes;
 
 	private final Handler handler = new Handler();
 
@@ -34,9 +51,9 @@ public class TimeTrial extends Activity {
 		public void run() {
 			// my methods
 			final long start = StartTime;
-			long elapseTime = System.currentTimeMillis() - start;
-			int seconds = (int) (elapseTime / 1000);
-			int minutes = seconds / 60;
+			elapseTime = System.currentTimeMillis() - start;
+			seconds = (int) (elapseTime / 1000);
+			minutes = seconds / 60;
 			seconds = seconds % 60;
 
 			TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
@@ -67,6 +84,10 @@ public class TimeTrial extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_trial);
 
+		// start a new model with new static variables
+
+		new Thread(new Model()).start();
+
 		// timer
 		handler.post(task);
 
@@ -75,12 +96,14 @@ public class TimeTrial extends Activity {
 
 		// put on async task
 
-		TextView[] txt = new TextView[Model.magic_numbers.size()];
+		txt = new TextView[Model.magic_numbers.size()];
+
 		VF = (ViewFlipper) findViewById(R.id.viewFlipper1);
 
 		for (int i = 0; i < txt.length; i++) {
 
 			txt[i] = new TextView(TimeTrial.this);
+
 			String cardsToString = (Arrays.toString(Model
 					.convertIntegers(Model.modelOfCards.get(i))));
 			String formattedString = cardsToString.replace(",", "")
@@ -122,10 +145,20 @@ public class TimeTrial extends Activity {
 
 							// if set to player_guess mode
 
-							// code to check if card displayed contains secret
-							// number
-							// code to turn appropriate button background color.
-							// and grey out other?
+							if (Model.player_guess_mode) {
+								// code to check if card displayed contains
+								// secret
+								// number selected at random by computer
+
+								int i = VF.getDisplayedChild();
+
+								// if (txt[i].getText()){}
+
+								// code to turn appropriate button background
+								// color.
+								// and grey out other?
+							}
+
 							return true;
 						}
 
@@ -151,6 +184,13 @@ public class TimeTrial extends Activity {
 					}
 
 				});
+
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		return detector_TimeTrial.onTouchEvent(event);
 	}
 
 	@Override
@@ -177,12 +217,54 @@ public class TimeTrial extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void IfNoButtonPressed(View view) {
+		if (!Model.player_guess_mode) {
+			VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+		}
+	}
+
+	@SuppressLint("ResourceAsColor")
 	public void IfYesButtonPressed(View view) {
 		// if set to computer guess mode
 
-		// get displayed child array first index and add to rolling sum.
+		if (!Model.player_guess_mode) {
+			int i = VF.getDisplayedChild();
+			System.out.println("i value is : " + i);
+			ArrayList<Integer> a = Model.modelOfCards.get(i);
 
-		// if not set to computer guess mode return true
+			Integer numberToAddToSum = a.get(0);
+
+			if (numbersAdded.contains(numberToAddToSum)) {
+				Toast.makeText(this, "Number already confirmed",
+						Toast.LENGTH_SHORT).show();
+
+			} else {
+
+				numbersAdded.add(numberToAddToSum);
+
+				rollingSum += numberToAddToSum;
+
+				System.out.println("i value is : " + i);
+				System.out.println(" numberto add to sum is : "
+						+ numberToAddToSum);
+				System.out.println("rolling sum is : " + rollingSum);
+
+				// turn off button
+
+				// Button button = (Button) findViewById(R.id.yes_button);
+				// button.setOnClickListener(new OnClickListener() {
+				//
+				// @Override
+				// public void onClick(View v) {
+				// Button button = (Button) v;
+				// button.setBackgroundColor(R.color.Green);
+				// }
+				// });
+
+				VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+			}
+		}
+
 	}
 
 }

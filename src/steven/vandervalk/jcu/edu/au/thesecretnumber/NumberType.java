@@ -44,8 +44,8 @@ public class NumberType extends Activity {
 	public void setArrayTypeBinary(View view) {
 		Array_Type BINARY = Array_Type.BINARY;
 		Model.setArray_type(BINARY);
-		// System.out.println("starting timer class - current model : " +
-		// Model.PrintStatus());
+		System.out.println("starting timer class - current model : "
+				+ Model.PrintStatus());
 		Intent intent = new Intent(this, TimeMode.class);
 		startActivity(intent);
 
@@ -54,8 +54,8 @@ public class NumberType extends Activity {
 	public void setArrayTypePrime(View view) {
 		Array_Type PRIME = Array_Type.PRIME;
 		Model.setArray_type(PRIME);
-		// System.out.println("starting timer class - current model : " +
-		// Model.PrintStatus());
+		System.out.println("starting timer class - current model : "
+				+ Model.PrintStatus());
 		Intent intent = new Intent(this, TimeMode.class);
 		startActivity(intent);
 
@@ -65,8 +65,8 @@ public class NumberType extends Activity {
 		Array_Type FIBONACCI = Array_Type.FIBONACCI;
 		Model.setArray_type(FIBONACCI);
 		Intent intent = new Intent(this, TimeMode.class);
-		// System.out.println("starting timer class - current model : " +
-		// Model.modelOfCardsToString());
+		System.out.println("starting timer class - current model : "
+				+ Model.modelOfCardsToString());
 		startActivity(intent);
 
 	}

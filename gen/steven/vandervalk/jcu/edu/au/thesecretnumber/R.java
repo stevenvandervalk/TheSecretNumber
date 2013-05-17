@@ -11,6 +11,8 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int Green=0x7f040006;
+        public static final int SkyBlue=0x7f040005;
         public static final int dark_background=0x7f040001;
         public static final int dark_foreground1=0x7f040004;
         public static final int foreground1=0x7f040002;
@@ -46,20 +48,20 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout01=0x7f090002;
-        public static final int ScrollView1=0x7f09001c;
+        public static final int ScrollView1=0x7f09001d;
         public static final int TimeLabel=0x7f090018;
         public static final int ViewFlipper01=0x7f090004;
-        public static final int action_help=0x7f090023;
-        public static final int action_scores=0x7f090024;
-        public static final int action_settings=0x7f090022;
+        public static final int action_help=0x7f090024;
+        public static final int action_scores=0x7f090025;
+        public static final int action_settings=0x7f090023;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
         public static final int button3=0x7f090005;
-        public static final int help_button1=0x7f09001e;
-        public static final int help_button2=0x7f09001f;
-        public static final int help_button3=0x7f090020;
-        public static final int help_button4=0x7f090021;
-        public static final int help_page_intro=0x7f09001d;
+        public static final int help_button1=0x7f09001f;
+        public static final int help_button2=0x7f090020;
+        public static final int help_button3=0x7f090021;
+        public static final int help_button4=0x7f090022;
+        public static final int help_page_intro=0x7f09001e;
         public static final int radioGroup1=0x7f090003;
         public static final int radioGroup2=0x7f09000e;
         public static final int radioGroup3=0x7f090012;
@@ -78,10 +80,11 @@ public final class R {
         public static final int textView2=0x7f090006;
         public static final int textView3=0x7f090011;
         public static final int time_progress_value=0x7f090017;
-        public static final int title=0x7f09001a;
+        public static final int title=0x7f09001b;
         public static final int toggleButton1=0x7f090016;
-        public static final int value=0x7f09001b;
+        public static final int value=0x7f09001c;
         public static final int viewFlipper1=0x7f090019;
+        public static final int yes_button=0x7f09001a;
     }
     public static final class layout {
         public static final int activity_beat_the_clock=0x7f030000;

@@ -3,6 +3,7 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Model implements Runnable {
 
@@ -25,6 +26,8 @@ public class Model implements Runnable {
 
 	static float time_trial_clock;
 
+	static int computer_secret_number;
+
 	public static int magic_numbers_size;
 
 	public static int getMagic_numbers_size() {
@@ -43,6 +46,14 @@ public class Model implements Runnable {
 		return ret;
 	}
 
+	public static void generateComputerSecretNumber() {
+		Random rn = new Random();
+		int minimum = 0;
+		int range = max_length - minimum + 1;
+		computer_secret_number = rn.nextInt(range) + minimum;
+		// computer_secret_number = (int) (Random() * (max_length - 0));
+	}
+
 	// Code for obtaining cards in string form
 
 	// EditText editText1 = (EditText) findViewById(R.id.TextView01);
@@ -55,11 +66,9 @@ public class Model implements Runnable {
 	public void run() {
 		magic_numbers = new ArrayList<Integer>();
 		// dummy data settings
-		max_length = 20; // assume input from gui
-		String value = "BINARY"; // assume input from gui #still to be wired
 
-		array_type = Array_Type.valueOf(value); // surround with
-												// try/catch
+		// // surround with
+		// try/catch
 
 		// actual runtime
 
@@ -67,7 +76,7 @@ public class Model implements Runnable {
 
 		BuildChosenArray();
 
-		magic_numbers_size = magic_numbers.size();
+		// magic_numbers_size = magic_numbers.size();
 
 		System.out.println(magic_numbers_size);
 

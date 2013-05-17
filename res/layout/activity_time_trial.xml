@@ -36,18 +36,20 @@
     </ViewFlipper>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/yes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/TimeLabel"
         android:layout_toLeftOf="@+id/TimeLabel"
+        android:onClick="IfYesButtonPressed"
         android:text="@string/Yes_Button" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/yes_button"
+        android:layout_alignBottom="@+id/yes_button"
         android:layout_toRightOf="@+id/TimeLabel"
         android:text="@string/No_Button" />
 

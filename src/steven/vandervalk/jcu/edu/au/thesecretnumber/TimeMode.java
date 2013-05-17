@@ -24,6 +24,9 @@ public class TimeMode extends Activity {
 		setContentView(R.layout.activity_time_mode);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		new Thread(new Model()).start();
+
 		SeekBar timeSeekBar = (SeekBar) findViewById(R.id.seekBar1);
 
 		timeSeekBar.setMax(50);
@@ -104,11 +107,13 @@ public class TimeMode extends Activity {
 	}
 
 	public void StartBeatTheClockGame(View view) {
+		// test.run();
 		Intent intent = new Intent(this, BeatTheClock.class);
 		startActivity(intent);
 	}
 
 	public void StartTimeTrialGame(View view) {
+
 		Intent intent = new Intent(this, TimeTrial.class);
 		startActivity(intent);
 	}

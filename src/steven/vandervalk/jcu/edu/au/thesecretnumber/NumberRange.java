@@ -98,6 +98,7 @@ public class NumberRange extends Activity {
 	public void StartNumberTypeActivity(View view) {
 		String saved = "Settings Saved";
 		Model.max_length = number_value;
+		Model.generateComputerSecretNumber();
 		Toast.makeText(getApplicationContext(), saved, Toast.LENGTH_SHORT)
 				.show();
 		Intent intent = new Intent(this, NumberType.class);
