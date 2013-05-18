@@ -9,30 +9,21 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TimeMode extends Activity {
-
-	float time_value;
-	TextView tv;
+public class GoodGame extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_time_mode);
+		setContentView(R.layout.activity_good_game);
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		new Thread(new Model()).start();
-
-		SeekBar timeSeekBar = (SeekBar) findViewById(R.id.seekBar1);
-
-		timeSeekBar.setMax(50);
-		timeSeekBar.setProgress(1);
-
-		timeSeekBar.setOnSeekBarChangeListener(new yourListener());
+		TextView time_completed = (TextView) findViewById(R.id.time_completed);
+		time_completed.setText("Completed in : "
+				+ String.valueOf(Model.completed_timer) + " seconds!");
 	}
 
 	/**
@@ -48,45 +39,8 @@ public class TimeMode extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.time_mode, menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
 		return true;
-	}
-
-	private class yourListener implements SeekBar.OnSeekBarChangeListener {
-
-		@Override
-		public void onProgressChanged(SeekBar seekBar, int progress,
-				boolean fromUser) {
-
-			time_value = (float) (progress / 10.0);
-
-			System.out.println("Progress is: " + progress);
-			System.out.println("Value / Time is: " + time_value);
-
-			tv = (TextView) findViewById(R.id.time_progress_value);
-
-			tv.setText(time_value + " Minutes");
-
-		}
-
-		@Override
-		public void onStartTrackingTouch(SeekBar seekBar) {
-		}
-
-		@Override
-		public void onStopTrackingTouch(SeekBar seekBar) {
-			Model.timer_clock = time_value;
-
-			String time_minutes = String.valueOf(time_value);
-			StringBuilder ss = new StringBuilder();
-			String minutes = " Minutes";
-			ss.append(time_minutes);
-			ss.append(minutes);
-
-			Toast.makeText(getApplicationContext(), ss.toString(),
-					Toast.LENGTH_SHORT).show();
-
-		}
 	}
 
 	@Override
@@ -101,20 +55,39 @@ public class TimeMode extends Activity {
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
 			NavUtils.navigateUpFromSameTask(this);
-			return true;
+		case R.id.action_settings:
+			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
+					.show();
+			Intent intent = new Intent(this, Settings.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+			break;
+		case R.id.action_help:
+			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+			Intent intent2 = new Intent(this, HelpActivity.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent2);
+			break;
+
+		default:
+			break;
 		}
+		// return true;
+
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void StartBeatTheClockGame(View view) {
-
-		Intent intent = new Intent(this, BeatTheClock.class);
+	public void PlayAgainButtonPressed(View view) {
+		Intent intent = new Intent(this, StartPage.class);
 		startActivity(intent);
 	}
 
-	public void StartTimeTrialGame(View view) {
-
-		Intent intent = new Intent(this, TimeTrial.class);
+	public void QuitButtonPressed(View view) {
+		Intent intent = new Intent(this, ConstantsBrowser.class);
 		startActivity(intent);
 	}
 

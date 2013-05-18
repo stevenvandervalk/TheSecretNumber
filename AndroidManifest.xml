@@ -82,9 +82,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
         </activity>
-        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.BeatTheClockGame" />
-        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.TimeTrialGame" />
-        <activity android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberRange" />
+  
+       
 
         <provider
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
@@ -114,6 +113,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.NumberType" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.ComputerGuesses"
+            android:label="@string/title_activity_computer_guesses"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.GoodGame"
+            android:label="@string/title_activity_good_game"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
         </activity>
     </application>
 

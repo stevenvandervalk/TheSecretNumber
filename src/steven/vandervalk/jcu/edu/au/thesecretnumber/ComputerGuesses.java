@@ -1,5 +1,7 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
+import java.util.Random;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -9,30 +11,32 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class TimeMode extends Activity {
+public class ComputerGuesses extends Activity {
 
-	float time_value;
-	TextView tv;
+	int computer_guess;
+	Random rn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_time_mode);
+		setContentView(R.layout.activity_computer_guesses);
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		new Thread(new Model()).start();
+		generateRandomComputerGuess();
 
-		SeekBar timeSeekBar = (SeekBar) findViewById(R.id.seekBar1);
+	}
 
-		timeSeekBar.setMax(50);
-		timeSeekBar.setProgress(1);
+	public void generateRandomComputerGuess() {
+		rn = new Random();
+		int minimum = Model.rolling_sum;
+		int range = (minimum + 1) - minimum;
+		computer_guess = rn.nextInt(range) + minimum;
 
-		timeSeekBar.setOnSeekBarChangeListener(new yourListener());
+		TextView tv = (TextView) findViewById(R.id.textView1);
+		tv.setText(String.valueOf(computer_guess));
 	}
 
 	/**
@@ -48,45 +52,8 @@ public class TimeMode extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.time_mode, menu);
+		getMenuInflater().inflate(R.menu.computer_guesses, menu);
 		return true;
-	}
-
-	private class yourListener implements SeekBar.OnSeekBarChangeListener {
-
-		@Override
-		public void onProgressChanged(SeekBar seekBar, int progress,
-				boolean fromUser) {
-
-			time_value = (float) (progress / 10.0);
-
-			System.out.println("Progress is: " + progress);
-			System.out.println("Value / Time is: " + time_value);
-
-			tv = (TextView) findViewById(R.id.time_progress_value);
-
-			tv.setText(time_value + " Minutes");
-
-		}
-
-		@Override
-		public void onStartTrackingTouch(SeekBar seekBar) {
-		}
-
-		@Override
-		public void onStopTrackingTouch(SeekBar seekBar) {
-			Model.timer_clock = time_value;
-
-			String time_minutes = String.valueOf(time_value);
-			StringBuilder ss = new StringBuilder();
-			String minutes = " Minutes";
-			ss.append(time_minutes);
-			ss.append(minutes);
-
-			Toast.makeText(getApplicationContext(), ss.toString(),
-					Toast.LENGTH_SHORT).show();
-
-		}
 	}
 
 	@Override
@@ -106,16 +73,14 @@ public class TimeMode extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void StartBeatTheClockGame(View view) {
+	public void YesMyNumberPressed(View view) {
 
-		Intent intent = new Intent(this, BeatTheClock.class);
+		Intent intent = new Intent(this, GoodGame.class);
 		startActivity(intent);
 	}
 
-	public void StartTimeTrialGame(View view) {
-
-		Intent intent = new Intent(this, TimeTrial.class);
-		startActivity(intent);
+	public void NoNotMyNumberPressed(View view) {
+		generateRandomComputerGuess();
 	}
 
 }

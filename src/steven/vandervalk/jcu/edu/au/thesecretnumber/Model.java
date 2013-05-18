@@ -26,7 +26,11 @@ public class Model implements Runnable {
 
 	static float time_trial_clock;
 
+	static float completed_timer;
+
 	static int computer_secret_number;
+
+	static int rolling_sum;
 
 	public static int magic_numbers_size;
 

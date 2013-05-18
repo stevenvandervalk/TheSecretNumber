@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,7 +28,7 @@ public class TimeTrial extends Activity {
 
 	TextView[] txt;
 
-	int rollingSum;
+	// int rollingSum;
 
 	Set<Integer> numbersAdded = new HashSet<Integer>();
 
@@ -55,6 +55,7 @@ public class TimeTrial extends Activity {
 			seconds = (int) (elapseTime / 1000);
 			minutes = seconds / 60;
 			seconds = seconds % 60;
+			Model.completed_timer = seconds;
 
 			TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 
@@ -73,6 +74,11 @@ public class TimeTrial extends Activity {
 
 		}
 	};
+
+	public void stopHandler() {
+		handler.removeCallbacks(task);
+
+	}
 
 	// stop timer with
 	// handler.removeCallbacks(task);
@@ -145,19 +151,19 @@ public class TimeTrial extends Activity {
 
 							// if set to player_guess mode
 
-							if (Model.player_guess_mode) {
-								// code to check if card displayed contains
-								// secret
-								// number selected at random by computer
-
-								int i = VF.getDisplayedChild();
-
-								// if (txt[i].getText()){}
-
-								// code to turn appropriate button background
-								// color.
-								// and grey out other?
-							}
+							// if (Model.player_guess_mode) {
+							// // code to check if card displayed contains
+							// // secret
+							// // number selected at random by computer
+							//
+							// int i = VF.getDisplayedChild();
+							//
+							// // if (txt[i].getText()){}
+							//
+							// // code to turn appropriate button background
+							// // color.
+							// // and grey out other?
+							// }
 
 							return true;
 						}
@@ -219,11 +225,31 @@ public class TimeTrial extends Activity {
 
 	public void IfNoButtonPressed(View view) {
 		if (!Model.player_guess_mode) {
-			VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+
+			int i = VF.getDisplayedChild();
+
+			System.out.println("i value is : " + i);
+
+			System.out.println("rolling sum is : " + Model.rolling_sum);
+
+			System.out.println("txt length is : " + txt.length);
+			System.out
+					.println("displayed child is : " + VF.getDisplayedChild());
+
+			if (VF.getDisplayedChild() == txt.length - 1) {
+
+				stopHandler();
+
+				Intent intent = new Intent(this, ComputerGuesses.class);
+				startActivity(intent);
+			} else {
+
+				VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+
+			}
 		}
 	}
 
-	@SuppressLint("ResourceAsColor")
 	public void IfYesButtonPressed(View view) {
 		// if set to computer guess mode
 
@@ -242,12 +268,25 @@ public class TimeTrial extends Activity {
 
 				numbersAdded.add(numberToAddToSum);
 
-				rollingSum += numberToAddToSum;
+				Model.rolling_sum += numberToAddToSum;
 
 				System.out.println("i value is : " + i);
 				System.out.println(" numberto add to sum is : "
 						+ numberToAddToSum);
-				System.out.println("rolling sum is : " + rollingSum);
+				System.out.println("rolling sum is : " + Model.rolling_sum);
+
+				System.out.println("txt length is : " + txt.length);
+				System.out.println("displayed child is : "
+						+ VF.getDisplayedChild());
+
+				if (VF.getDisplayedChild() == txt.length - 1) {
+
+					stopHandler();
+
+					Intent intent = new Intent(this, ComputerGuesses.class);
+					startActivity(intent);
+
+				}
 
 				// turn off button
 

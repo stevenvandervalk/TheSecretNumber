@@ -52,5 +52,12 @@
     <string name="Yes_Button">Yes</string>
     <string name="No_Button">No</string>
     <string name="Is_the_secret_number_here">Is The Secret Number Here?</string>
+    <string name="title_activity_computer_guesses">ComputerGuesses</string>
+    <string name="is_this_your_number">Is This Your Secret Number?</string>
+    <string name="title_activity_good_game">GoodGame</string>
+    <string name="good_game">Good Game!</string>
+    <string name="time_completed">"Completed in : "</string>
+    <string name="play_again">Play Again?</string>
+  
 
 </resources>

@@ -6,52 +6,43 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".TimeTrial" >
-
-    
+    tools:context=".ComputerGuesses" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Is_the_secret_number_here" />
+        android:layout_centerVertical="true"
+        android:text="TextView" />
 
     <TextView
-        android:id="@+id/TimeLabel"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
-        android:text="TimeLabel" />
+        android:layout_marginTop="50dp"
+        android:text="@string/is_this_your_number"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ViewFlipper
-        android:id="@+id/viewFlipper1"
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true" >
-    </ViewFlipper>
-
-    <Button
-        android:id="@+id/yes_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TimeLabel"
-        android:layout_toLeftOf="@+id/TimeLabel"
-        android:onClick="IfYesButtonPressed"
+        android:layout_marginTop="80dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:onClick="YesMyNumberPressed"
         android:text="@string/Yes_Button" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/yes_button"
-        android:layout_alignBottom="@+id/yes_button"
-        android:layout_toRightOf="@+id/TimeLabel"
-        android:onClick="IfNoButtonPressed"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_toRightOf="@+id/textView1"
+        android:onClick="NoNotMyNumberPressed"
         android:text="@string/No_Button" />
 
 </RelativeLayout>
