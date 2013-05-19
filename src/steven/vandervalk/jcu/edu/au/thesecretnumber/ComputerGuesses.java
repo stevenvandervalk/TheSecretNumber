@@ -5,6 +5,7 @@ import java.util.Random;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -17,6 +18,7 @@ public class ComputerGuesses extends Activity {
 
 	int computer_guess;
 	Random rn;
+	TextView tv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +27,40 @@ public class ComputerGuesses extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		generateRandomComputerGuess();
+		new GenerateRandomComputerGuess().execute();
+		// firstone.execute();
+		tv = (TextView) findViewById(R.id.textView1);
 
 	}
 
-	public void generateRandomComputerGuess() {
-		rn = new Random();
-		int minimum = Model.rolling_sum;
-		int range = (minimum + 1) - minimum;
-		computer_guess = rn.nextInt(range) + minimum;
+	private class GenerateRandomComputerGuess extends
+			AsyncTask<String, Void, Integer> {
 
-		TextView tv = (TextView) findViewById(R.id.textView1);
-		tv.setText(String.valueOf(computer_guess));
+		@Override
+		protected Integer doInBackground(String... params) {
+			// TODO Auto-generated method stub
+
+			rn = new Random();
+			int minimum = Model.rolling_sum;
+
+			System.out.println("minimum is : " + minimum);
+
+			int range = (minimum + 2) - minimum;
+
+			System.out.println("range is : " + range);
+			computer_guess = rn.nextInt(range) + minimum;
+
+			System.out.println("computer guess is : " + computer_guess);
+
+			return computer_guess;
+		}
+
+		@Override
+		protected void onPostExecute(Integer result) {
+			tv.setText(String.valueOf(computer_guess));
+		}
+
+		// tv.setText(String.valueOf(computer_guess));
 	}
 
 	/**
@@ -80,7 +104,7 @@ public class ComputerGuesses extends Activity {
 	}
 
 	public void NoNotMyNumberPressed(View view) {
-		generateRandomComputerGuess();
+		new GenerateRandomComputerGuess().execute();
 	}
 
 }

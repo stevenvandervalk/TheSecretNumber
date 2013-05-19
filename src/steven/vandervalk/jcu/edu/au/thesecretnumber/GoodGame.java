@@ -82,7 +82,7 @@ public class GoodGame extends Activity {
 	}
 
 	public void PlayAgainButtonPressed(View view) {
-		Intent intent = new Intent(this, StartPage.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
 

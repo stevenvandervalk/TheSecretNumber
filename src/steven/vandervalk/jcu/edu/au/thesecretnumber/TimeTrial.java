@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -27,6 +31,10 @@ public class TimeTrial extends Activity {
 	ViewFlipper VF;
 
 	TextView[] txt;
+
+	Drawable bg1;
+
+	Drawable bg2;
 
 	// int rollingSum;
 
@@ -60,9 +68,9 @@ public class TimeTrial extends Activity {
 			TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 
 			if (seconds < 10) {
-				TimeText.setText("" + minutes + ":0" + seconds);
+				TimeText.setText("Time : " + minutes + ":0" + seconds);
 			} else {
-				TimeText.setText("" + minutes + ":" + seconds);
+				TimeText.setText("Time : " + minutes + ":" + seconds);
 			}
 
 			// add a delay to adjust for computation time
@@ -118,6 +126,45 @@ public class TimeTrial extends Activity {
 			txt[i].setTextAppearance(this, R.style.CodeFont);
 			VF.addView(txt[i]);
 		}
+
+		if (Model.player_guess_mode) {
+
+			Button b1 = (Button) findViewById(R.id.yes_button);
+			bg1 = b1.getBackground();
+
+			Button b2 = (Button) findViewById(R.id.no_button);
+			bg2 = b2.getBackground();
+
+			// Model.computer_secret_number
+
+			int i = VF.getDisplayedChild();
+
+			Set<Integer> a = new HashSet<Integer>();
+
+			String csv = txt[i].getText().toString();
+			if (csv.contains(" ")) {
+				// Split it.
+				String[] s = csv.split(" ");
+				for (String x : s) {
+					a.add(Integer.parseInt(x));
+				}
+			} else {
+				throw new IllegalArgumentException("String " + csv
+						+ " does not contain ,");
+			}
+
+			//
+			if (a.contains(Model.computer_secret_number)) {
+				Button button = (Button) findViewById(R.id.yes_button);
+				button.setBackgroundResource(R.drawable.green_btn);
+
+			} else {
+				Button button2 = (Button) findViewById(R.id.no_button);
+				button2.setBackgroundResource(R.drawable.red_btn);
+			}
+
+		}
+
 	}
 
 	/**
@@ -140,25 +187,92 @@ public class TimeTrial extends Activity {
 						return true;
 					}
 
+					@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+					@SuppressLint("NewApi")
 					@Override
 					public boolean onFling(MotionEvent start, MotionEvent end,
 							float velocityX, float velocityY) {
+
+						// set two button colors back to start
+
 						// TODO Auto-generated method stub
 
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped right");
+
+							// if at last game start player guessing activity
+
 							VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+
+							// put on async task
 
 							// if set to player_guess mode
 
-							// if (Model.player_guess_mode) {
+							if (Model.player_guess_mode) {
+
+								Button b1 = (Button) findViewById(R.id.yes_button);
+								b1.setBackground(bg1);
+
+								Button b2 = (Button) findViewById(R.id.no_button);
+								b2.setBackground(bg2);
+
+								// Button b = (Button)
+								// findViewById(R.id.yes_button);
+								// Button button2 = (Button)
+								// findViewById(R.id.no_button);
+								// Drawable d = b.getBackground();
+
+								// Model.computer_secret_number
+
+								int i = VF.getDisplayedChild();
+
+								Set<Integer> a = new HashSet<Integer>();
+
+								String csv = new String();
+								csv = txt[i].getText().toString();
+								if (csv.contains(" ")) {
+									// Split it.
+									String[] s = csv.split(" ");
+									for (String x : s) {
+										a.add(Integer.parseInt(x));
+									}
+								} else {
+									throw new IllegalArgumentException(
+											"String " + csv
+													+ " does not contain ,");
+								}
+								//
+								if (a.contains(Model.computer_secret_number)) {
+
+									b1.setBackgroundResource(R.drawable.green_btn);
+									// Button b = (Button)
+									// findViewById(R.id.yes_button);
+									// Drawable d = b.getBackground();
+
+									// b.setBackgroundResource(R.drawable.green_btn);
+
+									// b.getBackground().setColorFilter(
+									// 0xFF00FF00,
+									// PorterDuff.Mode.MULTIPLY);
+
+									a.clear();
+
+								} else {
+
+									b2.setBackgroundResource(R.drawable.red_btn);
+									// Button b = (Button)
+									// findViewById(R.id.yes_button);
+
+									a.clear();
+
+								}
+
+							}
 							// // code to check if card displayed contains
 							// // secret
 							// // number selected at random by computer
 							//
-							// int i = VF.getDisplayedChild();
-							//
-							// // if (txt[i].getText()){}
+
 							//
 							// // code to turn appropriate button background
 							// // color.
@@ -177,12 +291,67 @@ public class TimeTrial extends Activity {
 
 								// if set to player guess mode
 
-								// code to check if card displayed contains
-								// secret
-								// number
-								// code to turn appropriate button background
-								// color.
-								// and grey out other?
+								if (Model.player_guess_mode) {
+
+									Button b1 = (Button) findViewById(R.id.yes_button);
+									b1.setBackground(bg1);
+
+									Button b2 = (Button) findViewById(R.id.no_button);
+									b2.setBackground(bg2);
+
+									// Button b = (Button)
+									// findViewById(R.id.yes_button);
+									// Button button2 = (Button)
+									// findViewById(R.id.no_button);
+									// Drawable d = b.getBackground();
+
+									// Model.computer_secret_number
+
+									int i = VF.getDisplayedChild();
+
+									Set<Integer> a = new HashSet<Integer>();
+
+									String csv = new String();
+									csv = txt[i].getText().toString();
+									if (csv.contains(" ")) {
+										// Split it.
+										String[] s = csv.split(" ");
+										for (String x : s) {
+											a.add(Integer.parseInt(x));
+										}
+									} else {
+										throw new IllegalArgumentException(
+												"String " + csv
+														+ " does not contain ,");
+									}
+									//
+									if (a.contains(Model.computer_secret_number)) {
+
+										b1.setBackgroundResource(R.drawable.green_btn);
+										// Button b = (Button)
+										// findViewById(R.id.yes_button);
+										// Drawable d = b.getBackground();
+
+										// b.setBackgroundResource(R.drawable.green_btn);
+
+										// b.getBackground().setColorFilter(
+										// 0xFF00FF00,
+										// PorterDuff.Mode.MULTIPLY);
+
+										a.clear();
+
+									} else {
+
+										b2.setBackgroundResource(R.drawable.red_btn);
+										// Button b = (Button)
+										// findViewById(R.id.yes_button);
+
+										a.clear();
+
+									}
+
+								}
+
 							}
 						}
 
@@ -221,6 +390,16 @@ public class TimeTrial extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+	public void GuessButtonPressed(View view) {
+		if (Model.player_guess_mode) {
+			Intent intent = new Intent(this, PlayerGuesses.class);
+			ActivityOptions options = ActivityOptions.makeScaleUpAnimation(
+					view, 0, 0, view.getWidth(), view.getHeight());
+			startActivity(intent, options.toBundle());
+		}
 	}
 
 	public void IfNoButtonPressed(View view) {

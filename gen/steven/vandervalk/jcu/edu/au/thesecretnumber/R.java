@@ -33,59 +33,65 @@ public final class R {
         public static final int add=0x7f020000;
         public static final int delete=0x7f020001;
         public static final int eject=0x7f020002;
-        public static final int help=0x7f020003;
-        public static final int help_light=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int icon=0x7f020006;
-        public static final int muted=0x7f020007;
-        public static final int refresh=0x7f020008;
-        public static final int reminder=0x7f020009;
-        public static final int scores_icon=0x7f02000a;
-        public static final int scores_light=0x7f02000b;
-        public static final int settings=0x7f02000c;
-        public static final int settings_light=0x7f02000d;
-        public static final int volume_on=0x7f02000e;
+        public static final int green_btn=0x7f020003;
+        public static final int help=0x7f020004;
+        public static final int help_light=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int icon=0x7f020007;
+        public static final int muted=0x7f020008;
+        public static final int red_btn=0x7f020009;
+        public static final int refresh=0x7f02000a;
+        public static final int reminder=0x7f02000b;
+        public static final int scores_icon=0x7f02000c;
+        public static final int scores_light=0x7f02000d;
+        public static final int settings=0x7f02000e;
+        public static final int settings_light=0x7f02000f;
+        public static final int volume_on=0x7f020010;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f090004;
-        public static final int ScrollView1=0x7f09001e;
-        public static final int TimeLabel=0x7f090019;
+        public static final int ScrollView1=0x7f090022;
+        public static final int TimeLabel=0x7f09001b;
         public static final int ViewFlipper01=0x7f090006;
-        public static final int action_help=0x7f090025;
-        public static final int action_scores=0x7f090026;
-        public static final int action_settings=0x7f090024;
+        public static final int action_help=0x7f090029;
+        public static final int action_scores=0x7f09002a;
+        public static final int action_settings=0x7f090028;
         public static final int button1=0x7f090000;
         public static final int button2=0x7f090001;
         public static final int button3=0x7f090008;
-        public static final int help_button1=0x7f090020;
-        public static final int help_button2=0x7f090021;
-        public static final int help_button3=0x7f090022;
-        public static final int help_button4=0x7f090023;
-        public static final int help_page_intro=0x7f09001f;
+        public static final int guess_button=0x7f09001f;
+        public static final int help_button1=0x7f090024;
+        public static final int help_button2=0x7f090025;
+        public static final int help_button3=0x7f090026;
+        public static final int help_button4=0x7f090027;
+        public static final int help_page_intro=0x7f090023;
+        public static final int message_textview=0x7f09000c;
+        public static final int no_button=0x7f09001e;
+        public static final int numberPicker1=0x7f09000b;
         public static final int radioGroup1=0x7f090005;
-        public static final int radioGroup2=0x7f09000f;
-        public static final int radioGroup3=0x7f090013;
-        public static final int radio_beatheclock=0x7f090010;
-        public static final int radio_binary=0x7f090014;
-        public static final int radio_compguess=0x7f09000d;
-        public static final int radio_fibonnacci=0x7f090015;
-        public static final int radio_freeplay=0x7f09000c;
-        public static final int radio_playerguess=0x7f09000e;
-        public static final int radio_prime_numbers=0x7f090016;
-        public static final int radio_timetrial=0x7f090011;
-        public static final int save_settings_button=0x7f09000b;
+        public static final int radioGroup2=0x7f090011;
+        public static final int radioGroup3=0x7f090015;
+        public static final int radio_beatheclock=0x7f090012;
+        public static final int radio_binary=0x7f090016;
+        public static final int radio_compguess=0x7f09000f;
+        public static final int radio_fibonnacci=0x7f090017;
+        public static final int radio_freeplay=0x7f09000e;
+        public static final int radio_playerguess=0x7f090010;
+        public static final int radio_prime_numbers=0x7f090018;
+        public static final int radio_timetrial=0x7f090013;
+        public static final int save_settings_button=0x7f09000d;
         public static final int seekBar1=0x7f090009;
         public static final int seekbar_progress=0x7f09000a;
         public static final int textView1=0x7f090002;
         public static final int textView2=0x7f090003;
-        public static final int textView3=0x7f090012;
+        public static final int textView3=0x7f090014;
         public static final int time_completed=0x7f090007;
-        public static final int time_progress_value=0x7f090018;
-        public static final int title=0x7f09001c;
-        public static final int toggleButton1=0x7f090017;
-        public static final int value=0x7f09001d;
-        public static final int viewFlipper1=0x7f09001a;
-        public static final int yes_button=0x7f09001b;
+        public static final int time_progress_value=0x7f09001a;
+        public static final int title=0x7f090020;
+        public static final int toggleButton1=0x7f090019;
+        public static final int value=0x7f090021;
+        public static final int viewFlipper1=0x7f09001c;
+        public static final int yes_button=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_beat_the_clock=0x7f030000;
@@ -97,14 +103,15 @@ public final class R {
         public static final int activity_number_type=0x7f030006;
         public static final int activity_overview=0x7f030007;
         public static final int activity_play=0x7f030008;
-        public static final int activity_settings=0x7f030009;
-        public static final int activity_start_page=0x7f03000a;
-        public static final int activity_time_mode=0x7f03000b;
-        public static final int activity_time_trial=0x7f03000c;
-        public static final int add_edit=0x7f03000d;
-        public static final int help=0x7f03000e;
-        public static final int main=0x7f03000f;
-        public static final int row=0x7f030010;
+        public static final int activity_player_guesses=0x7f030009;
+        public static final int activity_settings=0x7f03000a;
+        public static final int activity_start_page=0x7f03000b;
+        public static final int activity_time_mode=0x7f03000c;
+        public static final int activity_time_trial=0x7f03000d;
+        public static final int add_edit=0x7f03000e;
+        public static final int help=0x7f03000f;
+        public static final int main=0x7f030010;
+        public static final int row=0x7f030011;
     }
     public static final class menu {
         public static final int beat_the_clock=0x7f080000;
@@ -114,18 +121,21 @@ public final class R {
         public static final int menu=0x7f080004;
         public static final int number_type=0x7f080005;
         public static final int play=0x7f080006;
-        public static final int preferences=0x7f080007;
-        public static final int settings=0x7f080008;
-        public static final int start_page=0x7f080009;
-        public static final int time_mode=0x7f08000a;
-        public static final int time_range=0x7f08000b;
-        public static final int time_trial=0x7f08000c;
+        public static final int player_guesses=0x7f080007;
+        public static final int preferences=0x7f080008;
+        public static final int settings=0x7f080009;
+        public static final int start_page=0x7f08000a;
+        public static final int time_mode=0x7f08000b;
+        public static final int time_range=0x7f08000c;
+        public static final int time_trial=0x7f08000d;
     }
     public static final class string {
+        public static final int Guess=0x7f06004a;
         public static final int Is_the_secret_number_here=0x7f060042;
         public static final int No_Button=0x7f060041;
         public static final int Scoring_mode=0x7f06001c;
         public static final int Sound_toggle_button=0x7f060022;
+        public static final int Time_Label=0x7f060049;
         public static final int Yes_Button=0x7f060040;
         public static final int about_help_topics=0x7f060001;
         public static final int action_settings=0x7f060011;
@@ -184,6 +194,7 @@ public final class R {
         public static final int title_activity_help=0x7f060027;
         public static final int title_activity_number_type=0x7f060035;
         public static final int title_activity_play=0x7f060034;
+        public static final int title_activity_player_guesses=0x7f06004b;
         public static final int title_activity_preferences=0x7f060025;
         public static final int title_activity_settings=0x7f060014;
         public static final int title_activity_start_page=0x7f060013;
@@ -194,6 +205,7 @@ public final class R {
         public static final int topic_section2=0x7f060009;
         public static final int topic_section3=0x7f06000c;
         public static final int topic_section4=0x7f06000f;
+        public static final int what_is_your_guess=0x7f06004c;
         public static final int what_number_type=0x7f060036;
     }
     public static final class style {
@@ -218,11 +230,12 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int CodeFont=0x7f070002;
+        public static final int AppTheme=0x7f070002;
+        public static final int ButtonText=0x7f070000;
+        public static final int CodeFont=0x7f070003;
     }
 }

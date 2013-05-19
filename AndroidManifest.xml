@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <application
@@ -82,8 +82,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayActivity" />
         </activity>
-  
-       
 
         <provider
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
@@ -129,6 +127,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.StartPage" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.PlayerGuesses"
+            android:label="@string/title_activity_player_guesses"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" />
         </activity>
     </application>
 

@@ -1,8 +1,12 @@
 package steven.vandervalk.jcu.edu.au.thesecretnumber;
 
 import steven.vandervalk.jcu.edu.au.thesecretnumber.Model.Array_Type;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.GestureDetector;
@@ -14,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 public class MainActivity extends Activity {
 
 	private GestureDetector detector;
@@ -159,14 +164,18 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	public void StartHighScore(View view) {
 		// // // Make magics
 		Intent intent = new Intent(this, ConstantsBrowser.class);
+		ActivityOptions options = ActivityOptions.makeScaleUpAnimation(view, 0,
+				0, view.getWidth(), view.getHeight());
+		startActivity(intent, options.toBundle());
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);
 		// // // String message = editText.getText().toString();
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
-		startActivity(intent);
+		// startActivity(intent);
 	}
 
 	public void StartPlay(View view) {

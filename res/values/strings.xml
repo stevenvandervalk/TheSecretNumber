@@ -44,7 +44,7 @@
     <string name="time_mode">Timer Mode</string>
     <string name="choose_a_number_range">Choose A Number Range</string>
     <string name="title_activity_beat_the_clock">BeatTheClock</string>
-    <string name="title_activity_time_range">TimeRange</string>
+    <string name="title_activity_time_range">Number Range</string>
     <string name="choose_your_number_range">Range For The Secret Number</string>
     <string name="seek_bar_output_label">"0 : "</string>
     <string name="time_progress_value">0.10 Minutes</string>
@@ -58,6 +58,24 @@
     <string name="good_game">Good Game!</string>
     <string name="time_completed">"Completed in : "</string>
     <string name="play_again">Play Again?</string>
-  
+    <string name="Time_Label">"Time : "</string>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <string name="Guess">Make A Guess</string>
+    <string name="title_activity_player_guesses">PlayerGuesses</string>
+    <string name="what_is_your_guess">What is your Guess?</string>
 
 </resources>

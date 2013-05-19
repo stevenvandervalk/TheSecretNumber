@@ -28,7 +28,9 @@ public class NumberRange extends Activity {
 		SeekBar numberRangeSeekBar = (SeekBar) findViewById(R.id.seekBar1);
 
 		numberRangeSeekBar.setMax(50);
-		numberRangeSeekBar.setProgress(25);
+		// numberRangeSeekBar.setProgress(25);
+
+		// tv.setText("0 : " + number_value);
 
 		numberRangeSeekBar.setOnSeekBarChangeListener(new Listener());
 
