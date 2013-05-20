@@ -58,14 +58,14 @@ public class TimeMode extends Activity {
 		public void onProgressChanged(SeekBar seekBar, int progress,
 				boolean fromUser) {
 
-			time_value = (float) (progress / 10.0);
+			time_value = (progress);
 
 			System.out.println("Progress is: " + progress);
 			System.out.println("Value / Time is: " + time_value);
 
 			tv = (TextView) findViewById(R.id.time_progress_value);
 
-			tv.setText(time_value + " Minutes");
+			tv.setText(time_value + " Seconds");
 
 		}
 
@@ -79,7 +79,7 @@ public class TimeMode extends Activity {
 
 			String time_minutes = String.valueOf(time_value);
 			StringBuilder ss = new StringBuilder();
-			String minutes = " Minutes";
+			String minutes = " Seconds";
 			ss.append(time_minutes);
 			ss.append(minutes);
 
@@ -108,7 +108,8 @@ public class TimeMode extends Activity {
 
 	public void StartBeatTheClockGame(View view) {
 
-		Intent intent = new Intent(this, BeatTheClock.class);
+		Intent intent = new Intent(this, TimeTrial.class);
+		Model.beat_the_clock_mode = true;
 		startActivity(intent);
 	}
 

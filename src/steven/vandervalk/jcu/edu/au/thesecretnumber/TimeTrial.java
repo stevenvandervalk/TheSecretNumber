@@ -46,11 +46,17 @@ public class TimeTrial extends Activity {
 
 	long elapseTime;
 
+	float timeRemaining;
+
 	int seconds;
 
 	int minutes;
 
 	private final Handler handler = new Handler();
+
+	protected int secondsRemaining;
+
+	protected int minutesRemaining;
 
 	// Runnable task = new Runnable()
 
@@ -58,6 +64,7 @@ public class TimeTrial extends Activity {
 		@Override
 		public void run() {
 			// my methods
+
 			final long start = StartTime;
 			elapseTime = System.currentTimeMillis() - start;
 			seconds = (int) (elapseTime / 1000);
@@ -65,14 +72,34 @@ public class TimeTrial extends Activity {
 			seconds = seconds % 60;
 			Model.completed_timer = seconds;
 
+			timeRemaining = (Model.timer_clock - seconds);
+
+			System.out.println("timer clock : " + Model.time_trial_clock);
+
+			System.out.println("timer clock : " + Model.timer_clock);
+
+			secondsRemaining = (int) (timeRemaining / 1000);
+
+			minutesRemaining = secondsRemaining / 60;
+
+			secondsRemaining = secondsRemaining % 60;
+
 			TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 
-			if (seconds < 10) {
-				TimeText.setText("Time : " + minutes + ":0" + seconds);
-			} else {
-				TimeText.setText("Time : " + minutes + ":" + seconds);
+			if (Model.beat_the_clock_mode) {
+
+				TimeText.setText("Time Remaining : "
+						+ (Model.timer_clock - seconds));
 			}
 
+			else {
+
+				if (seconds < 10) {
+					TimeText.setText("Time : " + minutes + ":0" + seconds);
+				} else {
+					TimeText.setText("Time : " + minutes + ":" + seconds);
+				}
+			}
 			// add a delay to adjust for computation time
 			long delay = (1000 - (elapseTime % 1000));
 
@@ -104,6 +131,20 @@ public class TimeTrial extends Activity {
 
 		// timer
 		handler.post(task);
+
+		// if (Model.beat_the_clock_mode && timeremaining == 0 stophandler and
+		// start good game activity
+
+		if ((Model.timer_clock - seconds == 0) & Model.beat_the_clock_mode) {
+			stopHandler();
+			Intent intent = new Intent(this, GoodGame.class);
+			startActivity(intent);
+		}
+
+		if (!Model.player_guess_mode) {
+			Button button = (Button) findViewById(R.id.guess_button);
+			button.setVisibility(View.INVISIBLE);
+		}
 
 		// Show the Up button in the action bar.
 		setupActionBar();

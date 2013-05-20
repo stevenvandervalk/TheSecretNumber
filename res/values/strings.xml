@@ -47,7 +47,7 @@
     <string name="title_activity_time_range">Number Range</string>
     <string name="choose_your_number_range">Range For The Secret Number</string>
     <string name="seek_bar_output_label">"0 : "</string>
-    <string name="time_progress_value">0.10 Minutes</string>
+    <string name="time_progress_value">10 Seconds</string>
     <string name="title_activity_time_trial">TimeTrial</string>
     <string name="Yes_Button">Yes</string>
     <string name="No_Button">No</string>
