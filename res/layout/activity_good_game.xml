@@ -29,18 +29,8 @@
 		android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="41dp"
-        android:layout_toLeftOf="@+id/time_completed"
-        android:onClick="PlayAgainButtonPressed"
-        android:text="@string/Yes_Button" />
-
-    <Button
         android:id="@+id/button2"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
@@ -57,5 +47,15 @@
         android:layout_marginTop="47dp"
         android:text="@string/play_again"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="38dp"
+        android:layout_toLeftOf="@+id/textView2"
+        android:onClick="PlayAgainButtonPressed"
+        android:text="@string/Yes_Button" />
 
 </RelativeLayout>

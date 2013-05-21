@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,9 +75,12 @@ public class TimeTrial extends Activity {
 
 			timeRemaining = (Model.timer_clock - seconds);
 
-			System.out.println("timer clock : " + Model.time_trial_clock);
-
 			System.out.println("timer clock : " + Model.timer_clock);
+
+			System.out.println("timer clock - seconds : "
+					+ (Model.timer_clock - seconds));
+
+			System.out.println("time remaining : " + timeRemaining);
 
 			secondsRemaining = (int) (timeRemaining / 1000);
 
@@ -135,15 +139,18 @@ public class TimeTrial extends Activity {
 		// if (Model.beat_the_clock_mode && timeremaining == 0 stophandler and
 		// start good game activity
 
-		if ((Model.timer_clock - seconds == 0) & Model.beat_the_clock_mode) {
+		if (timeRemaining < 0.0 & Model.beat_the_clock_mode) {
 			stopHandler();
 			Intent intent = new Intent(this, GoodGame.class);
+			intent.putExtra("Time_Up", true);
 			startActivity(intent);
+			overridePendingTransition(R.anim.shake, R.anim.push_left_out);
 		}
 
 		if (!Model.player_guess_mode) {
 			Button button = (Button) findViewById(R.id.guess_button);
 			button.setVisibility(View.INVISIBLE);
+			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 		}
 
 		// Show the Up button in the action bar.
@@ -208,6 +215,21 @@ public class TimeTrial extends Activity {
 
 	}
 
+	@Override
+	protected void onPause() {
+		try {
+			handler.wait();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void onStop() {
+		handler.removeCallbacks(task);
+	}
+
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
@@ -242,6 +264,8 @@ public class TimeTrial extends Activity {
 							System.out.println("swiped right");
 
 							// if at last game start player guessing activity
+							VF.setInAnimation(AnimationUtils.loadAnimation(
+									TimeTrial.this, R.anim.slide_right));
 
 							VF.setDisplayedChild(VF.getDisplayedChild() + 1);
 
@@ -328,6 +352,8 @@ public class TimeTrial extends Activity {
 							if (VF.getDisplayedChild() == 0) {
 								return true;
 							} else {
+								VF.setInAnimation(AnimationUtils.loadAnimation(
+										TimeTrial.this, R.anim.slide_left));
 								VF.setDisplayedChild(VF.getDisplayedChild() - 1);
 
 								// if set to player guess mode

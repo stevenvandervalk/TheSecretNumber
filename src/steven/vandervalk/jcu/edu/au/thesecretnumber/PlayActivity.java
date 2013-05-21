@@ -50,6 +50,7 @@ public class PlayActivity extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
+			Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
 			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
@@ -93,6 +94,7 @@ public class PlayActivity extends Activity {
 		// // // String message = editText.getText().toString();
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
 
 	public void StartComputerGuessMode(View view) {
@@ -104,6 +106,7 @@ public class PlayActivity extends Activity {
 		// // // String message = editText.getText().toString();
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 
 	}
 
@@ -116,5 +119,6 @@ public class PlayActivity extends Activity {
 		// // // String message = editText.getText().toString();
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
 }

@@ -111,12 +111,14 @@ public class TimeMode extends Activity {
 		Intent intent = new Intent(this, TimeTrial.class);
 		Model.beat_the_clock_mode = true;
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
 
 	public void StartTimeTrialGame(View view) {
 
 		Intent intent = new Intent(this, TimeTrial.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
 
 }

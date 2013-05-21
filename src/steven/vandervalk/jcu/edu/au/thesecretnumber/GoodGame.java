@@ -18,8 +18,19 @@ public class GoodGame extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_good_game);
+
+		String value = null;
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			value = extras.getString("Time_Up");
+		}
+		if (String.valueOf(value) != null) {
+			TextView tv1 = (TextView) findViewById(R.id.textView1);
+			tv1.setText("Time's Up!");
+		}
 
 		TextView time_completed = (TextView) findViewById(R.id.time_completed);
 		time_completed.setText("Completed in : "
@@ -84,11 +95,13 @@ public class GoodGame extends Activity {
 	public void PlayAgainButtonPressed(View view) {
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_out, R.anim.push_left_out);
 	}
 
 	public void QuitButtonPressed(View view) {
 		Intent intent = new Intent(this, ConstantsBrowser.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.fade, R.anim.push_left_out);
 	}
 
 }

@@ -76,12 +76,16 @@ public class MainActivity extends Activity {
 					// intent.putExtra(EXTRA_MESSAGE, message);
 
 					startActivity(intent1);
+					overridePendingTransition(R.anim.zoom_enter,
+							R.anim.zoom_exit);
 					return true;
 				}
 				if (start.getY() > end.getY()) {
 					System.out.println("swiped up");
 
 					startActivity(intent2);
+					overridePendingTransition(R.anim.zoom_enter,
+							R.anim.zoom_exit);
 
 					return true;
 				}
@@ -111,6 +115,7 @@ public class MainActivity extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
+			Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
 			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
@@ -120,6 +125,7 @@ public class MainActivity extends Activity {
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			break;
 		case R.id.action_help:
 			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
@@ -128,6 +134,7 @@ public class MainActivity extends Activity {
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent2);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			break;
 		case R.id.action_scores:
 			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
@@ -136,6 +143,7 @@ public class MainActivity extends Activity {
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent3);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			break;
 
 		default:
@@ -153,6 +161,7 @@ public class MainActivity extends Activity {
 		// String message = editText.getText().toString();
 		// intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 	}
 
 	public void StartHelp(View view) {
@@ -162,6 +171,7 @@ public class MainActivity extends Activity {
 		// String message = editText.getText().toString();
 		// intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.fade, R.anim.fade);
 	}
 
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -186,6 +196,6 @@ public class MainActivity extends Activity {
 		// // // String message = editText.getText().toString();
 		// // // intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
-
 }

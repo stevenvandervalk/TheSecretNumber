@@ -105,6 +105,7 @@ public class NumberRange extends Activity {
 				.show();
 		Intent intent = new Intent(this, NumberType.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 
 	}
 

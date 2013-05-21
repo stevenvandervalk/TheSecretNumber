@@ -48,6 +48,7 @@ public class NumberType extends Activity {
 				+ Model.PrintStatus());
 		Intent intent = new Intent(this, TimeMode.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
 
 	}
 
@@ -58,6 +59,8 @@ public class NumberType extends Activity {
 				+ Model.PrintStatus());
 		Intent intent = new Intent(this, TimeMode.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.slide_top_to_bottom,
+				R.anim.push_left_out);
 
 	}
 
@@ -68,6 +71,7 @@ public class NumberType extends Activity {
 		System.out.println("starting timer class - current model : "
 				+ Model.modelOfCardsToString());
 		startActivity(intent);
+		overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
 	}
 

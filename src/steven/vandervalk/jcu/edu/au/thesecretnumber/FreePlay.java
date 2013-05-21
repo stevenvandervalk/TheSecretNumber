@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -33,6 +34,9 @@ public class FreePlay extends Activity {
 		System.out.println(Model.getMagic_numbers_size());
 		TextView[] txt = new TextView[Model.magic_numbers.size()];
 		VF = (ViewFlipper) findViewById(R.id.ViewFlipper01);
+
+		// VF.setOutAnimation(AnimationUtils
+		// .loadAnimation(this, R.anim.slide_left));
 
 		for (int i = 0; i < txt.length; i++) {
 
@@ -94,7 +98,10 @@ public class FreePlay extends Activity {
 
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped right");
+							VF.setInAnimation(AnimationUtils.loadAnimation(
+									FreePlay.this, R.anim.slide_right));
 							VF.setDisplayedChild(VF.getDisplayedChild() + 1);
+
 							return true;
 						}
 
@@ -103,7 +110,10 @@ public class FreePlay extends Activity {
 							if (VF.getDisplayedChild() == 0) {
 								return true;
 							} else {
+								VF.setInAnimation(AnimationUtils.loadAnimation(
+										FreePlay.this, R.anim.slide_left));
 								VF.setDisplayedChild(VF.getDisplayedChild() - 1);
+
 							}
 						}
 
