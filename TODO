@@ -1,6 +1,9 @@
-add start activity animations to everything as per main activity
 
-rolling sum is not being cleared between games
+add sound effects to : main menu, swiping, etc see jason 
+
+?rolling sum is not being cleared between games
+
+only if problem:
 
 push things off the main thread
 

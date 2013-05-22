@@ -29,7 +29,7 @@ public class GoodGame extends Activity {
 		}
 		if (String.valueOf(value) != null) {
 			TextView tv1 = (TextView) findViewById(R.id.textView1);
-			tv1.setText("Time's Up!");
+			tv1.setText("Good Game!");
 		}
 
 		TextView time_completed = (TextView) findViewById(R.id.time_completed);
@@ -100,6 +100,12 @@ public class GoodGame extends Activity {
 
 	public void QuitButtonPressed(View view) {
 		Intent intent = new Intent(this, ConstantsBrowser.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.fade, R.anim.push_left_out);
+	}
+
+	public void SaveScoreButtonPressed(View view) {
+		Intent intent = new Intent(this, SaveScore.class);
 		startActivity(intent);
 		overridePendingTransition(R.anim.fade, R.anim.push_left_out);
 	}

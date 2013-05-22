@@ -136,6 +136,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" />
         </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.SaveScore"
+            android:label="@string/title_activity_save_score"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

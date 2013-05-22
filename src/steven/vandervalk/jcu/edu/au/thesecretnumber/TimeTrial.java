@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.GestureDetector;
@@ -29,6 +30,8 @@ import android.widget.ViewFlipper;
 
 public class TimeTrial extends Activity {
 
+	CountDownTimer countDownTimer;
+
 	ViewFlipper VF;
 
 	TextView[] txt;
@@ -42,6 +45,8 @@ public class TimeTrial extends Activity {
 	Set<Integer> numbersAdded = new HashSet<Integer>();
 
 	GestureDetector detector_TimeTrial;
+
+	long s1;
 
 	long StartTime = System.currentTimeMillis();
 
@@ -90,13 +95,13 @@ public class TimeTrial extends Activity {
 
 			TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 
-			if (Model.beat_the_clock_mode) {
+			if (!Model.beat_the_clock_mode) {
 
-				TimeText.setText("Time Remaining : "
-						+ (Model.timer_clock - seconds));
-			}
-
-			else {
+				// TimeText.setText("Time Remaining : "
+				// + (Model.timer_clock - seconds));
+				// }
+				//
+				// else {
 
 				if (seconds < 10) {
 					TimeText.setText("Time : " + minutes + ":0" + seconds);
@@ -133,19 +138,31 @@ public class TimeTrial extends Activity {
 
 		new Thread(new Model()).start();
 
+		if (Model.beat_the_clock_mode) {
+			countDownTimer = new CountDownTimer(
+					(long) (Model.timer_clock * 1000), 1000) {
+
+				@Override
+				public void onTick(long millisUntilFinished) {
+					TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
+					TimeText.setText("Time : " + (Model.timer_clock - seconds));
+					s1 = millisUntilFinished;
+
+				}
+
+				@Override
+				public void onFinish() {
+					// TODO Auto-generated method stub
+					System.out.println(" hit 0 time");
+					stopHandler();
+					startGoodGameIntent();
+
+				}
+			};
+		}
+
 		// timer
 		handler.post(task);
-
-		// if (Model.beat_the_clock_mode && timeremaining == 0 stophandler and
-		// start good game activity
-
-		if (timeRemaining < 0.0 & Model.beat_the_clock_mode) {
-			stopHandler();
-			Intent intent = new Intent(this, GoodGame.class);
-			intent.putExtra("Time_Up", true);
-			startActivity(intent);
-			overridePendingTransition(R.anim.shake, R.anim.push_left_out);
-		}
 
 		if (!Model.player_guess_mode) {
 			Button button = (Button) findViewById(R.id.guess_button);
@@ -217,17 +234,55 @@ public class TimeTrial extends Activity {
 
 	@Override
 	protected void onPause() {
-		try {
-			handler.wait();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		super.onPause();
+		if (Model.beat_the_clock_mode) {
+			countDownTimer.cancel();
 		}
+		handler.removeCallbacks(task);
 	}
 
 	@Override
 	protected void onStop() {
+
+		if (Model.beat_the_clock_mode) {
+			countDownTimer.cancel();
+		}
+
 		handler.removeCallbacks(task);
+		super.onStop();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		if (Model.beat_the_clock_mode) {
+			long timervalue = s1;
+
+			countDownTimer = new CountDownTimer(
+					(long) (Model.timer_clock * 1000), 1000) {
+
+				@Override
+				public void onTick(long millisUntilFinished) {
+					TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
+					TimeText.setText("Time Remaining : "
+							+ (Model.timer_clock - seconds));
+					s1 = millisUntilFinished;
+
+				}
+
+				@Override
+				public void onFinish() {
+					// TODO Auto-generated method stub
+					System.out.println(" hit 0 time");
+					stopHandler();
+					startGoodGameIntent();
+
+				}
+			};
+			countDownTimer.start();
+
+		}
 	}
 
 	/**
@@ -550,6 +605,13 @@ public class TimeTrial extends Activity {
 			}
 		}
 
+	}
+
+	public void startGoodGameIntent() {
+		Intent intent = new Intent(this, GoodGame.class);
+		intent.putExtra("Time_Up", true);
+		startActivity(intent);
+		overridePendingTransition(R.anim.shake, R.anim.push_left_out);
 	}
 
 }

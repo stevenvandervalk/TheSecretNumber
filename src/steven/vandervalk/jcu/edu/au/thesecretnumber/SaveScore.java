@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
 
-public class ConstantsBrowser extends ListActivity {
+public class SaveScore extends ListActivity {
 	// Key for Option Menu
 	private static final int ADD_ID = Menu.FIRST + 1;
 	private static final int DELETE_ID = Menu.FIRST + 3;
@@ -43,6 +43,7 @@ public class ConstantsBrowser extends ListActivity {
 						R.id.value });
 		setListAdapter(adapter);
 		registerForContextMenu(getListView());
+		add();
 	}
 
 	@Override
@@ -140,7 +141,7 @@ public class ConstantsBrowser extends ListActivity {
 		ContentValues values = new ContentValues(2);
 
 		values.put(Provider.Constants.TITLE, wrapper.getTitle());
-		values.put(Provider.Constants.VALUE, wrapper.getValue());
+		values.put(Provider.Constants.VALUE, Model.completed_timer);
 
 		getContentResolver().insert(Provider.Constants.CONTENT_URI, values);
 		constantsCursor.requery();
