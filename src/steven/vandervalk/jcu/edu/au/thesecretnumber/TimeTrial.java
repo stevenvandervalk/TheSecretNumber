@@ -48,6 +48,10 @@ public class TimeTrial extends Activity {
 
 	long s1;
 
+	long s2;
+
+	float countDownTimeRemaining;
+
 	long StartTime = System.currentTimeMillis();
 
 	long elapseTime;
@@ -77,6 +81,8 @@ public class TimeTrial extends Activity {
 			minutes = seconds / 60;
 			seconds = seconds % 60;
 			Model.completed_timer = seconds;
+
+			long s2 = seconds;
 
 			timeRemaining = (Model.timer_clock - seconds);
 
@@ -145,6 +151,7 @@ public class TimeTrial extends Activity {
 				@Override
 				public void onTick(long millisUntilFinished) {
 					TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
+					countDownTimeRemaining = (Model.timer_clock - seconds);
 					TimeText.setText("Time : " + (Model.timer_clock - seconds));
 					s1 = millisUntilFinished;
 
@@ -267,6 +274,7 @@ public class TimeTrial extends Activity {
 					TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 					TimeText.setText("Time Remaining : "
 							+ (Model.timer_clock - seconds));
+					countDownTimeRemaining = (Model.timer_clock - seconds);
 					s1 = millisUntilFinished;
 
 				}

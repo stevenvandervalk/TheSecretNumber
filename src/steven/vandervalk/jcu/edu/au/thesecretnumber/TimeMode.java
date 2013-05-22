@@ -29,8 +29,8 @@ public class TimeMode extends Activity {
 
 		SeekBar timeSeekBar = (SeekBar) findViewById(R.id.seekBar1);
 
-		timeSeekBar.setMax(50);
-		timeSeekBar.setProgress(1);
+		timeSeekBar.setMax(300);
+		timeSeekBar.setProgress(10);
 
 		timeSeekBar.setOnSeekBarChangeListener(new yourListener());
 	}

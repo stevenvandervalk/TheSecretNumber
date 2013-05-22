@@ -5,9 +5,15 @@
     android:layout_height="match_parent"
     >
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="This is sparta" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:drawableLeft="@drawable/swipe_left"
+        android:drawableRight="@drawable/swipe_right"
+        android:gravity="left|center|right"
+        android:onClick="StartHighScore"
+        android:text="@string/swipe" />
 
 </LinearLayout>

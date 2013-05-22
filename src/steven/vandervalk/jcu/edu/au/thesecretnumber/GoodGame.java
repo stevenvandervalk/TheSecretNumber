@@ -105,9 +105,17 @@ public class GoodGame extends Activity {
 	}
 
 	public void SaveScoreButtonPressed(View view) {
-		Intent intent = new Intent(this, SaveScore.class);
-		startActivity(intent);
-		overridePendingTransition(R.anim.fade, R.anim.push_left_out);
+
+		if (Model.beat_the_clock_mode) {
+
+			Intent intent = new Intent(this, SaveScore.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.fade, R.anim.push_left_out);
+		} else {
+			Intent intent = new Intent(this, SaveTimeTrialScore.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.fade, R.anim.push_left_out);
+		}
 	}
 
 }

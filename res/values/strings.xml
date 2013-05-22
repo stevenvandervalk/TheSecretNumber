@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">TheSecretNumber</string>
+    <string name="app_name">SecretNumber</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_start_page">StartPage</string>
+    <string name="title_activity_start_page">Start Page</string>
     <string name="title_activity_settings">Settings</string>
     <string name="settings">Settings</string>
     <string name="game_mode">Mode</string>
@@ -25,7 +25,7 @@
     <string name="title_activity_preferences">Preferences</string>
     <string name="help_button">Help</string>
     <string name="title_activity_help">Help</string>
-    <string name="title_activity_ConstantsBrowser">High Scores</string>
+    <string name="title_activity_ConstantsBrowser"> Beat The Clock</string>
     <string name="add_title">Enter Name</string>
     <string name="ok">OK</string>
     <string name="delete_title">Delete Title</string>
@@ -33,32 +33,33 @@
     <string name="freeplay_button">Free Play</string>
     <string name="computerguess_button">The Computer Guesses Your Number</string>
     <string name="playerguess_button">You Guess The Computers Number</string>
-    <string name="title_activity_free_play">FreePlay</string>
+    <string name="title_activity_free_play">Free Play!</string>
     <string name="how_to_play_button">How To Play</string>
     <string name="swipe_up">Swipe Up To Play</string>
     <string name="swipe_down">Swipe Down For Instructions</string>
-    <string name="title_activity_play">PlayActivity</string>
-    <string name="title_activity_number_type">NumberType</string>
+    <string name="title_activity_play">Game Type</string>
+    <string name="title_activity_number_type">Type of Number</string>
     <string name="what_number_type">Choose A Set of Numbers</string>
-    <string name="title_activity_time_mode">TimeMode</string>
+    <string name="title_activity_time_mode">Timer Mode</string>
     <string name="time_mode">Timer Mode</string>
     <string name="choose_a_number_range">Choose A Number Range</string>
-    <string name="title_activity_beat_the_clock">BeatTheClock</string>
+    <string name="title_activity_beat_the_clock">Beat The Clock!</string>
     <string name="title_activity_time_range">Number Range</string>
-    <string name="choose_your_number_range">Range For The Secret Number</string>
+    <string name="choose_your_number_range">Secret Number Range</string>
     <string name="seek_bar_output_label">"0 : "</string>
     <string name="time_progress_value">10 Seconds</string>
-    <string name="title_activity_time_trial">TimeTrial</string>
+    <string name="title_activity_time_trial">Time Trial!</string>
     <string name="Yes_Button">Yes</string>
     <string name="No_Button">No</string>
     <string name="Is_the_secret_number_here">Is The Secret Number Here?</string>
-    <string name="title_activity_computer_guesses">ComputerGuesses</string>
+    <string name="title_activity_computer_guesses">Computer Guesses!</string>
     <string name="is_this_your_number">Is This Your Secret Number?</string>
-    <string name="title_activity_good_game">GoodGame</string>
+    <string name="title_activity_good_game">Good Game!</string>
     <string name="good_game">Good Game!</string>
     <string name="time_completed">"Completed in : "</string>
     <string name="play_again">Play Again?</string>
     <string name="Time_Label">"Time : "</string>
+    <string name="title_activity_ConstantsBrowser2">Time Trials </string>
 
     <style name="ButtonText">
         <item name="android:layout_width">fill_parent</item>
@@ -80,5 +81,7 @@
     <string name="save_score_button">Save Score</string>
     <string name="title_activity_save_score">SaveScore</string>
     <string name="enter_your_name">What\'s Your Name?</string>
+    <string name="title_activity_save_time_trial_score">High Scores | Time Trial</string>
+    <string name="swipe">Swipe</string>
 
 </resources>

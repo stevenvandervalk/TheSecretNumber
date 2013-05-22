@@ -84,16 +84,19 @@ public final class R {
         public static final int settings_light=0x7f020015;
         public static final int star_big_on=0x7f020016;
         public static final int stat_happy=0x7f020017;
-        public static final int volume_on=0x7f020018;
+        public static final int swipe_left=0x7f020018;
+        public static final int swipe_right=0x7f020019;
+        public static final int volume_on=0x7f02001a;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f0a0004;
         public static final int ScrollView1=0x7f0a0023;
         public static final int TimeLabel=0x7f0a001c;
         public static final int ViewFlipper01=0x7f0a0006;
-        public static final int action_help=0x7f0a002a;
-        public static final int action_scores=0x7f0a002b;
+        public static final int action_help=0x7f0a002b;
+        public static final int action_scores=0x7f0a002c;
         public static final int action_settings=0x7f0a0029;
+        public static final int action_swipe=0x7f0a002a;
         public static final int button1=0x7f0a0000;
         public static final int button2=0x7f0a0001;
         public static final int button3=0x7f0a0008;
@@ -144,34 +147,40 @@ public final class R {
         public static final int activity_play=0x7f030008;
         public static final int activity_player_guesses=0x7f030009;
         public static final int activity_save_score=0x7f03000a;
-        public static final int activity_settings=0x7f03000b;
-        public static final int activity_start_page=0x7f03000c;
-        public static final int activity_time_mode=0x7f03000d;
-        public static final int activity_time_trial=0x7f03000e;
-        public static final int add_edit=0x7f03000f;
-        public static final int help=0x7f030010;
-        public static final int main=0x7f030011;
-        public static final int row=0x7f030012;
+        public static final int activity_save_time_trial_score=0x7f03000b;
+        public static final int activity_settings=0x7f03000c;
+        public static final int activity_start_page=0x7f03000d;
+        public static final int activity_time_mode=0x7f03000e;
+        public static final int activity_time_trial=0x7f03000f;
+        public static final int add_edit=0x7f030010;
+        public static final int add_edit2=0x7f030011;
+        public static final int help=0x7f030012;
+        public static final int main=0x7f030013;
+        public static final int main2=0x7f030014;
+        public static final int row=0x7f030015;
+        public static final int row2=0x7f030016;
     }
     public static final class menu {
         public static final int beat_the_clock=0x7f090000;
-        public static final int computer_guesses=0x7f090001;
-        public static final int free_play=0x7f090002;
-        public static final int good_game=0x7f090003;
-        public static final int menu=0x7f090004;
-        public static final int number_type=0x7f090005;
-        public static final int play=0x7f090006;
-        public static final int player_guesses=0x7f090007;
-        public static final int preferences=0x7f090008;
-        public static final int save_score=0x7f090009;
-        public static final int settings=0x7f09000a;
-        public static final int start_page=0x7f09000b;
-        public static final int time_mode=0x7f09000c;
-        public static final int time_range=0x7f09000d;
-        public static final int time_trial=0x7f09000e;
+        public static final int browsers=0x7f090001;
+        public static final int computer_guesses=0x7f090002;
+        public static final int free_play=0x7f090003;
+        public static final int good_game=0x7f090004;
+        public static final int menu=0x7f090005;
+        public static final int number_type=0x7f090006;
+        public static final int play=0x7f090007;
+        public static final int player_guesses=0x7f090008;
+        public static final int preferences=0x7f090009;
+        public static final int save_score=0x7f09000a;
+        public static final int save_time_trial_score=0x7f09000b;
+        public static final int settings=0x7f09000c;
+        public static final int start_page=0x7f09000d;
+        public static final int time_mode=0x7f09000e;
+        public static final int time_range=0x7f09000f;
+        public static final int time_trial=0x7f090010;
     }
     public static final class string {
-        public static final int Guess=0x7f07004a;
+        public static final int Guess=0x7f07004b;
         public static final int Is_the_secret_number_here=0x7f070042;
         public static final int No_Button=0x7f070041;
         public static final int Scoring_mode=0x7f07001c;
@@ -190,7 +199,7 @@ public final class R {
         public static final int choose_your_number_range=0x7f07003c;
         public static final int computerguess_button=0x7f07002e;
         public static final int delete_title=0x7f07002b;
-        public static final int enter_your_name=0x7f07004f;
+        public static final int enter_your_name=0x7f070050;
         public static final int fibonnacci=0x7f07001a;
         public static final int free_play=0x7f070017;
         public static final int freeplay_button=0x7f07002d;
@@ -219,10 +228,11 @@ public final class R {
         public static final int play_game_button=0x7f070023;
         public static final int playerguess_button=0x7f07002f;
         public static final int prime_numbers=0x7f070019;
-        public static final int save_score_button=0x7f07004d;
+        public static final int save_score_button=0x7f07004e;
         public static final int save_settings=0x7f070021;
         public static final int seek_bar_output_label=0x7f07003d;
         public static final int settings=0x7f070015;
+        public static final int swipe=0x7f070052;
         public static final int swipe_down=0x7f070033;
         public static final int swipe_up=0x7f070032;
         public static final int time_completed=0x7f070047;
@@ -230,6 +240,7 @@ public final class R {
         public static final int time_progress_value=0x7f07003e;
         public static final int time_trial=0x7f07001f;
         public static final int title_activity_ConstantsBrowser=0x7f070028;
+        public static final int title_activity_ConstantsBrowser2=0x7f07004a;
         public static final int title_activity_beat_the_clock=0x7f07003a;
         public static final int title_activity_computer_guesses=0x7f070043;
         public static final int title_activity_free_play=0x7f070030;
@@ -237,9 +248,10 @@ public final class R {
         public static final int title_activity_help=0x7f070027;
         public static final int title_activity_number_type=0x7f070035;
         public static final int title_activity_play=0x7f070034;
-        public static final int title_activity_player_guesses=0x7f07004b;
+        public static final int title_activity_player_guesses=0x7f07004c;
         public static final int title_activity_preferences=0x7f070025;
-        public static final int title_activity_save_score=0x7f07004e;
+        public static final int title_activity_save_score=0x7f07004f;
+        public static final int title_activity_save_time_trial_score=0x7f070051;
         public static final int title_activity_settings=0x7f070014;
         public static final int title_activity_start_page=0x7f070013;
         public static final int title_activity_time_mode=0x7f070037;
@@ -249,7 +261,7 @@ public final class R {
         public static final int topic_section2=0x7f070009;
         public static final int topic_section3=0x7f07000c;
         public static final int topic_section4=0x7f07000f;
-        public static final int what_is_your_guess=0x7f07004c;
+        public static final int what_is_your_guess=0x7f07004d;
         public static final int what_number_type=0x7f070036;
     }
     public static final class style {

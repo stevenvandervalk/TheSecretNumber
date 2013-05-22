@@ -4,12 +4,17 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -17,6 +22,8 @@ import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
 
 public class ConstantsBrowser extends ListActivity {
+
+	private GestureDetector detector;
 	// Key for Option Menu
 	private static final int ADD_ID = Menu.FIRST + 1;
 	private static final int DELETE_ID = Menu.FIRST + 3;
@@ -43,20 +50,75 @@ public class ConstantsBrowser extends ListActivity {
 						R.id.value });
 		setListAdapter(adapter);
 		registerForContextMenu(getListView());
+
+		// swipe gestures #TODO Change to switch between high score tables on
+		// swipe left and right
+
+		final Intent intent1 = new Intent(this, ConstantsBrowser2.class);
+
+		// change to play activity
+		// Intent intent4 = new Intent(this, HelpActivity.class);
+
+		detector = new GestureDetector(this, new SimpleOnGestureListener() {
+
+			@Override
+			public boolean onDoubleTap(MotionEvent e) {
+				System.out.println("double tap!");
+
+				return true;
+			}
+
+			@Override
+			public boolean onFling(MotionEvent start, MotionEvent end,
+					float velocityX, float velocityY) {
+				// TODO Auto-generated method stub
+
+				if (start.getX() < end.getX()) {
+
+					// EditText editText = (EditText) findViewById
+					// (R.id.edit_message);
+					// String message = editText.getText().toString();
+					// intent.putExtra(EXTRA_MESSAGE, message);
+
+					startOtherBrowser(intent1);
+					return true;
+				}
+				if (start.getX() > end.getX()) {
+					System.out.println("swiped up");
+
+					startOtherBrowser(intent1);
+
+					return true;
+				}
+
+				return false;
+			}
+
+		});
+		// return true;
+
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		return detector.onTouchEvent(event);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ADD_ID, Menu.NONE, "Add").setIcon(R.drawable.add)
-				.setAlphabeticShortcut('a');
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.browsers, menu);
+
 		return (super.onCreateOptionsMenu(menu));
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case ADD_ID:
-			add();
+		case R.id.action_swipe:
+			Intent intent1 = new Intent(this, ConstantsBrowser2.class);
+			startOtherBrowser(intent1);
 			return (true);
 		}
 		return (super.onOptionsItemSelected(item));
@@ -155,6 +217,11 @@ public class ConstantsBrowser extends ListActivity {
 		getContentResolver().delete(Provider.Constants.CONTENT_URI,
 				Provider.Constants._ID + "=?", args);
 		constantsCursor.requery();
+	}
+
+	public void startOtherBrowser(final Intent intent1) {
+		startActivity(intent1);
+		overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 	}
 
 	class DialogWrapper {

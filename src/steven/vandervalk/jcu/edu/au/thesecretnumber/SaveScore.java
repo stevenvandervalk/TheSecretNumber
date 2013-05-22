@@ -140,6 +140,11 @@ public class SaveScore extends ListActivity {
 	public void processAdd(DialogWrapper wrapper) {
 		ContentValues values = new ContentValues(2);
 
+		if (!Model.player_guess_mode) {
+			values.put(Provider.Constants.TITLE, "Computer ");
+			values.put(Provider.Constants.VALUE, Model.completed_timer);
+		}
+
 		values.put(Provider.Constants.TITLE, wrapper.getTitle());
 		values.put(Provider.Constants.VALUE, Model.completed_timer);
 
