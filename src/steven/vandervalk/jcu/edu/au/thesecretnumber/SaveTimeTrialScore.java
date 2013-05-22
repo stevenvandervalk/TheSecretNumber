@@ -41,7 +41,7 @@ public class SaveTimeTrialScore extends ListActivity {
 
 		constantsCursor = managedQuery(Provider2.Constants2.CONTENT_URI,
 				PROJECTION, null, null, null);
-		ListAdapter adapter = new SimpleCursorAdapter(this, R.layout.row,
+		ListAdapter adapter = new SimpleCursorAdapter(this, R.layout.row2,
 				constantsCursor, new String[] { Provider2.Constants2.TITLE,
 						Provider2.Constants2.VALUE }, new int[] { R.id.title,
 						R.id.value });
@@ -50,7 +50,7 @@ public class SaveTimeTrialScore extends ListActivity {
 
 		// put a button or flag when calling add is appropriate
 
-		// add();
+		add();
 	}
 
 	@Override
@@ -146,6 +146,11 @@ public class SaveTimeTrialScore extends ListActivity {
 
 	public void processAdd(DialogWrapper wrapper) {
 		ContentValues values = new ContentValues(2);
+
+		if (!Model.player_guess_mode) {
+			values.put(Provider2.Constants2.TITLE, "Computer ");
+			values.put(Provider2.Constants2.VALUE, Model.completed_timer);
+		}
 
 		values.put(Provider2.Constants2.TITLE, wrapper.getTitle());
 		values.put(Provider2.Constants2.VALUE, Model.completed_timer);

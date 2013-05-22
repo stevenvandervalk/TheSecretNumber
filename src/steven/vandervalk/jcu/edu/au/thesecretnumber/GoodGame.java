@@ -25,11 +25,11 @@ public class GoodGame extends Activity {
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
-			value = extras.getString("Time_Up");
+			value = "Time Up";
 		}
 		if (String.valueOf(value) != null) {
 			TextView tv1 = (TextView) findViewById(R.id.textView1);
-			tv1.setText("Good Game!");
+			tv1.setText(value);
 		}
 
 		TextView time_completed = (TextView) findViewById(R.id.time_completed);

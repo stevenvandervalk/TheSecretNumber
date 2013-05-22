@@ -20,14 +20,14 @@ public class Provider2 extends ContentProvider {
 
 	public static final class Constants2 implements BaseColumns {
 		public static final Uri CONTENT_URI = Uri
-				.parse("content://steven.vandervalk.jcu.edu.au.Provider/constants");
+				.parse("content://steven.vandervalk.jcu.edu.au.Provider2/constants2");
 		// Expose a content URI for this provider. This URI will be used to
 		// access the Content Provider
 		// from within application components using a ContentResolver
 		/**
 		 * SQL table columns
 		 */
-		public static final String DEFAULT_SORT_ORDER = "title";
+		public static final String DEFAULT_SORT_ORDER = "value";
 		public static final String TITLE = "title";
 		public static final String VALUE = "value";
 	}

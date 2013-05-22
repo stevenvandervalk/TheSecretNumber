@@ -61,6 +61,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/yes_button"
+        android:drawableLeft="@drawable/swipe_left"
+        android:drawableRight="@drawable/swipe_right"
+        android:gravity="left|center|right"
         android:layout_centerHorizontal="true"
         android:onClick="GuessButtonPressed"
         android:text="@string/Guess" />
