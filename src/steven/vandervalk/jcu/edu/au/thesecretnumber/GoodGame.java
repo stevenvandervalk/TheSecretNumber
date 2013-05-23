@@ -3,6 +3,7 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -14,10 +15,14 @@ import android.widget.Toast;
 
 public class GoodGame extends Activity {
 
+	MediaPlayer player;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_good_game);
+
+		player = MediaPlayer.create(this, R.raw.mario_coin);
 
 		String value = null;
 		// Show the Up button in the action bar.
@@ -108,10 +113,13 @@ public class GoodGame extends Activity {
 
 		if (Model.beat_the_clock_mode) {
 
+			player.start();
+
 			Intent intent = new Intent(this, SaveScore.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.fade, R.anim.push_left_out);
 		} else {
+			player.start();
 			Intent intent = new Intent(this, SaveTimeTrialScore.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.fade, R.anim.push_left_out);

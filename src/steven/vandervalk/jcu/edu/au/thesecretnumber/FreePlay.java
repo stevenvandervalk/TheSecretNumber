@@ -3,6 +3,7 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import java.util.Arrays;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -13,6 +14,7 @@ import android.widget.ViewFlipper;
 
 public class FreePlay extends Activity {
 
+	MediaPlayer player;
 	// RadioButton RB0;
 	// RadioButton RB1;
 	// RadioButton RB2;
@@ -23,6 +25,9 @@ public class FreePlay extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+
+		player = MediaPlayer.create(this, R.raw.mario_jump);
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_free_play);
 
@@ -98,6 +103,7 @@ public class FreePlay extends Activity {
 
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped right");
+							player.start();
 							VF.setInAnimation(AnimationUtils.loadAnimation(
 									FreePlay.this, R.anim.slide_right));
 							VF.setDisplayedChild(VF.getDisplayedChild() + 1);
@@ -110,6 +116,7 @@ public class FreePlay extends Activity {
 							if (VF.getDisplayedChild() == 0) {
 								return true;
 							} else {
+								player.start();
 								VF.setInAnimation(AnimationUtils.loadAnimation(
 										FreePlay.this, R.anim.slide_left));
 								VF.setDisplayedChild(VF.getDisplayedChild() - 1);

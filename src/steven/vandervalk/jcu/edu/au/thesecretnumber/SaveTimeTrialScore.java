@@ -5,6 +5,7 @@ import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.GestureDetector;
@@ -20,6 +21,7 @@ import android.widget.SimpleCursorAdapter;
 public class SaveTimeTrialScore extends ListActivity {
 
 	private GestureDetector detector;
+	MediaPlayer player;
 
 	// Key for Option Menu
 	private static final int ADD_ID = Menu.FIRST + 1;
@@ -33,6 +35,9 @@ public class SaveTimeTrialScore extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		player = MediaPlayer.create(this, R.raw.mario_powerup);
+
 		// call Provider.query() to get Cursor
 		// Wrapper around ContentResolver.query(android.net.Uri, String[],
 		// String, String[],
@@ -105,6 +110,7 @@ public class SaveTimeTrialScore extends ListActivity {
 							public void onClick(DialogInterface dialog,
 									int whichButton) {
 								processAdd(wrapper2);
+								player.start();
 							}
 						})
 				.setNegativeButton(R.string.cancel,

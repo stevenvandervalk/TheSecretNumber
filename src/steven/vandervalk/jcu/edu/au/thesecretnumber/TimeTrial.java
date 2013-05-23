@@ -11,6 +11,8 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -29,6 +31,12 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class TimeTrial extends Activity {
+
+	BackgroundSound mBackgroundSound = new BackgroundSound();
+
+	MediaPlayer player;
+
+	MediaPlayer player2;
 
 	CountDownTimer countDownTimer;
 
@@ -135,10 +143,35 @@ public class TimeTrial extends Activity {
 
 	// handler.post(task)
 
+	public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+
+		@Override
+		protected Void doInBackground(Void... params) {
+
+			boolean isCancelled = mBackgroundSound.isCancelled();
+
+			MediaPlayer player = MediaPlayer.create(TimeTrial.this,
+					R.raw.action);
+			player.setLooping(false); // Set looping?
+			player.setVolume(100, 100);
+			player.start();
+			if (!isCancelled) {
+				player.stop();
+			}
+
+			return null;
+		}
+
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_trial);
+
+		// player = MediaPlayer.create(this, R.raw.action);
+		player2 = MediaPlayer.create(this, R.raw.mario_jump);
+		// player.start();
 
 		// start a new model with new static variables
 
@@ -162,6 +195,7 @@ public class TimeTrial extends Activity {
 					// TODO Auto-generated method stub
 					System.out.println(" hit 0 time");
 					stopHandler();
+					player.stop();
 					startGoodGameIntent();
 
 				}
@@ -242,10 +276,13 @@ public class TimeTrial extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+
 		if (Model.beat_the_clock_mode) {
 			countDownTimer.cancel();
 		}
 		handler.removeCallbacks(task);
+		mBackgroundSound.cancel(true);
+
 	}
 
 	@Override
@@ -256,12 +293,18 @@ public class TimeTrial extends Activity {
 		}
 
 		handler.removeCallbacks(task);
+		// player.stop();
+		mBackgroundSound.cancel(true);
+
 		super.onStop();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		// player.start();
+		mBackgroundSound.cancel(true);
+		new BackgroundSound().execute(null, null, null);
 
 		if (Model.beat_the_clock_mode) {
 			long timervalue = s1;
@@ -284,6 +327,8 @@ public class TimeTrial extends Activity {
 					// TODO Auto-generated method stub
 					System.out.println(" hit 0 time");
 					stopHandler();
+					mBackgroundSound.cancel(true);
+
 					startGoodGameIntent();
 
 				}
@@ -325,6 +370,7 @@ public class TimeTrial extends Activity {
 
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped right");
+							player2.start();
 
 							// if at last game start player guessing activity
 							VF.setInAnimation(AnimationUtils.loadAnimation(
@@ -415,6 +461,7 @@ public class TimeTrial extends Activity {
 							if (VF.getDisplayedChild() == 0) {
 								return true;
 							} else {
+								player2.start();
 								VF.setInAnimation(AnimationUtils.loadAnimation(
 										TimeTrial.this, R.anim.slide_left));
 								VF.setDisplayedChild(VF.getDisplayedChild() - 1);

@@ -5,6 +5,7 @@ import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -17,6 +18,8 @@ import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
 
 public class SaveScore extends ListActivity {
+
+	MediaPlayer player;
 	// Key for Option Menu
 	private static final int ADD_ID = Menu.FIRST + 1;
 	private static final int DELETE_ID = Menu.FIRST + 3;
@@ -29,6 +32,9 @@ public class SaveScore extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		player = MediaPlayer.create(this, R.raw.mario_powerup);
+
 		// call Provider.query() to get Cursor
 		// Wrapper around ContentResolver.query(android.net.Uri, String[],
 		// String, String[],
@@ -98,6 +104,7 @@ public class SaveScore extends ListActivity {
 							public void onClick(DialogInterface dialog,
 									int whichButton) {
 								processAdd(wrapper);
+								player.start();
 							}
 						})
 				.setNegativeButton(R.string.cancel,
