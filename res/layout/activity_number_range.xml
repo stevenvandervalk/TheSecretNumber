@@ -3,7 +3,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@drawable/bg2">
 
     <TextView
         android:id="@+id/textView1"
@@ -23,16 +24,6 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="127dp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBar1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:onClick="StartNumberTypeActivity"
-        android:text="@string/save_settings" />
-
     <TextView
         android:id="@+id/seekbar_progress"
         android:layout_width="wrap_content"
@@ -42,5 +33,15 @@
         android:layout_marginTop="40dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/seek_bar_output_label" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBar1"
+        android:layout_marginTop="58dp"
+        android:onClick="StartNumberTypeActivity"
+        android:text="@string/save_settings" />
 
 </RelativeLayout>

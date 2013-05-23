@@ -152,6 +152,11 @@ public class TimeTrial extends Activity {
 
 			MediaPlayer player = MediaPlayer.create(TimeTrial.this,
 					R.raw.action);
+
+			if (Model.beat_the_clock_mode) {
+				player = MediaPlayer.create(TimeTrial.this, R.raw.countdown);
+			}
+
 			player.setLooping(false); // Set looping?
 			player.setVolume(100, 100);
 			player.start();

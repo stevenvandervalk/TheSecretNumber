@@ -25,6 +25,8 @@ public class MainActivity extends Activity {
 
 	MediaPlayer player;
 
+	boolean isCancelled = false;
+
 	private GestureDetector detector;
 	BackgroundSound mBackgroundSound = new BackgroundSound();
 
@@ -33,15 +35,15 @@ public class MainActivity extends Activity {
 		@Override
 		protected Void doInBackground(Void... params) {
 
-			boolean isCancelled = mBackgroundSound.isCancelled();
+			isCancelled = mBackgroundSound.isCancelled();
 
 			MediaPlayer player = MediaPlayer.create(MainActivity.this,
-					R.raw.snooze);
+					R.raw.mario_themesong);
 			player.setLooping(false); // Set looping?
 			player.setVolume(100, 100);
-			player.start();
-			if (!isCancelled) {
-				player.stop();
+
+			while (!isCancelled) {
+				player.start();
 			}
 
 			return null;
@@ -52,8 +54,9 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		mBackgroundSound.cancel(true);
+
 		new BackgroundSound().execute(null, null, null);
+
 	}
 
 	@Override

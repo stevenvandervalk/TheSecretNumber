@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg2"
     tools:context=".NumberType" >
 
     <TextView
@@ -33,8 +34,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="50dp"
+        android:layout_centerVertical="true"
         android:onClick="setArrayTypeFibonacci"
         android:text="@string/fibonnacci" />
 
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button2"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
         android:onClick="setArrayTypePrime"
         android:text="@string/prime_numbers" />
 
