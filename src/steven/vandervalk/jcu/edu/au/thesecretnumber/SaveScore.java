@@ -159,6 +159,16 @@ public class SaveScore extends ListActivity {
 		constantsCursor.requery();
 	}
 
+	public void processAddComputerScore() {
+		ContentValues values = new ContentValues(2);
+
+		values.put(Provider.Constants.TITLE, "Computer ");
+		values.put(Provider.Constants.VALUE, Model.completed_timer);
+
+		getContentResolver().insert(Provider.Constants.CONTENT_URI, values);
+		constantsCursor.requery();
+	}
+
 	/**
 	 * Delete Constant Value to SQLite database via ContentProvider
 	 */
@@ -171,6 +181,17 @@ public class SaveScore extends ListActivity {
 	}
 
 	class DialogWrapper {
+
+		public void processAddComputerScore() {
+			ContentValues values = new ContentValues(2);
+
+			values.put(Provider.Constants.TITLE, "Computer ");
+			values.put(Provider.Constants.VALUE, Model.completed_timer);
+
+			getContentResolver().insert(Provider.Constants.CONTENT_URI, values);
+			constantsCursor.requery();
+		}
+
 		EditText titleField = null;
 		EditText valueField = null;
 		View base = null;

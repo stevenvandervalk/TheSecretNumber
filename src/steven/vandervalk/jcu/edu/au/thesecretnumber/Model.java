@@ -18,6 +18,8 @@ public class Model implements Runnable {
 
 	public static boolean beat_the_clock_mode = false;
 
+	public static boolean stop_the_theme_music = false;
+
 	static int[] FIBONACCI_ARRAY = { 1, 2, 3, 5, 8, 13, 21, 34 };
 	static int[] PRIME_ARRAY = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23 };
 	static int[] BINARY_ARRAY = { 1, 2, 4, 8, 16, 32 };

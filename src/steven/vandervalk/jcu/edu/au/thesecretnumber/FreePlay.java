@@ -3,18 +3,25 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import java.util.Arrays;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class FreePlay extends Activity {
 
 	MediaPlayer player;
+	MediaPlayer player2;
 	// RadioButton RB0;
 	// RadioButton RB1;
 	// RadioButton RB2;
@@ -27,6 +34,7 @@ public class FreePlay extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		player = MediaPlayer.create(this, R.raw.mario_jump);
+		player2 = MediaPlayer.create(this, R.raw.mario_pipe);
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_free_play);
@@ -135,6 +143,68 @@ public class FreePlay extends Activity {
 	public boolean onTouchEvent(MotionEvent event) {
 		// TODO Auto-generated method stub
 		return detector_FreePlay.onTouchEvent(event);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
+			//
+			Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+			player2.start();
+			NavUtils.navigateUpFromSameTask(this);
+		case R.id.action_settings:
+			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
+					.show();
+			player2.start();
+			Intent intent = new Intent(this, Settings.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+		case R.id.action_help:
+			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+			player2.start();
+			Intent intent2 = new Intent(this, HelpActivity.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent2);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+		case R.id.action_scores:
+			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			player2.start();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+
+		default:
+			break;
+		}
+		// return true;
+
+		return super.onOptionsItemSelected(item);
 	}
 
 	/*

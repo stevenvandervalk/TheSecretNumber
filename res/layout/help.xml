@@ -21,6 +21,7 @@
         android:text="@string/help_page_intro"
         android:padding="2dip"
         android:layout_weight="1"
+         android:textAppearance="?android:attr/textAppearanceMedium" 
            />
     <LinearLayout
         android:orientation="horizontal"
@@ -28,13 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="4dip">
+        
         <Button android:id="@+id/help_button1"
         android:layout_weight="1"
+        android:drawableLeft="@drawable/swipe_left"
+        android:drawableRight="@drawable/swipe_right"
+       
         android:layout_width="180dip"
         android:layout_height="wrap_content"
      
-            android:onClick="onClickHelp"
-            android:text="@string/help_title_section1"
+     
 />
         <TextView  
            android:layout_width="wrap_content" 
@@ -50,13 +54,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+       
         <Button android:id="@+id/help_button2"
         android:layout_weight="1"
         android:layout_width="180dip"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/settings_light"
+        android:drawableRight="@drawable/settings_light"
           
-            android:onClick="onClickHelp"
-            android:text="@string/help_title_section2"
  />
         <TextView  
            android:layout_width="wrap_content" 
@@ -72,13 +77,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+        
         <Button android:id="@+id/help_button3"
         android:layout_weight="1"
         android:layout_width="180dip"
         android:layout_height="wrap_content"
-           
-            android:onClick="onClickHelp"
-            android:text="@string/help_title_section3"
+        android:drawableLeft="@drawable/scores_light"
+        android:text="@string/Scoring_mode"
             />
         <TextView  
            android:layout_width="wrap_content" 
@@ -94,13 +99,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+        
         <Button android:id="@+id/help_button4"
         android:layout_weight="1"
         android:layout_width="180dip"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/clock_light"
+        android:text="Clock"
             
-            android:onClick="onClickHelp"
-            android:text="@string/help_title_section4"
+           
         />
         <TextView  
            android:layout_width="wrap_content" 

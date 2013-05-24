@@ -9,26 +9,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-/**
- * This is the Help activity for the application. It displays some basic help
- * information. Clicking on the icons takes the user to a detailed description.
- * 
- */
-
 public class HelpActivity extends Activity {
 
 	static public final String ARG_TEXT_ID = "text_id";
-
-	/**
-	 * onCreate - called when the activity is first created. Called when the
-	 * activity is first created. This is where you should do all of your normal
-	 * static set up: create views, bind data to lists, etc. This method also
-	 * provides you with a Bundle containing the activity's previously frozen
-	 * state, if there was one.
-	 * 
-	 * Always followed by onStart().
-	 * 
-	 */
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +42,7 @@ public class HelpActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
-			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
-					.show();
+
 			Intent intent = new Intent(this, Settings.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -82,38 +64,5 @@ public class HelpActivity extends Activity {
 
 	/**
  */
-	// Methods
 
-	/**
-	 * Handle the click of one of the help buttons on the page. Start an
-	 * activity to display the help text for the topic selected.
-	 * 
-	 * @param v
-	 *            View
-	 * @return void
-	 */
-
-	/**
-	 * Start a TopicActivity and show the text indicated by argument 1.
-	 * 
-	 * @param textId
-	 *            int - resource id of the text to show
-	 * @return void
-	 */
-
-	/**
-	 * Show a string on the screen via Toast.
-	 * 
-	 * @param msg
-	 *            String
-	 * @param longLength
-	 *            boolean - show message a long time
-	 * @return void
-	 */
-
-	public void toast(String msg, boolean longLength) {
-		Toast.makeText(getApplicationContext(), msg,
-				(longLength ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT)).show();
-	}
-
-} // end class
+}

@@ -1,6 +1,5 @@
-Add second ConstantsBrowser class   
+if app guesses correctly first time, then score is recorded
 
-add sound effects to : main menu, swiping, etc see jason 
 
 ?rolling sum is not being cleared between games
 

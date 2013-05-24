@@ -3,15 +3,21 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class PlayActivity extends Activity {
+
+	MediaPlayer player_theme;
+
+	MediaPlayer player_pipe;
+
+	MediaPlayer player_coin;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,36 @@ public class PlayActivity extends Activity {
 		setContentView(R.layout.activity_play);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		player_theme = MediaPlayer.create(this, R.raw.mario_themesong);
+		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_coin = MediaPlayer.create(this, R.raw.mario_coin);
+
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		player_theme.pause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		player_theme.start();
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		player_theme.start();
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		player_theme.stop();
+		player_theme.release();
 
 	}
 
@@ -35,7 +71,7 @@ public class PlayActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.play, menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
 		return true;
 	}
 
@@ -50,11 +86,11 @@ public class PlayActivity extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
-			Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+
+			player_pipe.start();
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
-			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
-					.show();
+			player_pipe.start();
 			Intent intent = new Intent(this, Settings.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -62,7 +98,7 @@ public class PlayActivity extends Activity {
 			startActivity(intent);
 			break;
 		case R.id.action_help:
-			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
 			Intent intent2 = new Intent(this, HelpActivity.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -70,7 +106,7 @@ public class PlayActivity extends Activity {
 			startActivity(intent2);
 			break;
 		case R.id.action_scores:
-			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
 			Intent intent3 = new Intent(this, ConstantsBrowser.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -88,6 +124,7 @@ public class PlayActivity extends Activity {
 
 	public void StartFreePlay(View view) {
 		// // // Make magics
+		player_coin.start();
 		Intent intent = new Intent(this, FreePlay.class);
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);
@@ -99,6 +136,7 @@ public class PlayActivity extends Activity {
 
 	public void StartComputerGuessMode(View view) {
 		// // // Make magics
+		player_coin.start();
 		Model.player_guess_mode = false;
 		Intent intent = new Intent(this, NumberRange.class);
 		// // // EditText editText = (EditText) findViewById
@@ -112,6 +150,7 @@ public class PlayActivity extends Activity {
 
 	public void StartPlayerGuessMode(View view) {
 		// // // Make magics
+		player_coin.start();
 		Model.player_guess_mode = true;
 		Intent intent = new Intent(this, NumberRange.class);
 		// // // EditText editText = (EditText) findViewById

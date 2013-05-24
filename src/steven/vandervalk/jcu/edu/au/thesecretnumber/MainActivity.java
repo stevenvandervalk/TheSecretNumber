@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -23,54 +22,46 @@ import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {
 
-	MediaPlayer player;
+	MediaPlayer player_pipe;
+
+	MediaPlayer player_theme;
 
 	boolean isCancelled = false;
 
 	private GestureDetector detector;
-	BackgroundSound mBackgroundSound = new BackgroundSound();
 
-	public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+	// BackgroundSound themeMusic = new BackgroundSound();
 
-		@Override
-		protected Void doInBackground(Void... params) {
-
-			isCancelled = mBackgroundSound.isCancelled();
-
-			MediaPlayer player = MediaPlayer.create(MainActivity.this,
-					R.raw.mario_themesong);
-			player.setLooping(false); // Set looping?
-			player.setVolume(100, 100);
-
-			while (!isCancelled) {
-				player.start();
-			}
-
-			return null;
-		}
-
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-
-		new BackgroundSound().execute(null, null, null);
-
-	}
-
-	@Override
-	public void onPause() {
-		mBackgroundSound.cancel(true);
-		super.onPause();
-
-	}
-
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		mBackgroundSound.cancel(true);
-	}
+	// public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+	//
+	// @Override
+	// protected Void doInBackground(Void... params) {
+	//
+	// MediaPlayer player = MediaPlayer.create(MainActivity.this,
+	// R.raw.mario_themesong);
+	//
+	// player.setVolume(100, 100);
+	// try {
+	// player.prepare();
+	// } catch (IllegalStateException e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// } catch (IOException e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	//
+	// while (!themeMusic.isCancelled()) {
+	// player.start();
+	// }
+	// if (Model.stop_the_theme_music) {
+	// player.stop();
+	// }
+	//
+	// return null;
+	// }
+	//
+	// }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +69,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		System.out.println("running model");
 
-		player = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_theme = MediaPlayer.create(this, R.raw.mario_themesong);
 
 		String value = "BINARY"; // assume input from gui #still to be wired
 
@@ -86,10 +78,40 @@ public class MainActivity extends Activity {
 
 		Model.max_length = 20; // assume later input from gui
 
+		// test running this on async
 		new Thread(new Model()).start();
 
 		System.out.println("created first model in main : ");
 		// Model.PrintStatus();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		player_theme.start();
+
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+
+		player_theme.stop();
 	}
 
 	@Override
@@ -122,6 +144,7 @@ public class MainActivity extends Activity {
 
 				if (start.getY() < end.getY()) {
 					System.out.println("swiped down");
+					player_pipe.start();
 
 					// EditText editText = (EditText) findViewById
 					// (R.id.edit_message);
@@ -135,6 +158,8 @@ public class MainActivity extends Activity {
 				}
 				if (start.getY() > end.getY()) {
 					System.out.println("swiped up");
+
+					player_pipe.start();
 
 					startActivity(intent2);
 					overridePendingTransition(R.anim.zoom_enter,
@@ -168,13 +193,12 @@ public class MainActivity extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
-			Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
-			player.start();
+			// Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
-			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
-					.show();
-			player.start();
+
+			player_pipe.start();
 			Intent intent = new Intent(this, Settings.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -184,7 +208,7 @@ public class MainActivity extends Activity {
 			break;
 		case R.id.action_help:
 			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
-			player.start();
+			player_pipe.start();
 			Intent intent2 = new Intent(this, HelpActivity.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -194,7 +218,7 @@ public class MainActivity extends Activity {
 			break;
 		case R.id.action_scores:
 			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
-			player.start();
+			player_pipe.start();
 			Intent intent3 = new Intent(this, ConstantsBrowser.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
@@ -213,7 +237,7 @@ public class MainActivity extends Activity {
 
 	public void StartSettings(View view) {
 		// Make magics
-		player.start();
+		player_pipe.start();
 		Intent intent = new Intent(this, Settings.class);
 		// EditText editText = (EditText) findViewById (R.id.edit_message);
 		// String message = editText.getText().toString();
@@ -224,7 +248,7 @@ public class MainActivity extends Activity {
 
 	public void StartHelp(View view) {
 		// Make magics
-		player.start();
+		player_pipe.start();
 		Intent intent = new Intent(this, HelpActivity.class);
 		// EditText editText = (EditText) findViewById (R.id.edit_message);
 		// String message = editText.getText().toString();
@@ -236,7 +260,7 @@ public class MainActivity extends Activity {
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	public void StartHighScore(View view) {
 		// // // Make magics
-		player.start();
+		player_pipe.start();
 		Intent intent = new Intent(this, ConstantsBrowser.class);
 		ActivityOptions options = ActivityOptions.makeScaleUpAnimation(view, 0,
 				0, view.getWidth(), view.getHeight());
@@ -250,7 +274,7 @@ public class MainActivity extends Activity {
 
 	public void StartPlay(View view) {
 		// // // Make magics
-		player.start();
+		player_pipe.start();
 		Intent intent = new Intent(this, PlayActivity.class);
 		// // // EditText editText = (EditText) findViewById
 		// (R.id.edit_message);

@@ -12,7 +12,6 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -32,11 +31,15 @@ import android.widget.ViewFlipper;
 
 public class TimeTrial extends Activity {
 
-	BackgroundSound mBackgroundSound = new BackgroundSound();
+	MediaPlayer player_action_music;
 
-	MediaPlayer player;
+	MediaPlayer player_jump;
 
-	MediaPlayer player2;
+	MediaPlayer player_coin;
+
+	MediaPlayer player_death;
+
+	MediaPlayer player_pipe;
 
 	CountDownTimer countDownTimer;
 
@@ -143,39 +146,47 @@ public class TimeTrial extends Activity {
 
 	// handler.post(task)
 
-	public class BackgroundSound extends AsyncTask<Void, Void, Void> {
-
-		@Override
-		protected Void doInBackground(Void... params) {
-
-			boolean isCancelled = mBackgroundSound.isCancelled();
-
-			MediaPlayer player = MediaPlayer.create(TimeTrial.this,
-					R.raw.action);
-
-			if (Model.beat_the_clock_mode) {
-				player = MediaPlayer.create(TimeTrial.this, R.raw.countdown);
-			}
-
-			player.setLooping(false); // Set looping?
-			player.setVolume(100, 100);
-			player.start();
-			if (!isCancelled) {
-				player.stop();
-			}
-
-			return null;
-		}
-
-	}
+	// public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+	//
+	// @Override
+	// protected Void doInBackground(Void... params) {
+	//
+	// boolean isCancelled = mBackgroundSound.isCancelled();
+	//
+	// MediaPlayer player = MediaPlayer.create(TimeTrial.this,
+	// R.raw.action);
+	//
+	// if (Model.beat_the_clock_mode) {
+	// Model.stop_the_theme_music = true;
+	// player = MediaPlayer.create(TimeTrial.this, R.raw.countdown);
+	// }
+	//
+	// player.setLooping(false); // Set looping?
+	// player.setVolume(100, 100);
+	// player.start();
+	// if (!isCancelled) {
+	// player.release();
+	// }
+	//
+	// return null;
+	// }
+	//
+	// }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_trial);
 
-		// player = MediaPlayer.create(this, R.raw.action);
-		player2 = MediaPlayer.create(this, R.raw.mario_jump);
+		player_action_music = MediaPlayer.create(this, R.raw.action);
+		if (Model.beat_the_clock_mode) {
+			player_action_music = MediaPlayer.create(this, R.raw.countdown);
+			player_action_music.setLooping(true);
+		}
+		player_jump = MediaPlayer.create(this, R.raw.mario_jump);
+		player_coin = MediaPlayer.create(this, R.raw.mario_coin);
+		player_death = MediaPlayer.create(this, R.raw.mario_death);
+		player_pipe = MediaPlayer.create(this, R.raw.mario_jump);
 		// player.start();
 
 		// start a new model with new static variables
@@ -200,7 +211,8 @@ public class TimeTrial extends Activity {
 					// TODO Auto-generated method stub
 					System.out.println(" hit 0 time");
 					stopHandler();
-					player.stop();
+					player_action_music.stop();
+					player_death.start();
 					startGoodGameIntent();
 
 				}
@@ -286,12 +298,13 @@ public class TimeTrial extends Activity {
 			countDownTimer.cancel();
 		}
 		handler.removeCallbacks(task);
-		mBackgroundSound.cancel(true);
+		player_action_music.pause();
 
 	}
 
 	@Override
 	protected void onStop() {
+		super.onStop();
 
 		if (Model.beat_the_clock_mode) {
 			countDownTimer.cancel();
@@ -299,17 +312,15 @@ public class TimeTrial extends Activity {
 
 		handler.removeCallbacks(task);
 		// player.stop();
-		mBackgroundSound.cancel(true);
+		player_action_music.stop();
 
-		super.onStop();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		// player.start();
-		mBackgroundSound.cancel(true);
-		new BackgroundSound().execute(null, null, null);
+		player_action_music.start();
 
 		if (Model.beat_the_clock_mode) {
 			long timervalue = s1;
@@ -332,7 +343,8 @@ public class TimeTrial extends Activity {
 					// TODO Auto-generated method stub
 					System.out.println(" hit 0 time");
 					stopHandler();
-					mBackgroundSound.cancel(true);
+					player_action_music.stop();
+					player_death.start();
 
 					startGoodGameIntent();
 
@@ -374,8 +386,18 @@ public class TimeTrial extends Activity {
 						// TODO Auto-generated method stub
 
 						if (start.getX() < end.getX()) {
-							System.out.println("swiped right");
-							player2.start();
+							System.out.println("swiped left");
+
+							if (VF.getDisplayedChild() == txt.length - 1) {
+
+								System.out.println("text length" + txt.length);
+								System.out.println("displayed child : "
+										+ VF.getDisplayedChild());
+
+								startPlayerGuessIntent();
+							}
+
+							player_jump.start();
 
 							// if at last game start player guessing activity
 							VF.setInAnimation(AnimationUtils.loadAnimation(
@@ -463,79 +485,86 @@ public class TimeTrial extends Activity {
 
 						if (start.getX() > end.getX()) {
 							System.out.println("swiped left");
-							if (VF.getDisplayedChild() == 0) {
-								return true;
-							} else {
-								player2.start();
-								VF.setInAnimation(AnimationUtils.loadAnimation(
-										TimeTrial.this, R.anim.slide_left));
-								VF.setDisplayedChild(VF.getDisplayedChild() - 1);
-
-								// if set to player guess mode
-
-								if (Model.player_guess_mode) {
-
-									Button b1 = (Button) findViewById(R.id.yes_button);
-									b1.setBackground(bg1);
-
-									Button b2 = (Button) findViewById(R.id.no_button);
-									b2.setBackground(bg2);
-
-									// Button b = (Button)
-									// findViewById(R.id.yes_button);
-									// Button button2 = (Button)
-									// findViewById(R.id.no_button);
-									// Drawable d = b.getBackground();
-
-									// Model.computer_secret_number
-
-									int i = VF.getDisplayedChild();
-
-									Set<Integer> a = new HashSet<Integer>();
-
-									String csv = new String();
-									csv = txt[i].getText().toString();
-									if (csv.contains(" ")) {
-										// Split it.
-										String[] s = csv.split(" ");
-										for (String x : s) {
-											a.add(Integer.parseInt(x));
-										}
-									} else {
-										throw new IllegalArgumentException(
-												"String " + csv
-														+ " does not contain ,");
-									}
-									//
-									if (a.contains(Model.computer_secret_number)) {
-
-										b1.setBackgroundResource(R.drawable.green_btn);
-										// Button b = (Button)
-										// findViewById(R.id.yes_button);
-										// Drawable d = b.getBackground();
-
-										// b.setBackgroundResource(R.drawable.green_btn);
-
-										// b.getBackground().setColorFilter(
-										// 0xFF00FF00,
-										// PorterDuff.Mode.MULTIPLY);
-
-										a.clear();
-
-									} else {
-
-										b2.setBackgroundResource(R.drawable.red_btn);
-										// Button b = (Button)
-										// findViewById(R.id.yes_button);
-
-										a.clear();
-
-									}
-
-								}
-
-							}
+							return true;
 						}
+
+						// was originally allowing swiping in both
+						// directions.... then I read Jason's specific marking
+						// scheme...
+
+						// if (VF.getDisplayedChild() == 0) {
+						// return true;
+						// } else {
+						// player2.start();
+						// VF.setInAnimation(AnimationUtils.loadAnimation(
+						// TimeTrial.this, R.anim.slide_left));
+						// VF.setDisplayedChild(VF.getDisplayedChild() - 1);
+						//
+						// // if set to player guess mode
+						//
+						// if (Model.player_guess_mode) {
+						//
+						// Button b1 = (Button) findViewById(R.id.yes_button);
+						// b1.setBackground(bg1);
+						//
+						// Button b2 = (Button) findViewById(R.id.no_button);
+						// b2.setBackground(bg2);
+						//
+						// // Button b = (Button)
+						// // findViewById(R.id.yes_button);
+						// // Button button2 = (Button)
+						// // findViewById(R.id.no_button);
+						// // Drawable d = b.getBackground();
+						//
+						// // Model.computer_secret_number
+						//
+						// int i = VF.getDisplayedChild();
+						//
+						// Set<Integer> a = new HashSet<Integer>();
+						//
+						// String csv = new String();
+						// csv = txt[i].getText().toString();
+						// if (csv.contains(" ")) {
+						// // Split it.
+						// String[] s = csv.split(" ");
+						// for (String x : s) {
+						// a.add(Integer.parseInt(x));
+						// }
+						// } else {
+						// throw new IllegalArgumentException(
+						// "String " + csv
+						// + " does not contain ,");
+						// }
+						// //
+						// if (a.contains(Model.computer_secret_number)) {
+						//
+						// b1.setBackgroundResource(R.drawable.green_btn);
+						// // Button b = (Button)
+						// // findViewById(R.id.yes_button);
+						// // Drawable d = b.getBackground();
+						//
+						// // b.setBackgroundResource(R.drawable.green_btn);
+						//
+						// // b.getBackground().setColorFilter(
+						// // 0xFF00FF00,
+						// // PorterDuff.Mode.MULTIPLY);
+						//
+						// a.clear();
+						//
+						// } else {
+						//
+						// b2.setBackgroundResource(R.drawable.red_btn);
+						// // Button b = (Button)
+						// // findViewById(R.id.yes_button);
+						//
+						// a.clear();
+						//
+						// }
+						//
+						// }
+						//
+						// }
+						// }
 
 						return false;
 					}
@@ -553,7 +582,7 @@ public class TimeTrial extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.time_trial, menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
 		return true;
 	}
 
@@ -568,9 +597,39 @@ public class TimeTrial extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
+
+			player_pipe.start();
 			NavUtils.navigateUpFromSameTask(this);
-			return true;
+		case R.id.action_settings:
+			player_pipe.start();
+			Intent intent = new Intent(this, Settings.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+			break;
+		case R.id.action_help:
+			player_pipe.start();
+			Intent intent2 = new Intent(this, HelpActivity.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent2);
+			break;
+		case R.id.action_scores:
+			player_pipe.start();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			break;
+
+		default:
+			break;
 		}
+		// return true;
+
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -672,6 +731,11 @@ public class TimeTrial extends Activity {
 		intent.putExtra("Time_Up", true);
 		startActivity(intent);
 		overridePendingTransition(R.anim.shake, R.anim.push_left_out);
+	}
+
+	public void startPlayerGuessIntent() {
+		Intent intent = new Intent(this, PlayerGuesses.class);
+		startActivity(intent);
 	}
 
 }

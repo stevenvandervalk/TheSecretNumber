@@ -31,70 +31,44 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/activity_settings.xml">
+        <config>
+          <device>Nexus S</device>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="system.out" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="sysout" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ebd9f8-459e-43d2-9fe6-934324d9d24f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberRange.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TheSecretNumber.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/activity_number_range.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4_41c982acabf42717c7bf2fc44a3b7222.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/FreePlay$2.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$array.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$xml.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-41c982acabf42717c7bf2fc44a3b7222.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/values/strings_activity_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/xml/pref_data_sync.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/xml/pref_general.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/xml/pref_headers.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/xml/pref_notification.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/CardGenerator.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/CardGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/ConstantsBrowser.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/ConstantsBrowser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/DatabaseHelper.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/DatabaseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/FreePlay.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/FreePlay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/HelpActivity.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/HelpActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/PlayActivity.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/PlayActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Provider$Constants.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Provider$Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Provider.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Provider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$id.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$layout.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$menu.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$string.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$style.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Settings.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/Settings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/StartPage.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/StartPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/TheSecretNumber.apk" afterPath="$PROJECT_DIR$/bin/TheSecretNumber.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.class" afterPath="$PROJECT_DIR$/bin/classes/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/BeatTheClockGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeTrialGame.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bin/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.java" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.java" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.java" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/PlayActivity.java" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/PlayActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/steven/vandervalk/jcu/edu/au/thesecretnumber/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/steven/vandervalk/jcu/edu/au/thesecretnumber/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/steven/vandervalk/jcu/edu/au/thesecretnumber/R.java" afterPath="$PROJECT_DIR$/gen/steven/vandervalk/jcu/edu/au/thesecretnumber/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.java" afterPath="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_number_type.xml" afterPath="$PROJECT_DIR$/res/layout/activity_number_type.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_time_mode.xml" afterPath="$PROJECT_DIR$/res/layout/activity_time_mode.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="$PROJECT_DIR$/bin/jarlist.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TheSecretNumber.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368671892352" ignored="false" />
+    <file path="/Dummy.txt" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1369297420950" ignored="false" />
     <file path="/fragment.java" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368659109152" ignored="false" />
     <file path="/a.java" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368659405862" ignored="false" />
     <file path="/MainActivity.java" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368662852986" ignored="false" />
@@ -106,6 +80,7 @@
     <file path="/activity_time_mode.xml" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368667510560" ignored="false" />
     <file path="/strings.xml" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368667898782" ignored="false" />
     <file path="/activity_number_range.xml" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1368668315054" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="53ebd9f8-459e-43d2-9fe6-934324d9d24f" time="1369299751799" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +100,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -161,7 +137,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -171,79 +146,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NumberType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="5" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.0">
+            <state line="23" column="13" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <file leaf-file-name="Settings.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="59" selection-start="2454" selection-end="2454" vertical-scroll-proportion="0.0">
+            <state line="48" column="40" selection-start="1360" selection-end="1360" vertical-scroll-proportion="1.3846154">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NumberRange.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberRange.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.0">
+            <state line="47" column="94" selection-start="2241" selection-end="2241" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_time_mode.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_time_mode.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
+      <file leaf-file-name="activity_save_time_trial_score.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_save_time_trial_score.xml">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_number_range.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_number_range.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="49" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17021276">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="33" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeMode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="30" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreePlay.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/FreePlay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -272,18 +208,19 @@
         <option value="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.java" />
         <option value="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/BeatTheClockGame.java" />
         <option value="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeTrialGame.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_time_mode.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_number_type.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_number_range.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="896" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -293,30 +230,29 @@
             <id />
           </State>
           <State>
-            <id>Abstraction issues</id>
-          </State>
-          <State>
-            <id>Android Lint</id>
-          </State>
-          <State>
-            <id>Code style issues</id>
-          </State>
-          <State>
-            <id>Groovy</id>
+            <id>Bitwise operation issues</id>
           </State>
           <State>
             <id>Imports</id>
           </State>
           <State>
-            <id>Inheritance issues</id>
+            <id>Java language level issues</id>
           </State>
           <State>
-            <id>Logging issues</id>
+            <id>Javadoc issues</id>
           </State>
           <State>
-            <id>Potentially confusing code constructsGroovy</id>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -351,6 +287,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -439,8 +377,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,15 +386,15 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="393291FCB4D900EC" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_S" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="FullScreen" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -619,38 +555,40 @@
       <workItem from="1368659150427" duration="1071000" />
       <workItem from="1368660236727" duration="7462000" />
       <workItem from="1368671885412" duration="9000" />
+      <workItem from="1369297250371" duration="152000" />
+      <workItem from="1369297414932" duration="3001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11309000" />
+    <option name="totallyTimeSpent" value="14462000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="896" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.6713917" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.6713917" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7107232" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7107232" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2885572" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4742268" sideWeight="0.1205165" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3273196" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.6713917" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.7107232" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32793018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.67268044" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273196" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7107232" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7107232" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -716,129 +654,155 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#437#455#0" expanded="true" />
-            <element signature="e#1254#1310#0" expanded="true" />
-            <element signature="e#1638#1667#0" expanded="true" />
-            <element signature="e#2095#2136#0" expanded="true" />
-            <element signature="e#2556#2590#0" expanded="true" />
-            <element signature="e#3014#3043#0" expanded="true" />
-            <element signature="e#3465#3501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#437#455#0" expanded="true" />
-            <element signature="e#1254#1310#0" expanded="true" />
-            <element signature="e#1638#1667#0" expanded="true" />
-            <element signature="e#2095#2136#0" expanded="true" />
-            <element signature="e#2556#2590#0" expanded="true" />
-            <element signature="e#3014#3043#0" expanded="true" />
-            <element signature="e#3465#3501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/PlayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="11" selection-start="4275" selection-end="4275" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#437#455#0" expanded="true" />
-            <element signature="e#1254#1310#0" expanded="true" />
-            <element signature="e#1638#1667#0" expanded="true" />
-            <element signature="e#2095#2136#0" expanded="true" />
-            <element signature="e#2556#2590#0" expanded="true" />
-            <element signature="e#3014#3043#0" expanded="true" />
-            <element signature="e#3465#3501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_number_type.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="484" selection-end="484" vertical-scroll-proportion="-8.148149" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_good_game.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberRange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="59" selection-start="2454" selection-end="2454" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_number_range.xml">
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/NumberType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="5" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/FreePlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/TimeMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="30" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="33" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_time_mode.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_number_range.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_overview.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="49" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17021276">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_number_type.xml">
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="0.40772533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-1.7317597">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_time_trial.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_computer_guesses.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_beat_the_clock.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.50858366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_settings.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_free_play.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_save_score.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_save_time_trial_score.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="94" selection-start="2241" selection-end="2241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/steven/vandervalk/jcu/edu/au/thesecretnumber/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="40" selection-start="1360" selection-end="1360" vertical-scroll-proportion="1.3846154">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

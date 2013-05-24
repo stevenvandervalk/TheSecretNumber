@@ -28,6 +28,7 @@ public class ComputerGuesses extends Activity {
 		setupActionBar();
 
 		new GenerateRandomComputerGuess().execute();
+
 		// firstone.execute();
 		tv = (TextView) findViewById(R.id.textView1);
 
@@ -60,7 +61,6 @@ public class ComputerGuesses extends Activity {
 			tv.setText(String.valueOf(computer_guess));
 		}
 
-		// tv.setText(String.valueOf(computer_guess));
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class ComputerGuesses extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.computer_guesses, menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
 		return true;
 	}
 
@@ -98,13 +98,18 @@ public class ComputerGuesses extends Activity {
 	}
 
 	public void YesMyNumberPressed(View view) {
-
-		Intent intent = new Intent(this, GoodGame.class);
-		startActivity(intent);
+		if (Model.beat_the_clock_mode) {
+			Intent intent = new Intent(this, ConstantsBrowser.class);
+			startActivity(intent);
+		} else {
+			Intent intent = new Intent(this, ConstantsBrowser2.class);
+			startActivity(intent);
+		}
 	}
 
 	public void NoNotMyNumberPressed(View view) {
-		new GenerateRandomComputerGuess().execute();
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 
 }
