@@ -50,7 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" />
         </activity>
-         <activity
+        <activity
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.ConstantsBrowser2"
             android:label="@string/title_activity_ConstantsBrowser2"
             android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" >
@@ -95,7 +95,7 @@
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider"
             android:authorities="steven.vandervalk.jcu.edu.au.Provider"
             android:exported="false" />
-         <provider
+        <provider
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.Provider2"
             android:authorities="steven.vandervalk.jcu.edu.au.Provider2"
             android:exported="false" />
@@ -159,6 +159,14 @@
         <activity
             android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.SaveTimeTrialScore"
             android:label="@string/title_activity_save_time_trial_score"
+            android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" />
+        </activity>
+        <activity
+            android:name="steven.vandervalk.jcu.edu.au.thesecretnumber.ComputerWon"
+            android:label="@string/title_activity_computer_won"
             android:parentActivityName="steven.vandervalk.jcu.edu.au.thesecretnumber.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

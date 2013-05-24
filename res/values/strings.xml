@@ -83,5 +83,6 @@
     <string name="enter_your_name">What\'s Your Name?</string>
     <string name="title_activity_save_time_trial_score">High Scores | Time Trial</string>
     <string name="swipe">Swipe</string>
+    <string name="title_activity_computer_won">ComputerWon</string>
 
 </resources>

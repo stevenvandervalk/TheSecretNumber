@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnKeyListener;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
@@ -16,6 +19,7 @@ import android.widget.TextView;
 public class PlayerGuesses extends Activity {
 
 	int player_guess;
+	int player_guess_input;
 	int minValue;
 	int maxValue;
 
@@ -27,6 +31,29 @@ public class PlayerGuesses extends Activity {
 		setupActionBar();
 
 		final NumberPicker np = (NumberPicker) findViewById(R.id.numberPicker1);
+
+		final EditText player_guess_field = (EditText) findViewById(R.id.player_guess_field);
+
+		player_guess_field.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				// If the event is a key-down event on the "enter" button
+				if ((event.getAction() == KeyEvent.ACTION_DOWN)
+						&& (keyCode == KeyEvent.KEYCODE_ENTER)) {
+					// Perform action on key press
+					player_guess_input = Integer.parseInt(player_guess_field
+							.getText().toString());
+					if (player_guess_input == Model.computer_secret_number) {
+						startGoodGameActivity();
+					} else {
+
+					}
+
+					return true;
+				}
+				return false;
+			}
+		});
 
 		maxValue = Model.max_length;
 
@@ -130,6 +157,16 @@ public class PlayerGuesses extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void startGoodGameActivity() {
+		Intent intent = new Intent(this, GoodGame.class);
+		startActivity(intent);
+	}
+
+	public void startComputerWoneActivity() {
+		Intent intent = new Intent(this, ComputerWon.class);
+		startActivity(intent);
 	}
 
 }
