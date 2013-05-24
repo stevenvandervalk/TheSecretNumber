@@ -3,6 +3,7 @@ package steven.vandervalk.jcu.edu.au.thesecretnumber;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -16,6 +17,12 @@ import android.widget.Toast;
 
 public class Settings extends Activity {
 
+	MediaPlayer player_pipe;
+
+	MediaPlayer player_theme;
+
+	MediaPlayer player_coin;
+
 	RadioGroup rg;
 	RadioButton rb;
 
@@ -25,6 +32,39 @@ public class Settings extends Activity {
 		setContentView(R.layout.activity_settings);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_theme = MediaPlayer.create(this, R.raw.mario_themesong);
+		player_coin = MediaPlayer.create(this, R.raw.mario_coin);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		player_theme.start();
+
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+
+		player_theme.stop();
 	}
 
 	/**
@@ -47,6 +87,11 @@ public class Settings extends Activity {
 	}
 
 	public void SavePressed(View view) {
+
+		player_coin.start();
+
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 
 		// Intent data = new Intent();
 		//
@@ -87,23 +132,38 @@ public class Settings extends Activity {
 			//
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
+			// Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
 			NavUtils.navigateUpFromSameTask(this);
 		case R.id.action_settings:
-			Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT)
-					.show();
+
+			player_pipe.start();
 			Intent intent = new Intent(this, Settings.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			break;
 		case R.id.action_help:
 			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
 			Intent intent2 = new Intent(this, HelpActivity.class);
 			// EditText editText = (EditText) findViewById (R.id.edit_message);
 			// String message = editText.getText().toString();
 			// intent.putExtra(EXTRA_MESSAGE, message);
 			startActivity(intent2);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+		case R.id.action_scores:
+			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 			break;
 
 		default:

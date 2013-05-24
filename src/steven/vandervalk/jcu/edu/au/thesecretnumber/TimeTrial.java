@@ -178,6 +178,11 @@ public class TimeTrial extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time_trial);
 
+		if (!Model.player_guess_mode) {
+			Button button = (Button) findViewById(R.id.guess_button);
+			button.setText("Click one!");
+		}
+
 		player_action_music = MediaPlayer.create(this, R.raw.action);
 		if (Model.beat_the_clock_mode) {
 			player_action_music = MediaPlayer.create(this, R.raw.countdown);
@@ -247,6 +252,9 @@ public class TimeTrial extends Activity {
 					.replace("[", "").replace("]", "");
 			txt[i].setText(formattedString);
 			txt[i].setTextAppearance(this, R.style.CodeFont);
+			if (Model.magic_numbers.size() > 30) {
+				txt[i].setTextAppearance(this, R.style.CodeFontMedium);
+			}
 			VF.addView(txt[i]);
 		}
 

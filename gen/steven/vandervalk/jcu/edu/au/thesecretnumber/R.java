@@ -97,9 +97,11 @@ public final class R {
         public static final int stat_happy=0x7f020022;
         public static final int swipe_down=0x7f020023;
         public static final int swipe_left=0x7f020024;
-        public static final int swipe_right=0x7f020025;
-        public static final int swipe_up=0x7f020026;
-        public static final int volume_on=0x7f020027;
+        public static final int swipe_left_small=0x7f020025;
+        public static final int swipe_right=0x7f020026;
+        public static final int swipe_right_small=0x7f020027;
+        public static final int swipe_up=0x7f020028;
+        public static final int volume_on=0x7f020029;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f0b0004;
@@ -316,5 +318,6 @@ public final class R {
         public static final int AppTheme=0x7f090002;
         public static final int ButtonText=0x7f090000;
         public static final int CodeFont=0x7f090003;
+        public static final int CodeFontMedium=0x7f090004;
     }
 }
