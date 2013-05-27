@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,117 +10,83 @@
     android:background="@drawable/bg_score"
     tools:context=".Settings" >
 
-    <Button
-        android:id="@+id/save_settings_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="SavePressed"
-        android:text="@string/save_settings" />
+    
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/save_settings_button"
-        android:text="@string/game_mode"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true" >
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
         <RadioButton
             android:id="@+id/radio_freeplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/free_play" />
 
         <RadioButton
             android:id="@+id/radio_compguess"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/app_guess" />
 
         <RadioButton
             android:id="@+id/radio_playerguess"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/human_guess" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/radioGroup1"
-        android:layout_marginTop="21dp"
-        android:text="@string/Scoring_mode"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/textView1" >
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+>
 
         <RadioButton
             android:id="@+id/radio_beatheclock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/beat_the_clock" />
 
         <RadioButton
             android:id="@+id/radio_timetrial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/time_trial" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/radioGroup2"
-        android:text="@string/number_type"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RadioGroup
         android:id="@+id/radioGroup3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3" >
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+ >
 
         <RadioButton
             android:id="@+id/radio_binary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/binary" />
 
         <RadioButton
             android:id="@+id/radio_fibonnacci"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
             android:text="@string/fibonnacci" />
 
         <RadioButton
             android:id="@+id/radio_prime_numbers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
             android:text="@string/prime_numbers" />
     </RadioGroup>
     
+    <Button
+        android:id="@+id/save_settings_button"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+ 
+        android:onClick="SavePressed"
+        android:text="@string/save_settings" />
+    
     
 
-</RelativeLayout>
+</LinearLayout>

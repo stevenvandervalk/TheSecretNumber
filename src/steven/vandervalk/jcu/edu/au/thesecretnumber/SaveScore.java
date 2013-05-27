@@ -4,20 +4,26 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class SaveScore extends ListActivity {
+
+	MediaPlayer player_pipe;
 
 	MediaPlayer player;
 	// Key for Option Menu
@@ -34,6 +40,7 @@ public class SaveScore extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		player = MediaPlayer.create(this, R.raw.mario_powerup);
+		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
 
 		// call Provider.query() to get Cursor
 		// Wrapper around ContentResolver.query(android.net.Uri, String[],
@@ -54,6 +61,8 @@ public class SaveScore extends ListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
 		menu.add(Menu.NONE, ADD_ID, Menu.NONE, "Add").setIcon(R.drawable.add)
 				.setAlphabeticShortcut('a');
 		return (super.onCreateOptionsMenu(menu));
@@ -62,11 +71,54 @@ public class SaveScore extends ListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case ADD_ID:
-			add();
-			return (true);
+		case android.R.id.home:
+			// This ID represents the Home or Up button. In the case of this
+			// activity, the Up button is shown. Use NavUtils to allow users
+			// to navigate up one level in the application structure. For
+			// more details, see the Navigation pattern on Android Design:
+			//
+			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
+			//
+			// Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
+			NavUtils.navigateUpFromSameTask(this);
+		case R.id.action_settings:
+
+			player_pipe.start();
+			Intent intent = new Intent(this, Settings.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+		case R.id.action_help:
+			Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
+			Intent intent2 = new Intent(this, HelpActivity.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent2);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+		case R.id.action_scores:
+			Toast.makeText(this, "Scores selected", Toast.LENGTH_SHORT).show();
+			player_pipe.start();
+			Intent intent3 = new Intent(this, ConstantsBrowser.class);
+			// EditText editText = (EditText) findViewById (R.id.edit_message);
+			// String message = editText.getText().toString();
+			// intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent3);
+			overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+			break;
+
+		default:
+			break;
 		}
-		return (super.onOptionsItemSelected(item));
+		// return true;
+
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
