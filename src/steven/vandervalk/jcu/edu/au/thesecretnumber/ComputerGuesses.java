@@ -43,6 +43,7 @@ public class ComputerGuesses extends Activity {
 
 			rn = new Random();
 			int minimum = Model.rolling_sum;
+			Model.rolling_sum = 0; // reset so doesn't add to next time around.
 
 			System.out.println("minimum is : " + minimum);
 

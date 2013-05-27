@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,62 +14,67 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
         android:text="@string/Is_the_secret_number_here" 
         android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <TextView
+    
+     <TextView
         android:id="@+id/TimeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="@string/Time_Label"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ViewFlipper
+    
+     <ViewFlipper
         android:id="@+id/viewFlipper1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true" >
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_gravity="center_horizontal" >
     </ViewFlipper>
+
+   
+
+     <Button
+        android:id="@+id/guess_button"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/swipe_right_small"
+        android:drawableRight="@drawable/swipe_right_small"
+        android:gravity="center_horizontal"
+        android:text="Swipe"
+        android:textSize="18dp"
+        />
 
     <Button
         android:id="@+id/yes_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TimeLabel"
-        android:layout_toLeftOf="@+id/TimeLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:onClick="IfYesButtonPressed"
-        android:text="@string/Yes_Button" />
+        android:text="@string/Yes_Button"
+        android:textSize="18dp"
+        
+       />
 
     <Button
         android:id="@+id/no_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/yes_button"
-        android:layout_alignBottom="@+id/yes_button"
-        android:layout_toRightOf="@+id/TimeLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:onClick="IfNoButtonPressed"
-        android:text="@string/No_Button" />
+        android:text="@string/No_Button"
+        android:textSize="18dp" 
+      />
 
-    <Button
-        android:id="@+id/guess_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/yes_button"
+  
         
         
-        android:drawableLeft="@drawable/swipe_left_small"
-        android:text=""
-        android:gravity="left|center|right"
-        android:layout_centerHorizontal="true"
-        
-         />
 
-</RelativeLayout>
+</LinearLayout>
