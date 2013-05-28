@@ -303,7 +303,10 @@ public class MainActivity extends Activity {
 
 		anim_mario.start();
 		player_coin.start();
-		while (!player_coin.isPlaying()) {
+		player_pipe.start();
+		player_coin.stop();
+		if (!player_coin.isPlaying()) {
+
 			Intent intent = new Intent(this, PlayActivity.class);
 			// // // EditText editText = (EditText) findViewById
 			// (R.id.edit_message);
