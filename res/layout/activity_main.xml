@@ -40,8 +40,36 @@
          android:drawableRight="@drawable/swipe_down"
          android:gravity="left|center|right"
          android:textAppearance="?android:attr/textAppearanceMedium" />
-   
- 
+      
+      <LinearLayout 
+          android:orientation="horizontal"
+          android:layout_width="fill_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          >
+      
+     <Space 
+          android:layout_width="0dp"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+
+      <ImageView
+          android:id="@+id/imageView1"
+          android:contentDescription="coin_flips"
+          android:layout_width="0dp"
+          android:layout_gravity="center_horizontal"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@drawable/mario_squat"
+  
+           />
+      
+       <Space 
+          android:layout_width="0dp"
+          android:layout_height="fill_parent"
+          android:layout_weight="1"/>
+       
+       </LinearLayout>
 
     <Button
         android:id="@+id/button1"

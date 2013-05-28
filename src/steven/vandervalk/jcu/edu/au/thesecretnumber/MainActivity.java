@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 @SuppressLint("NewApi")
@@ -26,9 +28,17 @@ public class MainActivity extends Activity {
 
 	MediaPlayer player_theme;
 
+	MediaPlayer player_coin;
+
 	boolean isCancelled = false;
 
 	private GestureDetector detector;
+
+	ImageView imageView;
+
+	AnimationDrawable anim;
+
+	AnimationDrawable anim_mario;
 
 	// BackgroundSound themeMusic = new BackgroundSound();
 
@@ -69,7 +79,17 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		System.out.println("running model");
 
+		// animate me coins yar
+
+		imageView = (ImageView) findViewById(R.id.imageView1);
+		imageView.setBackgroundResource(R.drawable.coin_movie);
+		anim = (AnimationDrawable) imageView.getBackground();
+		anim.start();
+
+		// sing me mateys
+
 		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_coin = MediaPlayer.create(this, R.raw.mario_coin);
 		player_theme = MediaPlayer.create(this, R.raw.mario_themesong);
 
 		String value = "BINARY"; // assume input from gui #still to be wired
@@ -90,6 +110,7 @@ public class MainActivity extends Activity {
 		super.onResume();
 
 		player_theme.start();
+		anim.start();
 
 	}
 
@@ -97,6 +118,7 @@ public class MainActivity extends Activity {
 	public void onPause() {
 		super.onPause();
 		player_theme.stop();
+		anim.stop();
 
 	}
 
@@ -274,14 +296,22 @@ public class MainActivity extends Activity {
 
 	public void StartPlay(View view) {
 		// // // Make magics
-		player_pipe.start();
-		Intent intent = new Intent(this, PlayActivity.class);
-		// // // EditText editText = (EditText) findViewById
-		// (R.id.edit_message);
-		// // // String message = editText.getText().toString();
-		// // // intent.putExtra(EXTRA_MESSAGE, message);
-		startActivity(intent);
-		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		anim.stop();
+		imageView = (ImageView) findViewById(R.id.imageView1);
+		imageView.setBackgroundResource(R.drawable.mario_movie);
+		anim_mario = (AnimationDrawable) imageView.getBackground();
+
+		anim_mario.start();
+		player_coin.start();
+		while (!player_coin.isPlaying()) {
+			Intent intent = new Intent(this, PlayActivity.class);
+			// // // EditText editText = (EditText) findViewById
+			// (R.id.edit_message);
+			// // // String message = editText.getText().toString();
+			// // // intent.putExtra(EXTRA_MESSAGE, message);
+			startActivity(intent);
+			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		}
 	}
 
 }
