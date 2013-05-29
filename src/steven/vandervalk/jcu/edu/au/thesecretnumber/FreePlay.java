@@ -22,6 +22,8 @@ public class FreePlay extends Activity {
 
 	MediaPlayer player;
 	MediaPlayer player2;
+
+	MediaPlayer player_theme;
 	// RadioButton RB0;
 	// RadioButton RB1;
 	// RadioButton RB2;
@@ -35,6 +37,7 @@ public class FreePlay extends Activity {
 
 		player = MediaPlayer.create(this, R.raw.mario_jump);
 		player2 = MediaPlayer.create(this, R.raw.mario_pipe);
+		player_theme = MediaPlayer.create(this, R.raw.mario_themesong);
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_free_play);
@@ -151,6 +154,35 @@ public class FreePlay extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
 		return true;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		player_theme.start();
+
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		player_theme.stop();
+
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+
+		player_theme.stop();
 	}
 
 	@Override

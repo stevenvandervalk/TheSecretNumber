@@ -36,6 +36,7 @@ public class ConstantsBrowser extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		// call Provider.query() to get Cursor
 		// Wrapper around ContentResolver.query(android.net.Uri, String[],
 		// String, String[],
@@ -96,6 +97,18 @@ public class ConstantsBrowser extends ListActivity {
 
 		});
 		// return true;
+
+		if (Model.enter_computer_score) {
+
+			ContentValues values = new ContentValues(2);
+			values.put(Provider.Constants.TITLE, "Computer");
+			values.put(Provider.Constants.VALUE, Model.completed_timer);
+
+			getContentResolver().insert(Provider.Constants.CONTENT_URI, values);
+			constantsCursor.requery();
+
+			Model.enter_computer_score = false;
+		}
 
 	}
 

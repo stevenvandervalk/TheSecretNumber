@@ -51,7 +51,7 @@
      <Space 
           android:layout_width="0dp"
           android:layout_height="fill_parent"
-          android:layout_weight="1"/>
+          android:layout_weight="1.5"/>
 
       <ImageView
           android:id="@+id/imageView1"
@@ -67,7 +67,7 @@
        <Space 
           android:layout_width="0dp"
           android:layout_height="fill_parent"
-          android:layout_weight="1"/>
+          android:layout_weight="1.5"/>
        
        </LinearLayout>
 
@@ -86,6 +86,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:drawableLeft="@drawable/scores_light"
+        android:drawableRight="@drawable/scores_light"
         android:gravity="center"
         android:onClick="StartHighScore"
         android:text="@string/high_score_button"

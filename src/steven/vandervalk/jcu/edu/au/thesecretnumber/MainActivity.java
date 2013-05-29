@@ -166,6 +166,7 @@ public class MainActivity extends Activity {
 
 				if (start.getY() < end.getY()) {
 					System.out.println("swiped down");
+
 					player_pipe.start();
 
 					// EditText editText = (EditText) findViewById
@@ -181,13 +182,24 @@ public class MainActivity extends Activity {
 				if (start.getY() > end.getY()) {
 					System.out.println("swiped up");
 
+					// anim
+
+					anim.stop();
+					imageView = (ImageView) findViewById(R.id.imageView1);
+					imageView.setBackgroundResource(R.drawable.mario_movie);
+					anim_mario = (AnimationDrawable) imageView.getBackground();
+
+					anim_mario.start();
+					player_coin.start();
 					player_pipe.start();
+					player_coin.stop();
+					if (!player_coin.isPlaying()) {
 
-					startActivity(intent2);
-					overridePendingTransition(R.anim.zoom_enter,
-							R.anim.zoom_exit);
+						startActivity(intent2);
+						overridePendingTransition(R.anim.push_left_in,
+								R.anim.push_left_out);
+					}
 
-					return true;
 				}
 
 				return false;

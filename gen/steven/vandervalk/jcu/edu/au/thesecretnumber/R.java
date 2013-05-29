@@ -118,8 +118,8 @@ public final class R {
     public static final class id {
         public static final int LinearLayout01=0x7f0c0005;
         public static final int ScrollView1=0x7f0c0022;
-        public static final int TimeLabel=0x7f0c001b;
-        public static final int ViewFlipper01=0x7f0c0007;
+        public static final int TimeLabel=0x7f0c001c;
+        public static final int ViewFlipper01=0x7f0c0006;
         public static final int action_help=0x7f0c002a;
         public static final int action_scores=0x7f0c002b;
         public static final int action_settings=0x7f0c0028;
@@ -128,7 +128,7 @@ public final class R {
         public static final int button2=0x7f0c0001;
         public static final int button3=0x7f0c0008;
         public static final int editText1=0x7f0c000e;
-        public static final int guess_button=0x7f0c001d;
+        public static final int guess_button=0x7f0c0007;
         public static final int help_button1=0x7f0c0024;
         public static final int help_button2=0x7f0c0025;
         public static final int help_button3=0x7f0c0026;
@@ -138,27 +138,27 @@ public final class R {
         public static final int message_textview=0x7f0c000d;
         public static final int no_button=0x7f0c001f;
         public static final int player_guess_field=0x7f0c000c;
-        public static final int radioGroup1=0x7f0c0006;
-        public static final int radioGroup2=0x7f0c0012;
-        public static final int radioGroup3=0x7f0c0015;
-        public static final int radio_beatheclock=0x7f0c0013;
-        public static final int radio_binary=0x7f0c0016;
-        public static final int radio_compguess=0x7f0c0010;
-        public static final int radio_fibonnacci=0x7f0c0017;
-        public static final int radio_freeplay=0x7f0c000f;
-        public static final int radio_playerguess=0x7f0c0011;
-        public static final int radio_prime_numbers=0x7f0c0018;
-        public static final int radio_timetrial=0x7f0c0014;
-        public static final int save_settings_button=0x7f0c0019;
+        public static final int radioGroup1=0x7f0c000f;
+        public static final int radioGroup2=0x7f0c0013;
+        public static final int radioGroup3=0x7f0c0016;
+        public static final int radio_beatheclock=0x7f0c0014;
+        public static final int radio_binary=0x7f0c0017;
+        public static final int radio_compguess=0x7f0c0011;
+        public static final int radio_fibonnacci=0x7f0c0018;
+        public static final int radio_freeplay=0x7f0c0010;
+        public static final int radio_playerguess=0x7f0c0012;
+        public static final int radio_prime_numbers=0x7f0c0019;
+        public static final int radio_timetrial=0x7f0c0015;
+        public static final int save_settings_button=0x7f0c001a;
         public static final int seekBar1=0x7f0c000a;
         public static final int seekbar_progress=0x7f0c000b;
         public static final int textView1=0x7f0c0003;
         public static final int textView2=0x7f0c0002;
         public static final int time_completed=0x7f0c0004;
-        public static final int time_progress_value=0x7f0c001a;
+        public static final int time_progress_value=0x7f0c001b;
         public static final int title=0x7f0c0020;
         public static final int value=0x7f0c0021;
-        public static final int viewFlipper1=0x7f0c001c;
+        public static final int viewFlipper1=0x7f0c001d;
         public static final int yes_button=0x7f0c001e;
     }
     public static final class integer {

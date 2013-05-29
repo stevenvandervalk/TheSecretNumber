@@ -20,6 +20,8 @@ public class Model implements Runnable {
 
 	public static boolean stop_the_theme_music = false;
 
+	public static boolean enter_computer_score = false;
+
 	static int[] FIBONACCI_ARRAY = { 1, 2, 3, 5, 8, 13, 21, 34 };
 	static int[] PRIME_ARRAY = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23 };
 	static int[] BINARY_ARRAY = { 1, 2, 4, 8, 16, 32 };
@@ -81,6 +83,8 @@ public class Model implements Runnable {
 		// actual runtime
 
 		System.out.println("making chosen array");
+
+		array_type = getArray_type();
 
 		BuildChosenArray();
 
@@ -185,7 +189,7 @@ public class Model implements Runnable {
 		System.out
 				.println("magic_numbers  : " + Model.magic_numbers.toString());
 		System.out.println("modelofCards : " + Model.modelOfCardsToString());
-		return "tim loves pants";
+		return "I loves pants";
 	}
 
 }

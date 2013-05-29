@@ -42,15 +42,21 @@ public class ComputerGuesses extends Activity {
 			// TODO Auto-generated method stub
 
 			rn = new Random();
-			int minimum = Model.rolling_sum;
+			int answer = Model.rolling_sum;
 			Model.rolling_sum = 0; // reset so doesn't add to next time around.
 
-			System.out.println("minimum is : " + minimum);
+			System.out.println("correct answer is : " + answer);
 
-			int range = (minimum + 2) - minimum;
+			int range = 10;
 
 			System.out.println("range is : " + range);
-			computer_guess = rn.nextInt(range) + minimum;
+			int right_or_not = rn.nextInt(range);
+
+			if (right_or_not < 6) {
+				computer_guess = answer;
+			} else {
+				computer_guess = right_or_not;
+			}
 
 			System.out.println("computer guess is : " + computer_guess);
 
@@ -99,7 +105,13 @@ public class ComputerGuesses extends Activity {
 	}
 
 	public void YesMyNumberPressed(View view) {
+
+		// if computer guesses correctly record the score.
+
+		Model.enter_computer_score = true;
+
 		if (Model.beat_the_clock_mode) {
+
 			Intent intent = new Intent(this, ConstantsBrowser.class);
 			startActivity(intent);
 		} else {
@@ -109,7 +121,7 @@ public class ComputerGuesses extends Activity {
 	}
 
 	public void NoNotMyNumberPressed(View view) {
-		Intent intent = new Intent(this, MainActivity.class);
+		Intent intent = new Intent(this, GoodGame.class);
 		startActivity(intent);
 	}
 

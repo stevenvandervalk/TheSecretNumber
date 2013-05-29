@@ -36,6 +36,7 @@ public class ConstantsBrowser2 extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		// call Provider.query() to get Cursor
 		// Wrapper around ContentResolver.query(android.net.Uri, String[],
 		// String, String[],
@@ -53,6 +54,19 @@ public class ConstantsBrowser2 extends ListActivity {
 
 		// swipe gestures #TODO Change to switch between high score tables on
 		// swipe left and right
+
+		if (Model.enter_computer_score) {
+
+			ContentValues values = new ContentValues(2);
+			values.put(Provider2.Constants2.TITLE, "Computer");
+			values.put(Provider2.Constants2.VALUE, Model.completed_timer);
+
+			getContentResolver().insert(Provider2.Constants2.CONTENT_URI,
+					values);
+			constantsCursor.requery();
+
+			Model.enter_computer_score = false;
+		}
 
 	}
 

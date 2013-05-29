@@ -8,7 +8,6 @@ import java.util.Set;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -51,8 +50,6 @@ public class TimeTrial extends Activity {
 
 	Drawable bg2;
 
-	// int rollingSum;
-
 	Set<Integer> numbersAdded = new HashSet<Integer>();
 
 	GestureDetector detector_TimeTrial;
@@ -73,11 +70,11 @@ public class TimeTrial extends Activity {
 
 	int minutes;
 
-	private final Handler handler = new Handler();
-
 	protected int secondsRemaining;
 
 	protected int minutesRemaining;
+
+	private final Handler handler = new Handler();
 
 	// Runnable task = new Runnable()
 
@@ -114,12 +111,6 @@ public class TimeTrial extends Activity {
 
 			if (!Model.beat_the_clock_mode) {
 
-				// TimeText.setText("Time Remaining : "
-				// + (Model.timer_clock - seconds));
-				// }
-				//
-				// else {
-
 				if (seconds < 10) {
 					TimeText.setText("Time : " + minutes + ":0" + seconds);
 				} else {
@@ -141,38 +132,6 @@ public class TimeTrial extends Activity {
 
 	}
 
-	// stop timer with
-	// handler.removeCallbacks(task);
-
-	// handler.post(task)
-
-	// public class BackgroundSound extends AsyncTask<Void, Void, Void> {
-	//
-	// @Override
-	// protected Void doInBackground(Void... params) {
-	//
-	// boolean isCancelled = mBackgroundSound.isCancelled();
-	//
-	// MediaPlayer player = MediaPlayer.create(TimeTrial.this,
-	// R.raw.action);
-	//
-	// if (Model.beat_the_clock_mode) {
-	// Model.stop_the_theme_music = true;
-	// player = MediaPlayer.create(TimeTrial.this, R.raw.countdown);
-	// }
-	//
-	// player.setLooping(false); // Set looping?
-	// player.setVolume(100, 100);
-	// player.start();
-	// if (!isCancelled) {
-	// player.release();
-	// }
-	//
-	// return null;
-	// }
-	//
-	// }
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -186,7 +145,7 @@ public class TimeTrial extends Activity {
 		player_action_music = MediaPlayer.create(this, R.raw.action);
 		if (Model.beat_the_clock_mode) {
 			player_action_music = MediaPlayer.create(this, R.raw.countdown);
-			player_action_music.setLooping(true);
+			player_action_music.setLooping(false);
 		}
 		player_jump = MediaPlayer.create(this, R.raw.mario_jump);
 		player_coin = MediaPlayer.create(this, R.raw.mario_coin);
@@ -227,11 +186,11 @@ public class TimeTrial extends Activity {
 		// timer
 		handler.post(task);
 
-		if (!Model.player_guess_mode) {
-			Button button = (Button) findViewById(R.id.guess_button);
-			button.setVisibility(View.INVISIBLE);
-			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-		}
+		// if (!Model.player_guess_mode) {
+		// Button button = (Button) findViewById(R.id.guess_button);
+		// button.setVisibility(View.INVISIBLE);
+		// overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+		// }
 
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -389,10 +348,6 @@ public class TimeTrial extends Activity {
 					public boolean onFling(MotionEvent start, MotionEvent end,
 							float velocityX, float velocityY) {
 
-						// set two button colors back to start
-
-						// TODO Auto-generated method stub
-
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped left");
 
@@ -413,9 +368,9 @@ public class TimeTrial extends Activity {
 
 							VF.setDisplayedChild(VF.getDisplayedChild() + 1);
 
-							// put on async task
-
 							// if set to player_guess mode
+							// code to determine if number is on screen and if
+							// so change button color
 
 							if (Model.player_guess_mode) {
 
@@ -424,14 +379,6 @@ public class TimeTrial extends Activity {
 
 								Button b2 = (Button) findViewById(R.id.no_button);
 								b2.setBackground(bg2);
-
-								// Button b = (Button)
-								// findViewById(R.id.yes_button);
-								// Button button2 = (Button)
-								// findViewById(R.id.no_button);
-								// Drawable d = b.getBackground();
-
-								// Model.computer_secret_number
 
 								int i = VF.getDisplayedChild();
 
@@ -454,15 +401,6 @@ public class TimeTrial extends Activity {
 								if (a.contains(Model.computer_secret_number)) {
 
 									b1.setBackgroundResource(R.drawable.green_btn);
-									// Button b = (Button)
-									// findViewById(R.id.yes_button);
-									// Drawable d = b.getBackground();
-
-									// b.setBackgroundResource(R.drawable.green_btn);
-
-									// b.getBackground().setColorFilter(
-									// 0xFF00FF00,
-									// PorterDuff.Mode.MULTIPLY);
 
 									a.clear();
 
@@ -477,22 +415,12 @@ public class TimeTrial extends Activity {
 								}
 
 							}
-							// // code to check if card displayed contains
-							// // secret
-							// // number selected at random by computer
-							//
-
-							//
-							// // code to turn appropriate button background
-							// // color.
-							// // and grey out other?
-							// }
 
 							return true;
 						}
 
 						if (start.getX() > end.getX()) {
-							System.out.println("swiped left");
+							System.out.println("swiped right");
 							return true;
 						}
 
@@ -641,15 +569,15 @@ public class TimeTrial extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-	public void GuessButtonPressed(View view) {
-		if (Model.player_guess_mode) {
-			Intent intent = new Intent(this, PlayerGuesses.class);
-			ActivityOptions options = ActivityOptions.makeScaleUpAnimation(
-					view, 0, 0, view.getWidth(), view.getHeight());
-			startActivity(intent, options.toBundle());
-		}
-	}
+	// @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+	// public void GuessButtonPressed(View view) {
+	// if (Model.player_guess_mode) {
+	// Intent intent = new Intent(this, PlayerGuesses.class);
+	// ActivityOptions options = ActivityOptions.makeScaleUpAnimation(
+	// view, 0, 0, view.getWidth(), view.getHeight());
+	// startActivity(intent, options.toBundle());
+	// }
+	// }
 
 	public void IfNoButtonPressed(View view) {
 		if (!Model.player_guess_mode) {
@@ -715,18 +643,6 @@ public class TimeTrial extends Activity {
 					startActivity(intent);
 
 				}
-
-				// turn off button
-
-				// Button button = (Button) findViewById(R.id.yes_button);
-				// button.setOnClickListener(new OnClickListener() {
-				//
-				// @Override
-				// public void onClick(View v) {
-				// Button button = (Button) v;
-				// button.setBackgroundColor(R.color.Green);
-				// }
-				// });
 
 				VF.setDisplayedChild(VF.getDisplayedChild() + 1);
 			}

@@ -7,18 +7,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
 
-    <RadioGroup android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        
-    </RadioGroup>
+   
 
     <ViewFlipper android:id="@+id/ViewFlipper01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <!--adding views to ViewFlipper-->
         
        
     </ViewFlipper>
+    
+      <TextView
+        android:id="@+id/guess_button"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:drawableLeft="@drawable/swipe_left"
+        android:drawableRight="@drawable/swipe_right"
+        android:gravity="center_horizontal"
+        />
 
 </LinearLayout>

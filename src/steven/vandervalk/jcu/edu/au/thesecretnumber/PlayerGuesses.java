@@ -30,8 +30,6 @@ public class PlayerGuesses extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		maxValue = Model.max_length;
-
 		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
 
 		// final NumberPicker np = (NumberPicker)
@@ -64,69 +62,6 @@ public class PlayerGuesses extends Activity {
 		});
 
 	}
-
-	//
-	// np.setMinValue(minValue);
-	// np.setMaxValue(maxValue);
-	// np.setOnValueChangedListener(new OnValueChangeListener() {
-	// @Override
-	// public void onValueChange(NumberPicker picker, int oldVal,
-	// int newVal) {
-	// // do something here
-	// player_guess = np.getValue();
-	// if (player_guess == Model.computer_secret_number) {
-	//
-	// TextView tv = (TextView) findViewById(R.id.message_textview);
-	// String text = "Congrats";
-	// tv.setText(text);
-	//
-	// StartGoodGame(tv);
-	//
-	// } else {
-	// TextView tv = (TextView) findViewById(R.id.message_textview);
-	// String text = "Guess again";
-	// tv.setText(text);
-	// }
-	// }
-	// });
-
-	//
-	// TextView.OnEditorActionListener exampleListener = new
-	// TextView.OnEditorActionListener() {
-	//
-	// @Override
-	// public boolean onEditorAction(TextView v, int actionId,
-	// KeyEvent event) {
-	// if (actionId == EditorInfo.IME_NULL
-	// && event.getAction() == KeyEvent.ACTION_DOWN) {
-	// // example_confirm();//match this behavior to your 'Send'
-	// // (or
-	// // Confirm) button
-	//
-	// // if player guess edittext.gettext == computer secret
-	// // number start good game activity
-	//
-	// EditText et = (EditText) findViewById(R.id.mfield);
-	// player_guess = Integer.valueOf(et.getText().toString());
-	//
-	// // else Say guess again
-	//
-	// }
-	// return true;
-	// }
-	// };
-
-	// EditText et = (EditText) findViewById(R.id.player_guess_field);
-	//
-	// et.setOnEditorActionListener(exampleListener);
-	//
-	// }
-
-	// public void onClick(View v) {
-	//
-	// NumberPicker numPicker = (NumberPicker) findViewById(R.id.numberPicker1);
-	// int x = numPicker.getValue();
-	// }
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -205,11 +140,6 @@ public class PlayerGuesses extends Activity {
 
 	public void startGoodGameActivity() {
 		Intent intent = new Intent(this, GoodGame.class);
-		startActivity(intent);
-	}
-
-	public void startComputerWoneActivity() {
-		Intent intent = new Intent(this, ComputerWon.class);
 		startActivity(intent);
 	}
 
