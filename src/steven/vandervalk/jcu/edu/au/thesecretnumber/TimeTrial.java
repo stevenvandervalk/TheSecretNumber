@@ -353,7 +353,7 @@ public class TimeTrial extends Activity {
 
 							if (VF.getDisplayedChild() == txt.length - 1) {
 
-								System.out.println("text length" + txt.length);
+								System.out.println("text length " + txt.length);
 								System.out.println("displayed child : "
 										+ VF.getDisplayedChild());
 
@@ -362,7 +362,6 @@ public class TimeTrial extends Activity {
 
 							player_jump.start();
 
-							// if at last game start player guessing activity
 							VF.setInAnimation(AnimationUtils.loadAnimation(
 									TimeTrial.this, R.anim.slide_right));
 

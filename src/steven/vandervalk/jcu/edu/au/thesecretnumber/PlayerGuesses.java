@@ -32,9 +32,6 @@ public class PlayerGuesses extends Activity {
 
 		player_pipe = MediaPlayer.create(this, R.raw.mario_pipe);
 
-		// final NumberPicker np = (NumberPicker)
-		// findViewById(R.id.numberPicker1);
-
 		final EditText player_guess_field = (EditText) findViewById(R.id.player_guess_field);
 
 		player_guess_field.setOnKeyListener(new OnKeyListener() {

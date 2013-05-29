@@ -86,9 +86,11 @@ public class Model implements Runnable {
 
 		array_type = getArray_type();
 
-		BuildChosenArray();
+		System.out.println("array type " + array_type.toString());
 
-		// magic_numbers_size = magic_numbers.size();
+		// often throws null pointer NEED TO CATCH AND DEBUG
+
+		BuildChosenArray();
 
 		System.out.println(magic_numbers_size);
 

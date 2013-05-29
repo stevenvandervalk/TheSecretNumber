@@ -1,11 +1,9 @@
-Need to recheck computer's guess // ROLLING SUM still not cleared.
 
-if app guesses correctly first time, then score is recorded
+ 1) NPE involved in buildchosenarray on player guess completion.
 
-add card flipp animation somewhere.
+ 2) more animations needed.
 
 
-?rolling sum is not being cleared between games
 
 only if problem:
 
