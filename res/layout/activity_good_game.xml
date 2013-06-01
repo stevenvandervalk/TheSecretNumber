@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:text="@string/good_game"
+        android:text="@string/you_won"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -27,6 +27,17 @@
         android:gravity="center_horizontal"
         android:text="@string/time_completed"
 		android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+       <Button
+          android:id="@+id/button3"
+          android:layout_width="fill_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:drawableLeft="@drawable/scores_light"
+          android:drawableRight="@drawable/scores_light"
+          android:gravity="center"
+          android:onClick="SaveScoreButtonPressed"
+          android:text="@string/save_score_button" />
 
     <TextView
         android:id="@+id/textView2"
@@ -61,15 +72,6 @@
 
   
       
-        <Button
-          android:id="@+id/button3"
-          android:layout_width="fill_parent"
-          android:layout_height="0dp"
-          android:layout_weight="1"
-          android:drawableLeft="@drawable/scores_light"
-          android:drawableRight="@drawable/scores_light"
-          android:gravity="center"
-          android:onClick="SaveScoreButtonPressed"
-          android:text="@string/save_score_button" />
+     
 
 </LinearLayout>

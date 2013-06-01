@@ -139,7 +139,7 @@ public class TimeTrial extends Activity {
 
 		if (!Model.player_guess_mode) {
 			Button button = (Button) findViewById(R.id.guess_button);
-			button.setText("Click one!");
+			button.setVisibility(View.INVISIBLE);
 		}
 
 		player_action_music = MediaPlayer.create(this, R.raw.action);
@@ -157,6 +157,8 @@ public class TimeTrial extends Activity {
 
 		new Thread(new Model()).start();
 
+		// for beat the clock use a countdown timer
+
 		if (Model.beat_the_clock_mode) {
 			countDownTimer = new CountDownTimer(
 					(long) (Model.timer_clock * 1000), 1000) {
@@ -166,7 +168,11 @@ public class TimeTrial extends Activity {
 					TextView TimeText = (TextView) findViewById(R.id.TimeLabel);
 					countDownTimeRemaining = (Model.timer_clock - seconds);
 					TimeText.setText("Time : " + (Model.timer_clock - seconds));
+
+					System.out.println("countDownTimeRemaining : "
+							+ countDownTimeRemaining);
 					s1 = millisUntilFinished;
+					System.out.println("s1 : " + s1);
 
 				}
 
@@ -181,7 +187,7 @@ public class TimeTrial extends Activity {
 
 				}
 			};
-		}
+		} // always start a a normal timer
 
 		// timer
 		handler.post(task);
@@ -301,7 +307,10 @@ public class TimeTrial extends Activity {
 					TimeText.setText("Time Remaining : "
 							+ (Model.timer_clock - seconds));
 					countDownTimeRemaining = (Model.timer_clock - seconds);
+					System.out.println("countDownTimeRemaining : "
+							+ countDownTimeRemaining);
 					s1 = millisUntilFinished;
+					System.out.println("s1 : " + s1);
 
 				}
 
@@ -319,6 +328,8 @@ public class TimeTrial extends Activity {
 			};
 			countDownTimer.start();
 
+		} else {
+			handler.post(task);
 		}
 	}
 
@@ -350,6 +361,7 @@ public class TimeTrial extends Activity {
 
 						if (start.getX() < end.getX()) {
 							System.out.println("swiped left");
+							player_jump.start();
 
 							if (VF.getDisplayedChild() == txt.length - 1) {
 
@@ -357,7 +369,10 @@ public class TimeTrial extends Activity {
 								System.out.println("displayed child : "
 										+ VF.getDisplayedChild());
 
+								player_pipe.start();
+
 								startPlayerGuessIntent();
+
 							}
 
 							player_jump.start();
@@ -579,6 +594,8 @@ public class TimeTrial extends Activity {
 	// }
 
 	public void IfNoButtonPressed(View view) {
+		player_coin.start();
+
 		if (!Model.player_guess_mode) {
 
 			int i = VF.getDisplayedChild();
@@ -609,6 +626,7 @@ public class TimeTrial extends Activity {
 		// if set to computer guess mode
 
 		if (!Model.player_guess_mode) {
+			player_coin.start();
 			int i = VF.getDisplayedChild();
 			System.out.println("i value is : " + i);
 			ArrayList<Integer> a = Model.modelOfCards.get(i);

@@ -10,6 +10,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,9 @@ public class GoodGame extends Activity {
 		if (String.valueOf(value) != null) {
 			TextView tv1 = (TextView) findViewById(R.id.textView1);
 			tv1.setText(value);
+			Button button = (Button) findViewById(R.id.button3);
+			button.setVisibility(View.INVISIBLE);
+
 		}
 
 		TextView time_completed = (TextView) findViewById(R.id.time_completed);

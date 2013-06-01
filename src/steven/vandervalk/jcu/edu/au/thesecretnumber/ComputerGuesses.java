@@ -5,6 +5,7 @@ import java.util.Random;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 
 public class ComputerGuesses extends Activity {
 
+	MediaPlayer player_grow;
+	MediaPlayer player_die;
+
 	int computer_guess;
 	Random rn;
 	TextView tv;
@@ -26,6 +30,9 @@ public class ComputerGuesses extends Activity {
 		setContentView(R.layout.activity_computer_guesses);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		player_grow = MediaPlayer.create(this, R.raw.mario_powerup);
+		player_die = MediaPlayer.create(this, R.raw.mario_death);
 
 		new GenerateRandomComputerGuess().execute();
 
@@ -107,6 +114,7 @@ public class ComputerGuesses extends Activity {
 	public void YesMyNumberPressed(View view) {
 
 		// if computer guesses correctly record the score.
+		player_grow.start();
 
 		Model.enter_computer_score = true;
 
@@ -121,6 +129,7 @@ public class ComputerGuesses extends Activity {
 	}
 
 	public void NoNotMyNumberPressed(View view) {
+		player_die.start();
 		Intent intent = new Intent(this, GoodGame.class);
 		startActivity(intent);
 	}
